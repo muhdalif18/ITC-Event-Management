@@ -42,37 +42,3 @@ return new class extends Migration {
     Schema::dropIfExists('event_proposals');
   }
 };
-
-/* <?php
-
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
-
-return new class extends Migration {
- 
-  public function up(): void
-  {
-    Schema::create('event_proposals', function (Blueprint $table) {
-      $table->id();
-      $table->string('purpose');
-      $table->string('background');
-      $table->string('eventName');
-      $table->string('organizer');
-      $table->string('date');
-      $table->string('day');
-      $table->string('time');
-      $table->string('location');
-
-      $table->timestamps();
-    });
-  }
-
- 
-  public function down(): void
-  {
-    Schema::dropIfExists('event_proposals');
-  }
-};
-
- */
