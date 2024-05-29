@@ -72,7 +72,7 @@
                 </div>
               </th>
               <th scope="col" class="px-6 py-3">
-                Event Name (Admin)
+                Event Name ASDAS ASd(Admin)
               </th>
               <th scope="col" class="px-6 py-3">
                 Exco
