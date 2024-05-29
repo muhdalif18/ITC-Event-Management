@@ -86,7 +86,7 @@
             </tr>
           </thead>
           <tbody>
-            @foreach ($eventProposal as $eventProposalData)
+            @foreach ($eventReport as $eventReportData)
               <tr
                 class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                 <td class="w-4 p-4">
@@ -101,17 +101,17 @@
                   <div class="ps-3">
                     {{-- <div class="text-base font-semibold">Name</div> --}}
                     <div class="text-base font-semibold">
-                      <a href="{{ route('event.get-view-event-proposal', $eventProposalData->id) }}"
+                      <a href="{{ route('event.get-view-event-report', $eventReportData->id) }}"
                         class="text-blue-600 dark:text-blue-400 hover:underline">
-                        {{ $eventProposalData->eventName }}
+                        {{ $eventReportData->r_purpose }}
                       </a>
                     </div>
 
                     {{-- <div class="text-base font-semibold">
-                      <div class="text-blue-600 dark:text-blue-400 hover:underline">
-                        {{ $eventProposalData->eventName }}
-                      </div>
-                    </div> --}}
+                        <div class="text-blue-600 dark:text-blue-400 hover:underline">
+                          {{ $eventProposalData->eventName }}
+                        </div>
+                      </div> --}}
 
                     {{-- <div class="font-normal text-gray-500 ">{{ $eventProposalData->eventName }}</div> --}}
                   </div>

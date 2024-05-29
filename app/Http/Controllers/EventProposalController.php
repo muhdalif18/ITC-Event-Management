@@ -43,7 +43,7 @@ class EventProposalController extends Controller
 
   }
 
-  public function getEventProposalUser(Request $request): View
+  /* public function getEventProposalUser(Request $request): View
   {
     $eventProposal = EventProposal::all();
 
@@ -52,7 +52,7 @@ class EventProposalController extends Controller
       'eventProposal' => $eventProposal
     ]);
 
-  }
+  } */
 
   public function getSubmitEventProposal(Request $request): View
   {

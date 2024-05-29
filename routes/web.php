@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\EventProposalController;
+use App\Http\Controllers\EventReportController;
+
 use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\YourController;
@@ -22,6 +24,10 @@ use Illuminate\Http\Request;
 Route::get('/', function () {
   return view('welcome');
 });
+
+
+Route::post('/profile/change-password', [ProfileController::class, 'changePassword'])->name('profile.change-password');
+
 
 Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
   $request->fulfill();
@@ -72,7 +78,6 @@ Route::get('generate-docx', 'HomeController@generateDocx');
 
 /* Route::get('export-to-word', [EventProposalController::class, 'exportToWord']); */
 
-
 Route::middleware('auth')->group(function () {
   // Event Proposal
   Route::post('/event-proposal', [EventProposalController::class, 'postEventProposal'])->name('event.post-event-proposal');
@@ -81,6 +86,17 @@ Route::middleware('auth')->group(function () {
   Route::get('/event-proposal/submit/', [EventProposalController::class, 'getSubmitEventProposal'])->name('event.get-submit-event-proposal');
   Route::get('/event-proposal/view/{id}', [EventProposalController::class, 'getViewEventProposal'])->name('event.get-view-event-proposal');
   Route::get('/export-to-word/{id}', [EventProposalController::class, 'exportToWord'])->name('export-to-word');
+
+  // Event Report
+  Route::post('/event-report', [EventReportController::class, 'postEventReport'])->name('event.post-event-report');
+  Route::get('/event-report', [EventReportController::class, 'getEventReport'])->name('event.get-event-report');
+  Route::get('/event-report-user', [EventReportController::class, 'getEventReportUser'])->name('event.get-event-report-user');
+  Route::get('/event-report/submit/', [EventReportController::class, 'getGenerateEventReport'])->name('event.get-generate-event-report');
+  Route::get('/event-report/view/{id}', [EventReportController::class, 'getViewEventReport'])->name('event.get-view-event-report');
+  //Route::get('/export-to-word/{id}', [EventProposalController::class, 'exportToWord'])->name('export-to-word');
+
+  //Event Report
+  //Route::post('/event-report', [EventReportController::class, 'postEventReport'])->name('event.post-event-report');
 
   // Calendar
   Route::get('/calendar', [CalendarController::class, 'getCalendar'])->name('calendar.get-calendar');
