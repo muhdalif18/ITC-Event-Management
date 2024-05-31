@@ -53,6 +53,9 @@ Route::get('/submit-event-proposal-form', function () {
   return view('submit-event-proposal-form');
 })->middleware(['auth', 'verified'])->name('submit-event-proposal-form');
 
+Route::get('/event-proposal-overview', function () {
+  return view('event-proposal-overview');
+})->middleware(['auth', 'verified'])->name('event-proposal-overview');
 
 Route::get('/generate-event-report-form', function () {
   return view('generate-event-report-form');
