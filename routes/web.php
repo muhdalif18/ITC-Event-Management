@@ -57,6 +57,10 @@ Route::get('/event-proposal-overview', function () {
   return view('event-proposal-overview');
 })->middleware(['auth', 'verified'])->name('event-proposal-overview');
 
+Route::get('/event-report-overview', function () {
+  return view('event-report-overview');
+})->middleware(['auth', 'verified'])->name('event-report-overview');
+
 Route::get('/generate-event-report-form', function () {
   return view('generate-event-report-form');
 })->middleware(['auth', 'verified'])->name('generate-event-report-form');
@@ -96,7 +100,7 @@ Route::middleware('auth')->group(function () {
   Route::get('/event-report-user', [EventReportController::class, 'getEventReportUser'])->name('event.get-event-report-user');
   Route::get('/event-report/submit/', [EventReportController::class, 'getGenerateEventReport'])->name('event.get-generate-event-report');
   Route::get('/event-report/view/{id}', [EventReportController::class, 'getViewEventReport'])->name('event.get-view-event-report');
-  //Route::get('/export-to-word/{id}', [EventProposalController::class, 'exportToWord'])->name('export-to-word');
+  /* Route::get('/export-to-word/{id}', [EventProposalController::class, 'exportToWord'])->name('export-to-word'); */
 
   //Event Report
   //Route::post('/event-report', [EventReportController::class, 'postEventReport'])->name('event.post-event-report');

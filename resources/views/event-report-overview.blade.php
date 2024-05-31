@@ -269,7 +269,7 @@
           <!-- Proceed to Submission Proposal Button -->
           <div class="mb-4 text-center">
             <button class="bg-indigo-500 text-white px-4 py-2 rounded-md">
-              Proceed to submission proposal
+              Proceed to submission report
             </button>
           </div>
           <!-- Image Container -->

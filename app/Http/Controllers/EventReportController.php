@@ -49,6 +49,7 @@ class EventReportController extends Controller
     $this->validate($request, [
       'r_purpose' => 'required|string|max:255',
       'r_background' => 'required|string|max:1000',
+      'r_description_Comment' => 'required|string|max:1000',
     ]);
 
     if ($request->has('id')) {
@@ -67,6 +68,7 @@ class EventReportController extends Controller
     // Update the event proposal details
     $eventReport->r_purpose = $request->input('r_purpose');
     $eventReport->r_background = $request->input('r_background');
+    $eventReport->r_description_Comment = $request->input('r_description_Comment');
     $eventReport->save();
 
     return redirect()->route('generate-event-report-form');
