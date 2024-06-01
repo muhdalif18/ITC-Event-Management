@@ -48,8 +48,8 @@ class EventReportController extends Controller
 
     $this->validate($request, [
       'r_purpose' => 'required|string|max:255',
-      'r_background' => 'required|string|max:1000',
-      'r_description_Comment' => 'required|string|max:1000',
+      'r_background' => 'required|string|max:255',
+      'r_description_Comment' => 'string|max:255',
     ]);
 
     if ($request->has('id')) {
