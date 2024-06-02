@@ -30,6 +30,8 @@ return new class extends Migration {
       $table->string('eventDetails_Comment');
       $table->string('organizer_Comment');
       $table->string('obj_Comment');
+      $table->string('status')->default('Pending');
+
       $table->timestamps();
     });
   }

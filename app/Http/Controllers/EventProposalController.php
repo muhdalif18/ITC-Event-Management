@@ -32,6 +32,19 @@ class EventProposalController extends Controller
       ]);
     }
   } */
+  public function updateEventProposalStatus(Request $request, $id)
+  {
+    $request->validate([
+        'status' => 'required|string',
+    ]);
+
+    $eventProposal = EventProposal::findOrFail($id);
+    $eventProposal->status = $request->input('status');
+    $eventProposal->save();
+
+    return redirect()->back()->with('success', 'Status updated successfully');
+  }
+
   public function getEventProposal(Request $request): View
   {
     $eventProposal = EventProposal::all();

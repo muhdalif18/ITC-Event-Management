@@ -265,17 +265,17 @@
         <img class="w-full h-auto object-cover object-center rounded-lg" src="img/ppw1.png" alt="step"> 
       </div> -->
 
-      <div class="lg:w-3/5 md:w-1/2 object-cover object-center rounded-lg md:mt-0 mt-12">
-          <!-- Proceed to Submission Proposal Button -->
+      <!-- <div class="lg:w-3/5 md:w-1/2 object-cover object-center rounded-lg md:mt-0 mt-12">
+          
           <div class="mb-4 text-center">
             <button class="bg-indigo-500 text-white px-4 py-2 rounded-md">
               Proceed to submission proposal
             </button>
           </div>
-          <!-- Image Container -->
+        
           <div class="relative">
             <img id="slideshow-image" class="w-full h-auto object-cover object-center rounded-lg border border-gray-300" src="img/ppw1.png" alt="step">
-            <!-- Next and Previous Buttons -->
+          
             <button id="prevBtn" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-300 text-gray px-4 py-2 rounded-l-md">
               Previous
             </button>
@@ -283,7 +283,28 @@
               Next
             </button>
           </div>
-      </div>
+      </div> -->
+
+      <div class="lg:w-3/5 md:w-1/2 object-cover object-center rounded-lg md:mt-0 mt-12">
+  <!-- Proceed to Submission Proposal Button -->
+  <div class="mb-4 text-center">
+    <button class="bg-indigo-500 text-white px-4 py-2 rounded-md" onclick="window.location.href='submit-event-proposal-form'">
+      Proceed to submission proposal
+    </button>
+  </div>
+  <!-- Image Container -->
+  <div class="relative">
+    <img id="slideshow-image" class="w-full h-auto object-cover object-center rounded-lg border border-gray-300" src="img/ppw1.png" alt="step">
+    <!-- Next and Previous Buttons -->
+    <button id="prevBtn" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-300 text-gray px-4 py-2 rounded-l-md">
+      Previous
+    </button>
+    <button id="nextBtn" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-300 text-gray px-4 py-2 rounded-r-md">
+      Next
+    </button>
+  </div>
+</div>
+
 
     </div>
   </div>

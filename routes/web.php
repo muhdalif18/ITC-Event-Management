@@ -94,6 +94,10 @@ Route::middleware('auth')->group(function () {
   Route::get('/event-proposal/view/{id}', [EventProposalController::class, 'getViewEventProposal'])->name('event.get-view-event-proposal');
   Route::get('/export-to-word/{id}', [EventProposalController::class, 'exportToWord'])->name('export-to-word');
 
+  //status
+  Route::patch('/event-proposal/{id}/status', [EventProposalController::class, 'updateEventProposalStatus'])->name('event.update-event-proposal-status');
+
+
   // Event Report
   Route::post('/event-report', [EventReportController::class, 'postEventReport'])->name('event.post-event-report');
   Route::get('/event-report', [EventReportController::class, 'getEventReport'])->name('event.get-event-report');

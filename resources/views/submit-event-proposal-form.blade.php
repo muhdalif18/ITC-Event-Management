@@ -7,10 +7,13 @@
 
   <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
     <div class="p-6 text-gray-900">
-    <div>
-    </div>
-      <!-- Stepper -->
-      <div data-hs-stepper>
+    
+     <div>
+
+        </div>
+        
+        <!-- Stepper -->
+        <div data-hs-stepper>
         <!-- Stepper Nav -->
         <ul class="relative flex flex-row gap-x-2">
           <!-- Item -->
