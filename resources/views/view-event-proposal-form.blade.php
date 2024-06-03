@@ -339,9 +339,9 @@
                   <div class="sm:col-span-9">
                     <div class="sm:flex">
                       <input type="text" id="purpose" name="purpose"
-       value="{{ old('purpose', $eventProposalData->purpose) }}"
-       class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px rounded-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
-       @if (auth()->user()->role == 'admin') readonly @endif>
+                        value="{{ old('purpose', $eventProposalData->purpose) }}"
+                        class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px rounded-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                        @if (auth()->user()->role == 'admin') readonly @endif>
 
                       <x-input-error class="mt-2" :messages="$errors->get('purpose')" />
                     </div>

@@ -119,10 +119,37 @@
                 <td class="px-6 py-4">
                   React Developer
                 </td>
-                <td class="px-6 py-4">
+                {{-- <td class="px-6 py-4">
                   <div class="flex items-center">
                     <div class="h-2.5 w-2.5 rounded-full bg-green-500 me-2"></div> Online
                   </div>
+                </td> --}}
+                <td class="px-6 py-4">
+
+                  @php($user = Auth::user())
+                  @if ($user->role == 'admin')
+                    <div class="flex items-center">
+                      <form method="POST"
+                        action="{{ route('event.update-event-report-status', $eventReportData->id) }}">
+                        @csrf
+                        @method('PATCH')
+                        <select name="status" onchange="this.form.submit()"
+                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                          <option value="Pending" {{ $eventReportData->status == 'Pending' ? 'selected' : '' }}>
+                            Pendssing</option>
+                          <option value="Approved" {{ $eventReportData->status == 'Approved' ? 'selected' : '' }}>
+                            Approved</option>
+                          <option value="Not Approved"
+                            {{ $eventReportData->status == 'Not Approved' ? 'selected' : '' }}>Not Approved</option>
+                        </select>
+                      </form>
+                    </div>
+                  @else
+                    <div class="text-sm">
+                      Status: {{ $eventReportData->status }}
+                    </div>
+                  @endif
+
                 </td>
                 <td class="px-6 py-4">
                   <!-- Modal toggle -->

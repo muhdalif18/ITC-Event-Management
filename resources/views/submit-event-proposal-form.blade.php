@@ -7,19 +7,19 @@
 
   <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
     <div class="p-6 text-gray-900">
-    
-     <div>
 
-        </div>
-        
-        <!-- Stepper -->
-        <div data-hs-stepper>
+      <div>
+
+      </div>
+
+      <!-- Stepper -->
+      <div data-hs-stepper>
         <!-- Stepper Nav -->
         <ul class="relative flex flex-row gap-x-2">
           <!-- Item -->
           <li class="flex items-center gap-x-2 shrink basis-0 flex-1 group active"
             data-hs-stepper-nav-item='{"index": 1, "isOptional": true}'>
-           <!--  <span
+            <!--  <span
               class="min-w-7 min-h-7 group inline-flex items-center text-xs align-middle focus:outline-none disabled:opacity-50 disabled:pointer-events-none">
               <span
                 class="size-7 flex justify-center items-center flex-shrink-0 bg-gray-100 font-medium text-gray-800 rounded-full group-focus:bg-gray-200 dark:bg-gray-700 dark:text-white dark:group-focus:bg-gray-600 hs-stepper-active:bg-blue-600 hs-stepper-active:text-white hs-stepper-success:bg-blue-600 hs-stepper-success:text-white hs-stepper-completed:bg-teal-500 hs-stepper-completed:group-focus:bg-teal-600">
@@ -164,7 +164,7 @@
 
           <!-- Item -->
           <li class="flex items-center gap-x-2 shrink basis-0 flex-1 group" data-hs-stepper-nav-item='{"index": 7}'>
-           <!--  <span
+            <!--  <span
               class="min-w-7 min-h-7 group inline-flex items-center text-xs align-middle focus:outline-none disabled:opacity-50 disabled:pointer-events-none">
               <span
                 class="size-7 flex justify-center items-center flex-shrink-0 bg-gray-100 font-medium text-gray-800 rounded-full group-focus:bg-gray-200 dark:bg-gray-700 dark:text-white dark:group-focus:bg-gray-600 hs-stepper-active:bg-blue-600 hs-stepper-active:text-white hs-stepper-success:bg-blue-600 hs-stepper-success:text-white hs-stepper-completed:bg-teal-500 hs-stepper-completed:group-focus:bg-teal-600">

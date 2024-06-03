@@ -35,7 +35,7 @@ class EventProposalController extends Controller
   public function updateEventProposalStatus(Request $request, $id)
   {
     $request->validate([
-        'status' => 'required|string',
+      'status' => 'required|string',
     ]);
 
     $eventProposal = EventProposal::findOrFail($id);

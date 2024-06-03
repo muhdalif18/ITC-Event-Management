@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\EventProposalController;
 use App\Http\Controllers\EventReportController;
+use App\Http\Controllers\UserController;
 
 use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\ProfileController;
@@ -65,7 +66,13 @@ Route::get('/generate-event-report-form', function () {
   return view('generate-event-report-form');
 })->middleware(['auth', 'verified'])->name('generate-event-report-form');
 
+Route::get('/proposal', function () {
+  return view('proposal');
+})->middleware(['auth', 'verified'])->name('proposal');
 
+Route::get('/report', function () {
+  return view('report');
+})->middleware(['auth', 'verified'])->name('report');
 /* Route::get('/calendar', function () {
   return view('calendar');
 })->middleware(['auth', 'verified'])->name('calendar'); */
@@ -94,8 +101,9 @@ Route::middleware('auth')->group(function () {
   Route::get('/event-proposal/view/{id}', [EventProposalController::class, 'getViewEventProposal'])->name('event.get-view-event-proposal');
   Route::get('/export-to-word/{id}', [EventProposalController::class, 'exportToWord'])->name('export-to-word');
 
-  //status
+  //status for report and proposal
   Route::patch('/event-proposal/{id}/status', [EventProposalController::class, 'updateEventProposalStatus'])->name('event.update-event-proposal-status');
+  Route::patch('/event-report/{id}/status', [EventReportController::class, 'updateEventReportStatus'])->name('event.update-event-report-status');
 
 
   // Event Report
@@ -106,6 +114,7 @@ Route::middleware('auth')->group(function () {
   Route::get('/event-report/view/{id}', [EventReportController::class, 'getViewEventReport'])->name('event.get-view-event-report');
   /* Route::get('/export-to-word/{id}', [EventProposalController::class, 'exportToWord'])->name('export-to-word'); */
 
+
   //Event Report
   //Route::post('/event-report', [EventReportController::class, 'postEventReport'])->name('event.post-event-report');
 
@@ -114,6 +123,10 @@ Route::middleware('auth')->group(function () {
   Route::post('/calendar', [CalendarController::class, 'postCalendarEvent'])->name('calendar.post-calendar-event');
 
   Route::delete('/calendar/delete-event', [CalendarController::class, 'deleteEvent'])->name('calendar.delete-calendar-event');
+
+
+  //chart
+  Route::get('/users', [UserController::class, 'index'])->name('users.index');
 
 
 

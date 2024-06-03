@@ -13,6 +13,19 @@ use Illuminate\View\View;
 class EventReportController extends Controller
 {
 
+  public function updateEventReportStatus(Request $request, $id)
+  {
+    $request->validate([
+      'status' => 'required|string',
+    ]);
+
+    $eventReport = EventReport::findOrFail($id);
+    $eventReport->status = $request->input('status');
+    $eventReport->save();
+
+    return redirect()->back()->with('success', 'Status updated successfully');
+  }
+
   public function getEventReport(Request $request): View
   {
     $eventReport = EventReport::all();
