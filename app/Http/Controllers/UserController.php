@@ -3,20 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Charts\MonthlyUsersChart;
+use Illuminate\View\View;
 
 class UserController extends Controller
 {
-
-  public function index(MonthlyUsersChart $chart)
-  {
-    return view('users.index', ['chart' => $chart->build()]);
-  }
   /**
    * Display a listing of the resource.
    */
-  public function index()
+  public function getDashbaord(Request $request, MonthlyUsersChart $chart): View
   {
-    //
+    return view('dashboard', [
+      'user' => $request->user(),
+      'chart' => $chart->build(),
+    ]);
   }
 
   /**

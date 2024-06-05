@@ -12,7 +12,6 @@
           class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.2 px-4 rounded-lg shadow-sm">Previous</button>
         <button id="next-month"
           class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.2 px-4 rounded-lg shadow-sm">Next</button>
-
         <button type="button" id="open-modal"
           class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.2 px-4 rounded-lg shadow-sm">
           Large
@@ -157,7 +156,7 @@
       </script>
 
       <div class="container mt-4 flex flex-col md:flex-row gap-6">
-        <div class="form-section bg-white p-6 shadow-sm sm:rounded-lg md:w-1/5  border-gray-100 border-2">
+        <div class="form-section bg-white p-6 shadow-sm sm:rounded-lg md:w-1/5 border-gray-100 border-2">
           <form method="post" action="{{ route('calendar.post-calendar-event') }}">
             @csrf
 
@@ -165,69 +164,80 @@
             <input type="date" id="date" name="date"
               class="block w-full p-2.5 mb-4 border border-gray-300 rounded-lg shadow-sm">
             <x-input-error :messages="$errors->get('date')" class="mt-2" />
+
             <label for="event" class="block mb-2 text-sm font-medium text-gray-900">Event</label>
-
-            <input type="text" id="event" name="event" placeholder="Enter event"
+            <input type="text" id="event" name="event" placeholder="Add event"
               class="block w-full p-2.5 mb-4 border border-gray-300 rounded-lg shadow-sm">
-
-            <input type="text" id="time" name="time" placeholder="Enter time"
-              class="block w-full p-2.5 mb-4 border border-gray-300 rounded-lg shadow-sm">
-
             <x-input-error :messages="$errors->get('event')" class="mt-2" />
+
+            <label for="time" class="block mb-2 text-sm font-medium text-gray-900">Time</label>
+            <input type="text" id="time" name="time" placeholder="Add time"
+              class="block w-full p-2.5 mb-4 border border-gray-300 rounded-lg shadow-sm">
             <x-input-error :messages="$errors->get('time')" class="mt-2" />
+
             <button type="submit"
-              class="block w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 rounded-lg shadow-sm">Submit</button>
+              class="py-2.5 px-3.5 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700">Add
+              Event</button>
           </form>
+
+          <h2 class="text-2xl font-semibold mt-6">Secretariat Events</h2>
+          @foreach ($secretariatEvents as $secretariatEvent)
+            <div class="bg-white p-3 mb-2 border rounded-lg shadow-sm">
+              <h2 class="text-xl font-semibold">{{ $secretariatEvent->eventProposal->eventName }}</h2>
+              <p class="text-sm">{{ $secretariatEvent->eventProposal->eventDate }} at
+                {{ $secretariatEvent->eventProposal->eventTime }}</p>
+            </div>
+          @endforeach
         </div>
 
-        <div class="calendar bg-white p-6 shadow-sm sm:rounded-lg md:w-4/5  border-gray-100 border-2">
-          <div class="month-year text-center text-xl font-semibold mb-4">
-            <span class="month">{{ $date->format('M') }}</span>
-            <span class="year">{{ $date->format('Y') }}</span>
-          </div>
-          <div class="days grid grid-cols-7 gap-2">
-            @php
-              $dayLabels = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-            @endphp
-            @foreach ($dayLabels as $dayLabel)
-              <span class="day-label text-center font-semibold bg-gray-200 rounded-md py-2">{{ $dayLabel }}</span>
-            @endforeach
-            @while ($startOfCalendar <= $endOfCalendar)
+        <div class="calendar-section p-6 md:w-4/5">
+          <div class="calendar bg-white p-6 shadow-sm sm:rounded-lg md:w-4/5 border-gray-100 border-2">
+            <div class="month-year text-center text-xl font-semibold mb-4">
+              <span class="month">{{ $date->format('M') }}</span>
+              <span class="year">{{ $date->format('Y') }}</span>
+            </div>
+            <div class="days grid grid-cols-7 gap-2">
               @php
-                $extraClass = $startOfCalendar->format('m') != $date->format('m') ? 'text-gray-400' : 'text-black';
-                $extraClass .= $startOfCalendar->isToday() ? ' bg-green-300' : '';
+                $dayLabels = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
               @endphp
-              <div class="day {{ $extraClass }} bg-gray-100 rounded-md p-2 h-24 flex flex-col justify-between">
-                <span class="content">{{ $startOfCalendar->format('j') }}</span>
-                @foreach ($calendarEvent as $calendarEventData)
-                  @php
-                    $dateFormat = \Carbon\Carbon::parse($calendarEventData->date);
-                    $eventColors = [
-                        /* 'bg-red-300', */
-                        'bg-blue-300' /* , 'bg-green-300', 'bg-yellow-300', 'bg-purple-300',  */,
-                    ];
-                    $colorClass = $eventColors[$loop->index % count($eventColors)];
-                  @endphp
-                  @if ($startOfCalendar->format('Y-m-d') == $dateFormat->format('Y-m-d'))
-                    <div class="event {{ $colorClass }} rounded-md p-1 text-xs mt-1">
-                      <div>{{ $calendarEventData->event }}</div>
-                      <div>{{ $calendarEventData->time }}</div>
-                      <div class="flex justify-between mt-1">
-                        <button class="edit-event text-blue-600 hover:text-blue-800"
-                          data-id="{{ $calendarEventData->id }}" data-date="{{ $calendarEventData->date }}"
-                          data-event="{{ $calendarEventData->event }}"
-                          data-time="{{ $calendarEventData->time }}">Edit</button>
-                        <button class="delete-event text-red-600 hover:text-red-800"
-                          data-id="{{ $calendarEventData->id }}">Delete</button>
+              @foreach ($dayLabels as $dayLabel)
+                <span
+                  class="day-label text-center font-semibold bg-gray-200 rounded-md py-2">{{ $dayLabel }}</span>
+              @endforeach
+              @while ($startOfCalendar <= $endOfCalendar)
+                @php
+                  $extraClass = $startOfCalendar->format('m') != $date->format('m') ? 'text-gray-400' : 'text-black';
+                  $extraClass .= $startOfCalendar->isToday() ? ' bg-green-300' : '';
+                @endphp
+                <div class="day {{ $extraClass }} bg-gray-100 rounded-md p-2 h-24 flex flex-col justify-between">
+                  <span class="content">{{ $startOfCalendar->format('j') }}</span>
+                  @foreach ($calendarEvents as $calendarEventData)
+                    @php
+                      $dateFormat = \Carbon\Carbon::parse($calendarEventData->date);
+                      $eventColors = ['bg-blue-300'];
+                      $colorClass = $eventColors[$loop->index % count($eventColors)];
+                    @endphp
+                    @if ($startOfCalendar->format('Y-m-d') == $dateFormat->format('Y-m-d'))
+                      <div class="event {{ $colorClass }} rounded-md p-1 text-xs mt-1">
+                        <div>{{ $calendarEventData->event }}</div>
+                        <div>{{ $calendarEventData->time }}</div>
+                        <div class="flex justify-between mt-1">
+                          <button class="edit-event text-blue-600 hover:text-blue-800"
+                            data-id="{{ $calendarEventData->id }}" data-date="{{ $calendarEventData->date }}"
+                            data-event="{{ $calendarEventData->event }}"
+                            data-time="{{ $calendarEventData->time }}">Edit</button>
+                          <button class="delete-event text-red-600 hover:text-red-800"
+                            data-id="{{ $calendarEventData->id }}">Delete</button>
+                        </div>
                       </div>
-                    </div>
-                  @endif
-                @endforeach
-              </div>
-              @php
-                $startOfCalendar->addDay();
-              @endphp
-            @endwhile
+                    @endif
+                  @endforeach
+                </div>
+                @php
+                  $startOfCalendar->addDay();
+                @endphp
+              @endwhile
+            </div>
           </div>
         </div>
       </div>

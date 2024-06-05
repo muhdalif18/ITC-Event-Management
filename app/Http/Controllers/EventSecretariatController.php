@@ -3,41 +3,28 @@
 namespace App\Http\Controllers;
 
 use App\Models\EventSecretariat;
-use PhpOffice\PhpWord\IOFactory;
+use App\Models\EventSecretariats;
 use Illuminate\Http\Request;
 
 class EventSecretariatController extends Controller
 {
-  public function postEventSecretariat(Request $request)
+  public function store(Request $request)
   {
-    $eventSecretariat = new EventSecretariat();
-
-    $this->validate($request, [
+    // Validate the request data
+    $request->validate([
       'secre_name' => 'required|string|max:255',
-      'secre_matric_number' => 'required|string|max:1000',
-      'secre_committee' => 'required|string|max:255',
-
+      'secre_matric_number' => 'required|string|max:255',
+      'event_id' => 'required|exists:event_proposals,id', // validate event_id
     ]);
 
-    if ($request->has('id')) {
-      // Find the existing event proposal by ID
-      $eventSecretariat = EventSecretariat::find($request->id);
+    // Create a new secretariat record
+    EventSecretariats::create([
+      'secre_name' => $request->secre_name,
+      'secre_matric_number' => $request->secre_matric_number,
+      'event_id' => $request->event_id, // save event_id
+    ]);
 
-      // If an event proposal with the provided ID doesn't exist, create a new one
-      if (!$eventSecretariat) {
-        $eventSecretariat = new EventSecretariat();
-      }
-    } else {
-      // If no ID is provided in the request, create a new event proposal
-      $eventSecretariat = new EventSecretariat();
-    }
-
-    // Update the event proposal details
-    $eventSecretariat->secre_name = $request->input('secre_name');
-    $eventSecretariat->secre_matric_number = $request->input('secre_matric_number');
-    $eventSecretariat->secre_committee = $request->input('secre_committee');
-    $eventSecretariat->save();
-
-    return redirect()->route('check-review-proposal');
+    // Redirect back with a success message
+    return redirect()->back()->with('success', 'Secretariat data saved successfully.');
   }
 }

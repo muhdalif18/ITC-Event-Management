@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\CalendarEvent;
+use App\Models\EventSecretariats;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+
 
 class CalendarController extends Controller
 {
@@ -24,7 +26,12 @@ class CalendarController extends Controller
     $startOfCalendar = $date->copy()->startOfMonth()->startOfWeek(Carbon::SUNDAY);
     $endOfCalendar = $date->copy()->endOfMonth()->endOfWeek(Carbon::SATURDAY);
 
-    $calendarEvent = CalendarEvent::whereBetween('date', [$startOfCalendar, $endOfCalendar])->get();
+    $calendarEvents = CalendarEvent::whereBetween('date', [$startOfCalendar, $endOfCalendar])->get();
+
+    // Retrieve secretariat's events
+    $secretariatEvents = EventSecretariats::where('secre_matric_number', $request->user()->matric_number)
+      ->with('eventProposal')
+      ->get();
 
     return view('calendar', [
       'user' => $request->user(),
@@ -32,7 +39,8 @@ class CalendarController extends Controller
       'time' => $date,
       'startOfCalendar' => $startOfCalendar,
       'endOfCalendar' => $endOfCalendar,
-      'calendarEvent' => $calendarEvent,
+      'calendarEvents' => $calendarEvents,
+      'secretariatEvents' => $secretariatEvents,
     ]);
   }
 

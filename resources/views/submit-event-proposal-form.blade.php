@@ -427,8 +427,6 @@
                       <input type="text" id="eventName" name="eventName" value="{{ old('eventName') }}"
                         class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
                       <x-input-error class="mt-2" :messages="$errors->get('eventName')" />
-                      {{-- <input type="text"
-                class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"> --}}
                     </div>
                   </div>
                   <!-- End Col -->
@@ -441,16 +439,45 @@
                   <!-- End Col -->
 
                   <div class="sm:col-span-9">
-                    {{--  <input id="af-submit-application-phone" type="text"
-                        class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"> --}}
-
-
                     <div class="sm:col-span-9">
                       <textarea id="organizer" name="organizer"
                         class="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
                         rows="6" placeholder=""> {{ old('organizer') }}
                       </textarea>
                       <x-input-error class="mt-2" :messages="$errors->get('organizer')" />
+                    </div>
+                  </div>
+                  <!-- End Col -->
+
+                  <div class="sm:col-span-3">
+                    <label for="organizer_exco" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                      Exco In Charge
+                    </label>
+                  </div>
+                  <!-- End Col -->
+
+                  <div class="sm:col-span-9">
+                    <div class="sm:flex">
+                      <input type="text" id="c" name="organizer_exco" value="{{ old('organizer_exco') }}"
+                        class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
+                      <x-input-error class="mt-2" :messages="$errors->get('organizer_exco')" />
+                    </div>
+                  </div>
+                  <!-- End Col -->
+
+                  <div class="sm:col-span-3">
+                    <label for="event_director" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                      Event Director
+                    </label>
+                  </div>
+                  <!-- End Col -->
+
+                  <div class="sm:col-span-9">
+                    <div class="sm:flex">
+                      <input type="text" id="event_director" name="event_director"
+                        value="{{ old('event_director') }}"
+                        class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
+                      <x-input-error class="mt-2" :messages="$errors->get('event_director')" />
                     </div>
                   </div>
                   <!-- End Col -->

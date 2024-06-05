@@ -3,6 +3,7 @@
 use App\Http\Controllers\EventProposalController;
 use App\Http\Controllers\EventReportController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\SecretariatController;
 
 use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\ProfileController;
@@ -10,6 +11,11 @@ use App\Http\Controllers\YourController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
+
+use App\Http\Controllers\EventSecretariatController;
+
+// Other routes
+
 
 /*
 |--------------------------------------------------------------------------
@@ -46,9 +52,9 @@ Route::get('/profile', function () {
   // Only verified users may access this route...
 })->middleware(['auth', 'verified']);
 
-Route::get('/dashboard', function () {
+/* Route::get('/dashboard', function () {
   return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard'); */
 
 Route::get('/submit-event-proposal-form', function () {
   return view('submit-event-proposal-form');
@@ -93,6 +99,8 @@ Route::get('generate-docx', 'HomeController@generateDocx');
 /* Route::get('export-to-word', [EventProposalController::class, 'exportToWord']); */
 
 Route::middleware('auth')->group(function () {
+  Route::get('/dashboard', [UserController::class, 'getDashbaord'])->name('dashboard');
+
   // Event Proposal
   Route::post('/event-proposal', [EventProposalController::class, 'postEventProposal'])->name('event.post-event-proposal');
   Route::get('/event-proposal', [EventProposalController::class, 'getEventProposal'])->name('event.get-event-proposal');
@@ -115,6 +123,9 @@ Route::middleware('auth')->group(function () {
   /* Route::get('/export-to-word/{id}', [EventProposalController::class, 'exportToWord'])->name('export-to-word'); */
 
 
+  //chart
+  Route::get('/index', [UserController::class, 'index'])->name('index');
+
   //Event Report
   //Route::post('/event-report', [EventReportController::class, 'postEventReport'])->name('event.post-event-report');
 
@@ -124,16 +135,15 @@ Route::middleware('auth')->group(function () {
 
   Route::delete('/calendar/delete-event', [CalendarController::class, 'deleteEvent'])->name('calendar.delete-calendar-event');
 
-
-  //chart
-  Route::get('/users', [UserController::class, 'index'])->name('users.index');
-
-
-
   // Profile
   Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
   Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
   Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+  //secre
+  Route::post('/event-secretariat', [EventSecretariatController::class, 'store'])->name('event.secretariat.store');
+
+
 });
 
 require __DIR__ . '/auth.php';

@@ -63,6 +63,9 @@ class EventReportController extends Controller
       'r_purpose' => 'required|string|max:255',
       'r_background' => 'required|string|max:255',
       'r_description_Comment' => 'string|max:255',
+
+      'r_organizer_exco' => 'string|max:255',
+      'r_event_director' => 'string|max:255',
     ]);
 
     if ($request->has('id')) {
@@ -82,6 +85,8 @@ class EventReportController extends Controller
     $eventReport->r_purpose = $request->input('r_purpose');
     $eventReport->r_background = $request->input('r_background');
     $eventReport->r_description_Comment = $request->input('r_description_Comment');
+    $eventReport->r_organizer_exco = $request->input('r_organizer_exco');
+    $eventReport->r_event_director = $request->input('r_event_director');
     $eventReport->save();
 
     return redirect()->route('generate-event-report-form');

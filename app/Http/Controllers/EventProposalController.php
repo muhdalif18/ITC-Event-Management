@@ -96,6 +96,10 @@ class EventProposalController extends Controller
       'background' => 'required|string|max:1000',
       'eventName' => 'required|string|max:255',
       'organizer' => 'required|string|max:255',
+
+      'organizer_exco' => 'required|string|max:255',
+      'event_director' => 'required|string|max:255',
+
       'date' => 'required|string|max:255',
       'day' => 'required|string|max:255',
       'time' => 'required|string|max:255',
@@ -131,6 +135,10 @@ class EventProposalController extends Controller
     $eventProposal->background = $request->input('background');
     $eventProposal->eventName = $request->input('eventName');
     $eventProposal->organizer = $request->input('organizer');
+
+    $eventProposal->organizer_exco = $request->input('organizer_exco');
+    $eventProposal->event_director = $request->input('event_director');
+
     $eventProposal->date = $request->input('date');
     $eventProposal->day = $request->input('day');
     $eventProposal->time = $request->input('time');

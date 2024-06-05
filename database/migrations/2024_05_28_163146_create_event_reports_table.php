@@ -14,6 +14,10 @@ return new class extends Migration {
       $table->id();
       $table->string('r_purpose');
       $table->string('r_background');
+
+      $table->string('r_organizer_exco');
+      $table->string('r_event_director');
+
       $table->string('r_description_Comment');
       $table->timestamps();
       $table->string('status')->default('Pending');

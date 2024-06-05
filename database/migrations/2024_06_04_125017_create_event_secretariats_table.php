@@ -11,10 +11,15 @@ return new class extends Migration {
   public function up(): void
   {
     Schema::create('event_secretariats', function (Blueprint $table) {
+      /* $table->id();
+      $table->string('secre_name');
+      $table->string('secre_matric_number');
+      $table->timestamps(); */
       $table->id();
       $table->string('secre_name');
       $table->string('secre_matric_number');
-      $table->string('secre_committee');
+      $table->unsignedBigInteger('event_id');
+      $table->foreign('event_id')->references('id')->on('event_proposals')->onDelete('cascade');
       $table->timestamps();
     });
   }
