@@ -837,7 +837,7 @@
 <body class="antialiased">
   @include('layouts.navigation-guest')
   <div
-    class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
+    class="relative sm:flex sm:justify-center sm:items-center min-h-screen selection:text-white bg-cover bg-center bg-no-repeat bg-[url('https://encycolorpedia.com/20364b.png')]">
     @if (Route::has('login'))
       <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
         @auth

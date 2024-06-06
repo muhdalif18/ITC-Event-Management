@@ -108,11 +108,12 @@
 <!-- ========== END HEADER ========== -->
  --}}
 
-<header class="flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full bg-white text-sm py-4 dark:bg-gray-800">
+<header class="flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full text-sm py-4 dark:bg-gray-800"
+  style="background-color: #365069";>
   <nav class="max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between" aria-label="Global">
     <div class="flex items-center justify-between">
       <a class="flex-none" href="#">
-        <img class="w-10 h-auto" src="img\brain-icon-3.png" alt="Logo">
+        <img class="w-60 h-auto" src="img\logoITC_p.png" alt="Logo">
       </a>
       <div class="sm:hidden">
         <button type="button"
@@ -138,7 +139,7 @@
       class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow sm:block">
       <div class="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:ps-5">
         <button type="button"
-          class="hs-dark-mode-active:hidden block hs-dark-mode group flex items-center text-gray-600 hover:text-blue-600 font-medium dark:text-gray-400 dark:hover:text-gray-500"
+          class="hs-dark-mode-active:hidden block hs-dark-mode group flex items-center text-white hover:text-blue-600 font-medium dark:text-gray-400 dark:hover:text-gray-500"
           data-hs-theme-click-value="dark">
           <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -164,13 +165,13 @@
             <path d="m19.07 4.93-1.41 1.41" />
           </svg>
         </button>
-        <a class="font-medium text-blue-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+        <a class="font-medium text-white dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
           href="#" aria-current="page">Landing</a>
-        <a class="font-medium text-gray-600 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+        <a class="font-medium text-white hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
           href="#">Account</a>
-        <a class="font-medium text-gray-600 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+        <a class="font-medium text-white hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
           href="#">Work</a>
-        <a class="font-medium text-gray-600 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+        <a class="font-medium text-white hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
           href="#">Blog</a>
       </div>
     </div>

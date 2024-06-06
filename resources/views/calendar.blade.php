@@ -157,7 +157,7 @@
 
       <div class="container mt-4 flex flex-col md:flex-row gap-6">
         <div class="form-section bg-white p-6 shadow-sm sm:rounded-lg md:w-1/5 border-gray-100 border-2">
-          <form method="post" action="{{ route('calendar.post-calendar-event') }}">
+          {{-- <form method="post" action="{{ route('calendar.post-calendar-event') }}">
             @csrf
 
             <label for="date" class="block mb-2 text-sm font-medium text-gray-900">Date</label>
@@ -178,9 +178,9 @@
             <button type="submit"
               class="py-2.5 px-3.5 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700">Add
               Event</button>
-          </form>
+          </form> --}}
 
-          <h2 class="text-2xl font-semibold mt-6">Secretariat Events</h2>
+          <h2 class="text-2xl font-semibold ">Secretariat Events</h2>
           @foreach ($secretariatEvents as $secretariatEvent)
             <div class="bg-white p-3 mb-2 border rounded-lg shadow-sm">
               <h2 class="text-xl font-semibold">{{ $secretariatEvent->eventProposal->eventName }}</h2>
@@ -190,8 +190,8 @@
           @endforeach
         </div>
 
-        <div class="calendar-section p-6 md:w-4/5">
-          <div class="calendar bg-white p-6 shadow-sm sm:rounded-lg md:w-4/5 border-gray-100 border-2">
+        <div class="calendar-section md:w-4/5">
+          <div class="calendar bg-white p-6 shadow-sm sm:rounded-lg border-gray-100 border-2">
             <div class="month-year text-center text-xl font-semibold mb-4">
               <span class="month">{{ $date->format('M') }}</span>
               <span class="year">{{ $date->format('Y') }}</span>
@@ -240,6 +240,7 @@
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </div>
