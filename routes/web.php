@@ -52,8 +52,6 @@ Route::get('/profile', function () {
   // Only verified users may access this route...
 })->middleware(['auth', 'verified']);
 
-
-
 /* Route::get('/dashboard', function () {
   return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard'); */
@@ -93,27 +91,15 @@ Route::get('/submit-manage-event-form', function () {
   return view('submit-manage-event-form');
 })->middleware(['auth', 'verified'])->name('submit-manage-event-form');
 
-Route::get('/dashboard', function () {
-  return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-
-
-
-Route::get('/profile', [ProfileController::class, 'edit'])->middleware(['auth', 'verified'])->name('profile.edit');
-
-
-
-
 Route::get('create', 'DocumentController@create');
 Route::post('store', 'DocumentController@store');
 
 Route::get('generate-docx', 'HomeController@generateDocx');
 
-/* Route::get('export-to-word', [EventProposalController::class, 'exportToWord']); */
+Route::get('/dashboard', [UserController::class, 'getDashbaord'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-  /*  Route::get('/dashboard', [UserController::class, 'getDashbaord'])->name('dashboard'); */
+  /* Route::get('/dashboard', [UserController::class, 'getDashbaord'])->name('dashboard'); */
 
   // Event Proposal
   Route::post('/event-proposal', [EventProposalController::class, 'postEventProposal'])->name('event.post-event-proposal');
@@ -150,7 +136,7 @@ Route::middleware('auth')->group(function () {
   Route::delete('/calendar/delete-event', [CalendarController::class, 'deleteEvent'])->name('calendar.delete-calendar-event');
 
   // Profile
-  /*  Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit'); */
+  Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
   Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
   Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
