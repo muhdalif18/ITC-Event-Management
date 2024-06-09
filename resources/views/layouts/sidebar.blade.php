@@ -105,7 +105,7 @@
 
         <li><a
             class="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-400 rounded-lg hover:bg-gray-800 hover:text-white-300 focus:outline-none focus:ring-1 focus:ring-gray-600"
-            href="#">
+            href="{{ route('calendar.get-calendar') }}">
             <svg class="flex-shrink-0 size-4" xmlns="" width="24" height="24" viewBox="0 0 24 24"
               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
