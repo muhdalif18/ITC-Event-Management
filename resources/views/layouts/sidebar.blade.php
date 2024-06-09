@@ -70,7 +70,7 @@
         </li>
 
         <li>
-          {{-- <a class="flex items-center gap-x-3 py-2 px-2.5  text-sm text-white rounded-lg focus:outline-none focus:ring-1 focus:ring-gray-600"
+          <a class="flex items-center gap-x-3 py-2 px-2.5  text-sm text-white rounded-lg focus:outline-none focus:ring-1 focus:ring-gray-600"
             href="{{ route('event.get-event-report') }}">
             <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
               viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -79,7 +79,7 @@
               <polyline points="9 22 9 12 15 12 15 22" />
             </svg>
             Check and Review Report
-          </a> --}}
+          </a>
         </li>
 
         <li>
