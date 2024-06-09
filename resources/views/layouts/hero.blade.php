@@ -8,13 +8,13 @@
         <br><span class="text-white font-black text-6xl">Event Management</span>
         <br><span class="text-white font-black text-6xl">System</span>
       </h1>
-      <p class="text-gray-100 font-black text-1xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+      {{-- <p class="text-gray-100 font-black text-1xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
         sed do eiusmod empor incididunt ut labore
-        et dolore magna aliqua. Ut enim ad..</p>
+        et dolore magna aliqua. Ut enim ad..</p> --}}
 
       <!-- Buttons -->
       <div class="mt-7 grid gap-3 w-full sm:inline-flex ">
-        <a class=" bg-yellow-400 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+        <a class="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
           href="{{ route('login') }}">
           Login
           <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"

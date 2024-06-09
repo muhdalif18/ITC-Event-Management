@@ -39,7 +39,9 @@
   </div>
 </body> --}}
 
-<body class="font-sans antialiased bg-gray-50 dark:bg-slate-900">
+<body
+  class="font-sans antialiased bg-gray-50 dark:bg-slate-900 bg-cover bg-center bg-no-repeat bg-[url('https://encycolorpedia.com/20364b.png')]"
+  {{-- style="background-color: #C0D2E6"; --}}>
   @include('layouts.navigation')
 
   @include('layouts.sidebar')

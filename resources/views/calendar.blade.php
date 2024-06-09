@@ -13,15 +13,15 @@
         <button id="next-month"
           class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.2 px-4 rounded-lg shadow-sm">Next</button>
         <button type="button" id="open-modal"
-          class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.2 px-4 rounded-lg shadow-sm">
-          Large
+          class="bg-white hover:bg-blue-700 text-white font-medium py-2.2 px-4 rounded-lg shadow-sm">
+          {{--  Large --}}
         </button>
 
         <div id="medium-modal"
           class="modal hidden fixed inset-0 z-50 overflow-auto bg-gray-800 bg-opacity-50 flex justify-center items-center">
           <div class="modal-content bg-white w-full lg:max-w-2xl m-3 lg:mx-auto p-6 rounded-lg shadow-lg">
             <div class="flex justify-between items-center pb-3">
-              <h3 class="text-xl font-bold text-gray-800">Modal Title</h3>
+              <h3 class="text-xl font-bold text-gray-800">Add Event</h3>
               <button id="close-modal" class="text-gray-800 hover:text-gray-600">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg">
@@ -184,8 +184,8 @@
           @foreach ($secretariatEvents as $secretariatEvent)
             <div class="bg-white p-3 mb-2 border rounded-lg shadow-sm">
               <h2 class="text-xl font-semibold">{{ $secretariatEvent->eventProposal->eventName }}</h2>
-              <p class="text-sm">{{ $secretariatEvent->eventProposal->eventDate }} at
-                {{ $secretariatEvent->eventProposal->eventTime }}</p>
+              <p class="text-sm">{{ $secretariatEvent->eventProposal->date }}
+                {{ $secretariatEvent->eventProposal->time }}</p>
             </div>
           @endforeach
         </div>

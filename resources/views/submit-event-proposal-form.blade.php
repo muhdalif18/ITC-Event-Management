@@ -322,16 +322,11 @@
             <div data-hs-stepper-content-item='{"index": 1}' style="display: none;">
               <div
                 class="p-4 h-max bg-gray-50  items-center border border-dashed border-gray-200 rounded-xl dark:bg-gray-800 dark:border-gray-700">
-                {{-- <h3 class="text-gray-500">
-                    First content
-                  </h3> --}}
-
-                <!-- Section -->
                 <div
                   class="grid sm:grid-cols-12 gap-2 sm:gap-4 py-8 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 dark:border-gray-700 dark:first:border-transparent">
                   <div class="sm:col-span-12">
                     <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
-                      Description (SIDE USER)
+                      Description
                     </h2>
                   </div>
                   <!-- End Col -->

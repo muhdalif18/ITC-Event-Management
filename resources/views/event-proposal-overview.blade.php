@@ -329,7 +329,7 @@
         <!-- Image Container -->
         <div class="relative">
           <img id="slideshow-image" class="w-full h-auto object-cover object-center rounded-lg border border-gray-300"
-            src="img/ppw1.png" alt="step">
+            src="img/p1.png" alt="step">
           <!-- Next and Previous Buttons -->
           <button id="prevBtn"
             class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-300 text-gray px-4 py-2 rounded-l-md">
@@ -351,7 +351,7 @@
 
 <script>
   // JavaScript for slideshow functionality
-  const images = ["img/ppw1.png", "img/ppw2.png"]; // Add paths to other images here
+  const images = ["img/p1.png", "img/p1.png"]; // Add paths to other images here
   let currentImageIndex = 0;
   const slideshowImage = document.getElementById('slideshow-image');
   const prevBtn = document.getElementById('prevBtn');

@@ -16,7 +16,7 @@ class UserSeed extends Seeder
   {
     DB::table('users')->insert([
       'name' => 'ADMIN',
-      'email' => 'muhdmuhd2468@gmail.com',
+      'email' => 'informationtechnologyclub2@gmail.com',
       'role' => 'admin',
       'matric_number' => 'test',
       'exco' => 'test',
