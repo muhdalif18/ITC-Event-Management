@@ -180,7 +180,12 @@
               Event</button>
           </form> --}}
 
-          <h2 class="text-2xl font-semibold ">Secretariat Events</h2>
+@if($user->role=='admin')
+<h2 class="text-2xl font-semibold "></h2>
+@else
+<h2 class="text-2xl font-semibold ">Secretariat Events</h2>
+@endif
+          <!-- <h2 class="text-2xl font-semibold ">Secretariat Events</h2> -->
           @foreach ($secretariatEvents as $secretariatEvent)
             <div class="bg-white p-3 mb-2 border rounded-lg shadow-sm">
               <h2 class="text-xl font-semibold">{{ $secretariatEvent->eventProposal->eventName }}</h2>
