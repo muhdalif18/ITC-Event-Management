@@ -351,7 +351,7 @@
 
 <script>
   // JavaScript for slideshow functionality
-  const images = ["img/p1.png", "img/p1.png"]; // Add paths to other images here
+  const images = ["img/p1.png", "img/ppw2.png"]; // Add paths to other images here
   let currentImageIndex = 0;
   const slideshowImage = document.getElementById('slideshow-image');
   const prevBtn = document.getElementById('prevBtn');
