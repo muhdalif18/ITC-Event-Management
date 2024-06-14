@@ -78,9 +78,6 @@
 
               @php($user = Auth::user())
               @if ($user->role == 'admin')
-                <th scope="col" class="px-6 py-3">
-                  Exco
-                </th>
               @endif
               <th scope="col" class="px-6 py-3">
                 Status
@@ -137,7 +134,7 @@
                         <select name="status" onchange="this.form.submit()"
                           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                           <option value="Pending" {{ $eventProposalData->status == 'Pending' ? 'selected' : '' }}>
-                            Pendssing</option>
+                            Pending</option>
                           <option value="Approved" {{ $eventProposalData->status == 'Approved' ? 'selected' : '' }}>
                             Approved</option>
                           <option value="Not Approved"
@@ -335,12 +332,12 @@
 
                 @php($user = Auth::user())
                 @if ($user->role == 'admin')
-                  <td class="px-6 py-4">
+                  {{-- <td class="px-6 py-4">
                     <!-- Modal toggle -->
                     <a href="#" type="button" data-modal-target="editUserModal"
                       data-modal-show="editUserModal"
                       class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit user</a>
-                  </td>
+                  </td> --}}
                 @endif
 
 
