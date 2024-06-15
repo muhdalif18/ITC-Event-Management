@@ -21,7 +21,7 @@ return new class extends Migration {
   /**
    * Reverse the migrations.
    */
-  public function down(): void
+  /* public function down(): void
   {
     Schema::table('event_proposals', function (Blueprint $table) {
       $table->string('description_comment', 1000)->nullable(false)->change(); // Revert to not nullable
@@ -29,5 +29,5 @@ return new class extends Migration {
       $table->string('organizer_Comment', 1000)->nullable(false)->change(); // Similarly revert if needed
       $table->string('obj_Comment', 1000)->nullable(false)->change(); // Similarly revert if needed
     });
-  }
+  } */
 };
