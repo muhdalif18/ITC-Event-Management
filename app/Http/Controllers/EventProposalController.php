@@ -110,10 +110,10 @@ class EventProposalController extends Controller
       'per_Masalah1' => 'required|string|max:255',
       'per_Masalah2' => 'required|string|max:255',
       'per_Masalah3' => 'required|string|max:255',
-      'description_Comment' => 'string|max:255',
-      'eventDetails_Comment' => 'string|max:255',
-      'organizer_Comment' => 'string|max:255',
-      'obj_Comment' => 'string|max:255',
+      'description_Comment' => 'nullable|string|max:1000',
+      'eventDetails_Comment' => 'nullable|string|max:1000',
+      'organizer_Comment' => 'nullable|string|max:1000',
+      'obj_Comment' => 'nullable|string|max:1000',
 
     ]);
 

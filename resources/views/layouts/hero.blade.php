@@ -4,7 +4,7 @@
   <div class="grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center{{--  bg-yellow-300 --}}">
     <div>
       <h1 class="block text-3xl font-bold text-gray-800 sm:text-4xl lg:text-6xl lg:leading-tight dark:text-white">
-        <span class="text-yellow-400 font-black text-8xl font-mono">ITC</span>
+        <span class="text-yellow-400 font-black text-8xl font-mono">ITCCCCC</span>
         <br><span class="text-white font-black text-6xl">Event Management</span>
         <br><span class="text-white font-black text-6xl">System</span>
       </h1>
