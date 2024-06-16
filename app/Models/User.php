@@ -45,4 +45,14 @@ class User extends Authenticatable implements MustVerifyEmail
     'email_verified_at' => 'datetime',
     'password' => 'hashed',
   ];
+
+  /**
+   * Determine if the user should be email verified.
+   *
+   * @return bool
+   */
+  public function shouldVerifyEmail(): bool
+  {
+    return !in_array($this->name, ['ADMIN', 'USER 1']);
+  }
 }

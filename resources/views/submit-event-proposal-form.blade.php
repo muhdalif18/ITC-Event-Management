@@ -7,8 +7,9 @@
 
   <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
     <div class="p-6 text-gray-900">
-      <div>
-      </div>
+      <h1 class="text-xl font-semibold text-gray-800 dark:text-gray-200">
+        Event Proposl Form
+      </h1>
       <div data-hs-stepper>
         <ul class="relative flex flex-row gap-x-2">
           <li class="flex items-center gap-x-2 shrink basis-0 flex-1 group active"
@@ -39,7 +40,7 @@
           </li>
         </ul>
         <div class="mt-5 sm:mt-8">
-          <form method='post' action={{ route('event.post-event-proposal') }}>
+          <form id="event-proposal-form" method='post' action={{ route('event.post-event-proposal') }}>
             @csrf
             <!-- First Content -->
             <div data-hs-stepper-content-item='{"index": 1}' style="display: none;">
@@ -59,7 +60,8 @@
                   </div>
                   <div class="sm:col-span-9">
                     <div class="sm:flex">
-                      <input type="text" id="purpose" name="purpose" value="{{ old('purpose') }}"
+                      <input type="text" id="purpose" name="purpose" value="{{ old('purpose') }}" required
+                        data-field-name="purpose"
                         class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
                       <x-input-error class="mt-2" :messages="$errors->get('purpose')" />
                     </div>
@@ -76,10 +78,9 @@
                   <div class="sm:col-span-9">
 
                     <div class="sm:col-span-9">
-                      <textarea id="background" name="background"
+                      <textarea id="background" name="background" required data-field-name="background"
                         class="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
-                        rows="6" placeholder=""> {{ old('background') }}
-                    </textarea>
+                        rows="6">{{ old('background') }}</textarea>
                       <x-input-error class="mt-2" :messages="$errors->get('background')" />
                     </div>
                   </div>
@@ -347,8 +348,10 @@
                 </svg>
               </button>
 
-              <button type="submit"
-                class="py-2 px-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
+              <button type="submit" id="submit-btn"
+                class="py-2 px-3 inline-flex items-center gap-x-1
+                text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700
+                disabled:opacity-50 disabled:pointer-events-none"
                 data-hs-stepper-next-btn>
                 Submit
                 <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -368,6 +371,7 @@
                 Reset
               </button>
             </div>
+          </form>
         </div>
 
       </div>
@@ -380,4 +384,86 @@
 
     </div>
   </div>
+
+  <div id="success-modal" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center">
+    <div class="bg-white rounded-lg p-6">
+      <h2 class="text-lg font-semibold text-gray-800 mb-4">Success</h2>
+      <p class="text-gray-600 mb-4">Your event proposal has been submitted successfully.</p>
+      <button id="close-modal" class="py-2 px-4 bg-blue-600 text-white rounded-lg">Close</button>
+    </div>
+  </div>
 </x-app-layout>
+
+<script>
+  document.getElementById('event-proposal-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Here you can add your form validation if needed
+
+    // Show the modal
+    document.getElementById('success-modal').classList.remove('hidden');
+
+    // Optionally, you can clear the form or perform other actions here
+  });
+
+  document.getElementById('close-modal').addEventListener('click', function() {
+    document.getElementById('success-modal').classList.add('hidden');
+  });
+</script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('event-proposal-form');
+    form.addEventListener('submit', function(event) {
+      let valid = true;
+      const requiredFields = document.querySelectorAll('[required]');
+      requiredFields.forEach(field => {
+        const errorElement = field.nextElementSibling;
+        if (!field.value.trim()) {
+          valid = false;
+          errorElement.textContent = `${field.getAttribute('data-field-name')} is required.`;
+          errorElement.style.display = 'block';
+        } else {
+          errorElement.textContent = '';
+          errorElement.style.display = 'none';
+        }
+      });
+      if (!valid) {
+        event.preventDefault();
+        alert('Please fill in all required fields.');
+      }
+    });
+  });
+</script>
+
+
+<script>
+  document.getElementById('event-proposal-form').addEventListener('submit', async function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Get form data
+    const form = event.target;
+    const formData = new FormData(form);
+
+    // Send form data using fetch
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'X-CSRF-TOKEN': document.querySelector('input[name="_token"]').value // Ensure CSRF token is sent
+      }
+    });
+
+    if (response.ok) {
+      // Clear the form
+      form.reset();
+
+      // Redirect to step 1 (you might need to adjust this based on your step navigation logic)
+      document.querySelector('[data-hs-stepper-nav-item="{\"index\": 1}"]').click();
+    } else {
+      // Handle error (optional)
+      console.error('Form submission failed');
+    }
+  });
+</script>

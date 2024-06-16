@@ -15,6 +15,11 @@
   <!-- Scripts -->
   @vite(['resources/css/app.css', 'resources/js/app.js'])
   @vite('resources/js/app.js')
+  {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
+
+  {{--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> --}}
+
+
 </head>
 
 {{-- <body class="flex font-sans antialiased">

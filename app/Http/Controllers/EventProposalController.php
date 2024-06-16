@@ -92,7 +92,7 @@ class EventProposalController extends Controller
     $eventProposal = new EventProposal();
 
     $this->validate($request, [
-      'purpose' => 'required|string|max:255',
+      /* 'purpose' => 'required|string|max:255',
       'background' => 'required|string|max:1000',
       'eventName' => 'required|string|max:255',
       'organizer' => 'required|string|max:255',
@@ -110,6 +110,29 @@ class EventProposalController extends Controller
       'per_Masalah1' => 'required|string|max:255',
       'per_Masalah2' => 'required|string|max:255',
       'per_Masalah3' => 'required|string|max:255',
+      'description_Comment' => 'nullable|string|max:1000',
+      'eventDetails_Comment' => 'nullable|string|max:1000',
+      'organizer_Comment' => 'nullable|string|max:1000',
+      'obj_Comment' => 'nullable|string|max:1000',
+ */
+      'purpose' => 'required|string|max:255',
+      'background' => 'required|string|max:255',
+      'eventName' => 'nullable|string|max:255',
+      'organizer' => 'nullable|string|max:255',
+
+      'organizer_exco' => 'nullable|string|max:255',
+      'event_director' => 'nullable|string|max:255',
+
+      'date' => 'nullable|string|max:255',
+      'day' => 'nullable|string|max:255',
+      'time' => 'nullable|string|max:255',
+      'location' => 'nullable|string|max:255',
+      'objective1' => 'nullable|string|max:255',
+      'objective2' => 'nullable|string|max:255',
+      'objective3' => 'nullable|string|max:255',
+      'per_Masalah1' => 'nullable|string|max:255',
+      'per_Masalah2' => 'nullable|string|max:255',
+      'per_Masalah3' => 'nullable|string|max:255',
       'description_Comment' => 'nullable|string|max:1000',
       'eventDetails_Comment' => 'nullable|string|max:1000',
       'organizer_Comment' => 'nullable|string|max:1000',
