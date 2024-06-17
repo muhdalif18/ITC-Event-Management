@@ -14,6 +14,9 @@ return new class extends Migration {
       $table->id();
       $table->string('purpose');
       $table->string('background');
+
+      $table->json('committee_members')->nullable();
+
       $table->string('eventName');
       $table->string('organizer');
 

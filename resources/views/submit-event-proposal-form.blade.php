@@ -22,7 +22,7 @@
           </li>
           <li class="flex items-center gap-x-2 shrink basis-0 flex-1 group" data-hs-stepper-nav-item='{"index": 4}'>
           </li>
-          <li class="flex items-center gap-x-2 shrink basis-0 flex-1 group" data-hs-stepper-nav-item='{"index": 5}'>
+          {{--          <li class="flex items-center gap-x-2 shrink basis-0 flex-1 group" data-hs-stepper-nav-item='{"index": 5}'>
           </li>
           <li class="flex items-center gap-x-2 shrink basis-0 flex-1 group" data-hs-stepper-nav-item='{"index": 6}'>
           </li>
@@ -37,12 +37,12 @@
           <li class="flex items-center gap-x-2 shrink basis-0 flex-1 group" data-hs-stepper-nav-item='{"index": 11}'>
           </li>
           <li class="flex items-center gap-x-2 shrink basis-0 flex-1 group" data-hs-stepper-nav-item='{"index": 12}'>
-          </li>
+          </li> --}}
         </ul>
         <div class="mt-5 sm:mt-8">
           <form id="event-proposal-form" method='post' action={{ route('event.post-event-proposal') }}>
             @csrf
-            <!-- First Content -->
+            <!-- 1 Content -->
             <div data-hs-stepper-content-item='{"index": 1}' style="display: none;">
               <div
                 class="p-4 h-max bg-gray-50  items-center border border-dashed border-gray-200 rounded-xl dark:bg-gray-800 dark:border-gray-700">
@@ -76,7 +76,6 @@
                   <!-- End Col -->
 
                   <div class="sm:col-span-9">
-
                     <div class="sm:col-span-9">
                       <textarea id="background" name="background" required data-field-name="background"
                         class="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
@@ -87,10 +86,84 @@
                 </div>
               </div>
             </div>
-            <!-- End First Content -->
+            <!-- End 1 Content -->
 
-            <!--Second COntent-->
+            <!-- 9 Content -->
             <div data-hs-stepper-content-item='{"index": 2}' style="display: none;">
+              <div
+                class="p-4 h-max bg-gray-50  items-center border border-dashed border-gray-200 rounded-xl dark:bg-gray-800 dark:border-gray-700">
+                <div
+                  class="grid sm:grid-cols-12 gap-2 sm:gap-4 py-8 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 dark:border-gray-700 dark:first:border-transparent">
+                  <div class="sm:col-span-12">
+                    <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
+                      Committee
+                    </h2>
+                  </div>
+                  <div class="sm:col-span-3">
+                    <label for="activity_commitee" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                      Activity Committee
+                    </label>
+                  </div>
+                  <div class="sm:col-span-9">
+                    <table id="committee-table" class="w-full">
+                      <thead>
+                        <tr>
+                          <th class="text-left py-2">Role</th>
+                          <th class="text-left py-2">Name</th>
+                          {{--  <th class="text-left py-2">Action</th> --}}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><input type="text" name="committee[0][role]"
+                              class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px rounded-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                              required></td>
+                          <td><input type="text" name="committee[0][name]"
+                              class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px rounded-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                              required></td>
+                          <td><button type="button" <td><button type="button"
+                                class="add-row text-green-500 hover:underline"
+                                style="background: none; border: none; padding: 0;">Add</button></td>
+
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+            <script>
+              document.addEventListener('DOMContentLoaded', function() {
+                let rowIndex = 1;
+                document.querySelector('#committee-table').addEventListener('click', function(event) {
+                  if (event.target.classList.contains('add-row')) {
+                    event.preventDefault();
+                    const table = document.querySelector('#committee-table tbody');
+                    const newRow = document.createElement('tr');
+                    newRow.innerHTML = `
+                              <td><input type="text" name="committee[${rowIndex}][role]" class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px rounded-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                              required></td>
+                              <td><input type="text" name="committee[${rowIndex}][name]" class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px rounded-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                              required></td>
+                              <td><button type="button" class="remove-row text-red-500 hover:underline py-1 px-2 bg-red-500 text-white rounded" style="background: none; border: none; padding: 0;">Remove</button></td>
+                          `;
+                    table.appendChild(newRow);
+                    rowIndex++;
+                  }
+                  if (event.target.classList.contains('remove-row')) {
+                    event.preventDefault();
+                    event.target.closest('tr').remove();
+                  }
+                });
+              });
+            </script>
+            <!-- End 9 Content -->
+
+            <!--2 COntent-->
+            <div data-hs-stepper-content-item='{"index": 3}' style="display: none;">
               <div
                 class="p-4 h-max bg-gray-50  items-center border border-dashed border-gray-200 rounded-xl dark:bg-gray-800 dark:border-gray-700">
                 <div
@@ -154,6 +227,9 @@
                 </div>
               </div>
             </div>
+            <!-- End 2 Content -->
+
+            {{-- <!--3 Content-->
             <div data-hs-stepper-content-item='{"index": 3}' style="display: none;">
               <div
                 class="p-4 h-max bg-gray-50  items-center border border-dashed border-gray-200 rounded-xl dark:bg-gray-800 dark:border-gray-700">
@@ -216,8 +292,9 @@
                 </div>
               </div>
             </div>
+            <!-- End 3 Content -->
 
-            <!-- Fourth Content -->
+            <!-- 4 Content -->
             <div data-hs-stepper-content-item='{"index": 4}' style="display: none;">
               <div
                 class="p-4 h-max bg-gray-50  items-center border border-dashed border-gray-200 rounded-xl dark:bg-gray-800 dark:border-gray-700">
@@ -323,7 +400,9 @@
                 </div>
               </div>
             </div>
-            <!-- End Fourth Content -->
+            <!-- End 4 Content -->  --}}
+
+
 
             <!-- Button -->
             <div class="mt-5 flex justify-between items-center gap-x-2">
@@ -466,4 +545,42 @@
       console.error('Form submission failed');
     }
   });
+</script>
+
+<script>
+  function addRow() {
+    var table = document.getElementById("tableBody");
+    var newRow = table.insertRow();
+
+    var cell1 = newRow.insertCell(0);
+    var cell2 = newRow.insertCell(1);
+
+    cell1.innerHTML = '<input type="text" name="column1[]">';
+    cell2.innerHTML = '<input type="text" name="column2[]">';
+  }
+
+  function saveData() {
+    var form = document.getElementById("tableForm");
+    var formData = new FormData(form);
+
+    fetch('save_data.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        alert('Data saved successfully');
+        console.log(data);
+        // Optionally, update UI or do something else after saving
+      })
+      .catch(error => {
+        console.error('Error saving data:', error);
+        alert('Error saving data');
+      });
+  }
 </script>

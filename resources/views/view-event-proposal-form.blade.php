@@ -315,11 +315,7 @@
             <div data-hs-stepper-content-item='{"index": 1}' style="display: none;">
               <div
                 class="p-4 h-max bg-gray-50  items-center border border-dashed border-gray-200 rounded-xl dark:bg-gray-800 dark:border-gray-700">
-                {{-- <h3 class="text-gray-500">
-                      First content
-                    </h3> --}}
 
-                <!-- Section -->
                 <div
                   class="grid sm:grid-cols-12 gap-2 sm:gap-4 py-8 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 dark:border-gray-700 dark:first:border-transparent">
                   <div class="sm:col-span-12">
@@ -387,8 +383,88 @@
             </div>
             <!-- End First Content -->
 
-            <!--Second COntent-->
+            <!-- Committee Members -->
             <div data-hs-stepper-content-item='{"index": 2}' style="display: none;">
+              <div
+                class="p-4 h-max bg-gray-50 items-center border border-dashed border-gray-200 rounded-xl dark:bg-gray-800 dark:border-gray-700">
+                <div
+                  class="grid sm:grid-cols-12 gap-2 sm:gap-4 py-8 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 dark:border-gray-700 dark:first:border-transparent">
+                  <div class="sm:col-span-12">
+                    <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
+                      Committee
+                    </h2>
+                  </div>
+                  <div class="sm:col-span-12">
+                    <table id="committee-table" class="w-full">
+                      <thead>
+                        <tr>
+                          <th class="text-left py-2">Role</th>
+                          <th class="text-left py-2">Name</th>
+                          @if (auth()->user()->role != 'admin')
+                            <th class="text-left py-2">Action</th>
+                          @endif
+                        </tr>
+                      </thead>
+                      <tbody>
+                        @foreach (json_decode($eventProposalData->committee_members, true) as $index => $member)
+                          <tr>
+                            <td><input type="text" name="committee[{{ $index }}][role]"
+                                value="{{ $member['role'] }}"
+                                class="py-2 px-3 block w-full border-gray-200 shadow-sm text-sm" required></td>
+                            <td><input type="text" name="committee[{{ $index }}][name]"
+                                value="{{ $member['name'] }}"
+                                class="py-2 px-3 block w-full border-gray-200 shadow-sm text-sm" required></td>
+                            @if (auth()->user()->role != 'admin')
+                              <td><button type="button"
+                                  class="remove-row py-1 px-2 bg-red-500 text-white rounded">Remove</button></td>
+                            @endif
+                          </tr>
+                        @endforeach
+                        @if (auth()->user()->role != 'admin')
+                          <tr>
+                            <td><input type="text" name="committee[0][role]"
+                                class="py-2 px-3 block w-full border-gray-200 shadow-sm text-sm" required></td>
+                            <td><input type="text" name="committee[0][name]"
+                                class="py-2 px-3 block w-full border-gray-200 shadow-sm text-sm" required></td>
+                            <td><button type="button"
+                                class="add-row py-1 px-2 bg-green-500 text-white rounded">Add</button></td>
+                          </tr>
+                        @endif
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <script>
+              document.addEventListener('DOMContentLoaded', function() {
+                let rowIndex = {{ count(json_decode($eventProposalData->committee_members, true)) }};
+                document.querySelector('#committee-table').addEventListener('click', function(event) {
+                  if (event.target.classList.contains('add-row')) {
+                    event.preventDefault();
+                    const table = document.querySelector('#committee-table tbody');
+                    const newRow = document.createElement('tr');
+                    newRow.innerHTML = `
+                                      <td><input type="text" name="committee[${rowIndex}][role]" class="py-2 px-3 block w-full border-gray-200 shadow-sm text-sm" required></td>
+                                      <td><input type="text" name="committee[${rowIndex}][name]" class="py-2 px-3 block w-full border-gray-200 shadow-sm text-sm" required></td>
+                                      <td><button type="button" class="remove-row py-1 px-2 bg-red-500 text-white rounded">Remove</button></td>
+                                  `;
+                    table.appendChild(newRow);
+                    rowIndex++;
+                  }
+                  if (event.target.classList.contains('remove-row')) {
+                    event.preventDefault();
+                    event.target.closest('tr').remove();
+                  }
+                });
+              });
+            </script>
+
+            <!-- end Committee Members -->
+
+            <!--Second COntent-->
+            <div data-hs-stepper-content-item='{"index": 6}' style="display: none;">
               <div
                 class="p-4 h-max bg-gray-50  items-center border border-dashed border-gray-200 rounded-xl dark:bg-gray-800 dark:border-gray-700">
                 {{-- <h3 class="text-gray-500">

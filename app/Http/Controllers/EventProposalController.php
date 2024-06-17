@@ -11,27 +11,7 @@ use Illuminate\View\View;
 
 class EventProposalController extends Controller
 {
-  /* public function getEventProposal(Request $request): View
-  {
-    $eventProposal = EventProposal::all();
 
-    $user = $request->user();
-
-    // Check a condition to determine which view to return
-    if ($user->role === 'admin') {
-      // Return the 'admin.check-review-proposal' view for admins
-      return view('admin.check-review-proposal', [
-        'user' => $user,
-        'eventProposal' => $eventProposal
-      ]);
-    } else {
-      // Return a different view for non-admin users
-      return view('submit-manage-event-form', [
-        'user' => $user,
-        'eventProposal' => $eventProposal
-      ]);
-    }
-  } */
   public function updateEventProposalStatus(Request $request, $id)
   {
     $request->validate([
@@ -55,17 +35,6 @@ class EventProposalController extends Controller
     ]);
 
   }
-
-  /* public function getEventProposalUser(Request $request): View
-  {
-    $eventProposal = EventProposal::all();
-
-    return view('submit-manage-event-form', [
-      'user' => $request->user(),
-      'eventProposal' => $eventProposal
-    ]);
-
-  } */
 
   public function getSubmitEventProposal(Request $request): View
   {
@@ -138,6 +107,10 @@ class EventProposalController extends Controller
       'organizer_Comment' => 'nullable|string|max:1000',
       'obj_Comment' => 'nullable|string|max:1000',
 
+      'committee' => 'required|array', // Validate the committee array
+      'committee.*.role' => 'required|string|max:255', // Validate each role
+      'committee.*.name' => 'required|string|max:255', // Validate each name
+
     ]);
 
     if ($request->has('id')) {
@@ -156,6 +129,10 @@ class EventProposalController extends Controller
     // Update the event proposal details
     $eventProposal->purpose = $request->input('purpose');
     $eventProposal->background = $request->input('background');
+
+    $eventProposal->committee_members = json_encode($request->input('committee'));
+
+
     $eventProposal->eventName = $request->input('eventName');
     $eventProposal->organizer = $request->input('organizer');
 
@@ -179,22 +156,6 @@ class EventProposalController extends Controller
     $eventProposal->save();
 
     return redirect()->route('submit-event-proposal-form');
-  }
-
-  public function postSecondEventProposal(Request $request)
-  {
-    /* $eventProposal = new EventProposal();
-
-    $this->validate($request, [
-      'purpose' => 'required|string|max:255',
-      'background' => 'required|string|max:255',
-    ]);
-
-    $eventProposal->purpose = $request['purpose'];
-    $eventProposal->background = $request['background'];
-    $eventProposal->save();
-
-    return redirect()->route('submit-event-proposal-form'); */
   }
 
   public function fetchData()
@@ -293,14 +254,6 @@ class EventProposalController extends Controller
       'height' => 76.32, // Height of the logo in points
       'alignment' => 'center', // Alignment of the logo within the page
     ]);
-
-    /* $section->addText('UNIVERSITI TUN HUSSEIN ONN MALAYSIA', [
-      'name' => 'Arial', // Font name
-      'size' => 13, // Font size
-      'bold' => true, // Bold style
-      'alignment' => 'center', // Text alignment
-      'valign' => 'center', // Vertical alignment
-    ]); */
 
     $section->addText('UNIVERSITI TUN HUSSEIN ONN MALAYSIA', [
       'name' => 'Arial', // Font name
