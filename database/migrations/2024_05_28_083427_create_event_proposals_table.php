@@ -16,10 +16,10 @@ return new class extends Migration {
       $table->string('background');
 
       $table->json('committee_members')->nullable();
+      $table->json('tentative_activity')->nullable();
 
       $table->string('eventName');
       $table->string('organizer');
-
       $table->string('organizer_exco');
       $table->string('event_director');
 
@@ -27,12 +27,34 @@ return new class extends Migration {
       $table->string('day');
       $table->string('time');
       $table->string('location');
+
       $table->string('objective1');
       $table->string('objective2');
       $table->string('objective3');
       $table->string('per_Masalah1');
       $table->string('per_Masalah2');
       $table->string('per_Masalah3');
+
+      $table->string('participant_escorts');
+
+      $table->string('name_of_mentor');
+      $table->string('position_of_mentor');
+      $table->string('company_address');
+      $table->string('suggested_role');
+
+      $table->string('impact_student_1');
+      $table->string('impact_student_2');
+      $table->string('impact_student_3');
+      $table->string('toward_club_1');
+      $table->string('toward_club_2');
+      $table->string('toward_club_3');
+
+      $table->string('others');
+      $table->string('implication');
+      $table->string('decision');
+
+
+
       $table->string('description_Comment');
       $table->string('eventDetails_Comment');
       $table->string('organizer_Comment');

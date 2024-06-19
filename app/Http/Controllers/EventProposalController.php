@@ -84,8 +84,8 @@ class EventProposalController extends Controller
       'organizer_Comment' => 'nullable|string|max:1000',
       'obj_Comment' => 'nullable|string|max:1000',
  */
-      'purpose' => 'required|string|max:255',
-      'background' => 'required|string|max:255',
+      'purpose' => 'nullable|string|max:255',
+      'background' => 'nullable|string|max:255',
       'eventName' => 'nullable|string|max:255',
       'organizer' => 'nullable|string|max:255',
 
@@ -107,9 +107,38 @@ class EventProposalController extends Controller
       'organizer_Comment' => 'nullable|string|max:1000',
       'obj_Comment' => 'nullable|string|max:1000',
 
+      'participant_escorts' => 'nullable|string|max:255',
+      'name_of_mentor' => 'nullable|string|max:255',
+      'position_of_mentor' => 'nullable|string|max:255',
+      'company_address' => 'nullable|string|max:255',
+      'suggested_role' => 'nullable|string|max:255',
+
+      'impact_student_1' => 'nullable|string|max:255',
+      'impact_student_2' => 'nullable|string|max:255',
+      'impact_student_3' => 'nullable|string|max:255',
+      'toward_club_1' => 'nullable|string|max:255',
+      'toward_club_2' => 'nullable|string|max:255',
+      'toward_club_3' => 'nullable|string|max:255',
+
+
+
       'committee' => 'required|array', // Validate the committee array
       'committee.*.role' => 'required|string|max:255', // Validate each role
       'committee.*.name' => 'required|string|max:255', // Validate each name
+      'committee.*.matric' => 'required|string|max:255', // Validate each name
+      'committee.*.faculty' => 'required|string|max:255', // Validate each name
+
+
+
+
+      'tentative' => 'nullable|array', // Validate the committee array
+      'tentative.*.time' => 'nullable|string|max:255', // Validate each role
+      'tentative.*.content' => 'nullable|string|max:255', // Validate each name
+
+      'others' => 'nullable|string|max:255',
+      'implication' => 'nullable|string|max:255',
+      'decision' => 'nullable|string|max:255',
+
 
     ]);
 
@@ -132,6 +161,8 @@ class EventProposalController extends Controller
 
     $eventProposal->committee_members = json_encode($request->input('committee'));
 
+    $eventProposal->tentative_activity = json_encode($request->input('tentative'));
+
 
     $eventProposal->eventName = $request->input('eventName');
     $eventProposal->organizer = $request->input('organizer');
@@ -149,10 +180,38 @@ class EventProposalController extends Controller
     $eventProposal->per_Masalah1 = $request->input('per_Masalah1');
     $eventProposal->per_Masalah2 = $request->input('per_Masalah2');
     $eventProposal->per_Masalah3 = $request->input('per_Masalah3');
+
+    $eventProposal->participant_escorts = $request->input('participant_escorts');
+
+    $eventProposal->name_of_mentor = $request->input('name_of_mentor');
+    $eventProposal->position_of_mentor = $request->input('position_of_mentor');
+    $eventProposal->company_address = $request->input('company_address');
+    $eventProposal->suggested_role = $request->input('suggested_role');
+
+    $eventProposal->impact_student_1 = $request->input('impact_student_1');
+    $eventProposal->impact_student_2 = $request->input('impact_student_2');
+    $eventProposal->impact_student_3 = $request->input('impact_student_3');
+    $eventProposal->toward_club_1 = $request->input('toward_club_1');
+    $eventProposal->toward_club_2 = $request->input('toward_club_2');
+    $eventProposal->toward_club_3 = $request->input('toward_club_3');
+
+
+
+
+
+
     $eventProposal->description_Comment = $request->input('description_Comment');
     $eventProposal->eventDetails_Comment = $request->input('eventDetails_Comment');
     $eventProposal->organizer_Comment = $request->input('organizer_Comment');
     $eventProposal->obj_Comment = $request->input('obj_Comment');
+
+    $eventProposal->others = $request->input('others');
+    $eventProposal->implication = $request->input('implication');
+    $eventProposal->decision = $request->input('decision');
+
+
+
+
     $eventProposal->save();
 
     return redirect()->route('submit-event-proposal-form');
@@ -218,7 +277,7 @@ class EventProposalController extends Controller
 
 
     // Add a section
-    $section = $phpWord->addSection();
+    $section2 = $phpWord->addSection();
 
     // Define paragraph style with indentation for level 2 items
     $phpWord->addParagraphStyle(
@@ -244,18 +303,18 @@ class EventProposalController extends Controller
     );
 
     //Add textbreak
-    $section->addTextBreak(4);
+    $section2->addTextBreak(4);
 
 
     //add Logo
     $logoPath = public_path('img/logo_uthm.png'); // Path to your logo image file
-    $section->addImage($logoPath, [
+    $section2->addImage($logoPath, [
       'width' => 268.08, // Width of the logo in points
       'height' => 76.32, // Height of the logo in points
       'alignment' => 'center', // Alignment of the logo within the page
     ]);
 
-    $section->addText('UNIVERSITI TUN HUSSEIN ONN MALAYSIA', [
+    $section2->addText('UNIVERSITI TUN HUSSEIN ONN MALAYSIA', [
       'name' => 'Arial', // Font name
       'size' => 13, // Font size
       'bold' => true, // Bold style
@@ -263,9 +322,9 @@ class EventProposalController extends Controller
       'alignment' => \PhpOffice\PhpWord\SimpleType\Jc::CENTER, // Text alignment
     ]);
 
-    $section->addTextBreak(1);
+    $section2->addTextBreak(1);
 
-    $section->addText('KERTAS KERJA', [
+    $section2->addText('KERTAS KERJA', [
       'name' => 'Arial', // Font name
       'size' => 13, // Font size
       'bold' => true, // Bold style
@@ -273,11 +332,11 @@ class EventProposalController extends Controller
       'alignment' => \PhpOffice\PhpWord\SimpleType\Jc::CENTER, // Text alignment
     ]);
 
-    $section->addTextBreak(1);
+    $section2->addTextBreak(1);
 
     // Retrieve and add eventName below "KERTAS KERJA"
     $eventName = $eventProposal->eventName;
-    $section->addText($eventName, [
+    $section2->addText($eventName, [
       'name' => 'Arial', // Font name
       'size' => 12, // Font size
       'bold' => true, // Bold style
@@ -285,9 +344,9 @@ class EventProposalController extends Controller
       'alignment' => \PhpOffice\PhpWord\SimpleType\Jc::CENTER, // Text alignment
     ]);
 
-    $section->addTextBreak(1);
+    $section2->addTextBreak(1);
 
-    $section->addText('TEMPAT:', [
+    $section2->addText('TEMPAT:', [
       'name' => 'Arial', // Font name
       'size' => 13, // Font size
       'bold' => true, // Bold style
@@ -295,10 +354,10 @@ class EventProposalController extends Controller
       'alignment' => \PhpOffice\PhpWord\SimpleType\Jc::CENTER, // Text alignment
     ]);
 
-    $section->addTextBreak(1);
+    $section2->addTextBreak(1);
 
     $location = $eventProposal->location;
-    $section->addText($location, [
+    $section2->addText($location, [
       'name' => 'Arial', // Font name
       'size' => 12, // Font size
       'bold' => true, // Bold style
@@ -306,9 +365,9 @@ class EventProposalController extends Controller
       'alignment' => \PhpOffice\PhpWord\SimpleType\Jc::CENTER, // Text alignment
     ]);
 
-    $section->addTextBreak(1);
+    $section2->addTextBreak(1);
 
-    $section->addText('ANJURAN :', [
+    $section2->addText('ANJURAN :', [
       'name' => 'Arial', // Font name
       'size' => 13, // Font size
       'bold' => true, // Bold style
@@ -316,10 +375,10 @@ class EventProposalController extends Controller
       'alignment' => \PhpOffice\PhpWord\SimpleType\Jc::CENTER, // Text alignment
     ]);
 
-    $section->addTextBreak(1);
+    $section2->addTextBreak(1);
 
     $organizer = $eventProposal->organizer;
-    $section->addText($organizer, [
+    $section2->addText($organizer, [
       'name' => 'Arial', // Font name
       'size' => 12, // Font size
       'bold' => true, // Bold style
@@ -327,9 +386,9 @@ class EventProposalController extends Controller
       'alignment' => \PhpOffice\PhpWord\SimpleType\Jc::CENTER, // Text alignment
     ]);
 
-    $section->addTextBreak(1);
+    $section2->addTextBreak(1);
 
-    $section->addText('TARIKH :', [
+    $section2->addText('TARIKH :', [
       'name' => 'Arial', // Font name
       'size' => 13, // Font size
       'bold' => true, // Bold style
@@ -338,7 +397,7 @@ class EventProposalController extends Controller
     ]);
 
     $date = $eventProposal->date;
-    $section->addText($date, [
+    $section2->addText($date, [
       'name' => 'Arial', // Font name
       'size' => 12, // Font size
       'bold' => true, // Bold style
@@ -418,6 +477,14 @@ class EventProposalController extends Controller
       [
         'alignment' => \PhpOffice\PhpWord\SimpleType\Jc::BOTH,
         'indentation' => ['left' => 1080],
+      ]
+    );
+
+    $phpWord->addParagraphStyle(
+      'justifiedStyle3',
+      [
+        'alignment' => \PhpOffice\PhpWord\SimpleType\Jc::BOTH,
+        'indentation' => ['left' => 1800],
       ]
     );
 
@@ -518,6 +585,240 @@ class EventProposalController extends Controller
     $section2->addListItem($per_Masalah2, 1, 'notBoldText', 'multilevel');
     $section2->addListItem($per_Masalah3, 1, 'notBoldText', 'multilevel');
 
+    $section2->addTextBreak(1);
+
+    $section2->addListItem('SENARAI PESERTA DAN PENGIRING ', 0, 'boldText', 'multilevel');
+
+    $participant_escorts = $eventProposal->participant_escorts;
+
+    $section2->addListItem($participant_escorts, 1, 'notBoldText', 'multilevel');
+
+    $section2->addTextBreak(1);
+
+    $section2->addListItem('SASARAN PADANAN TERAS AKTIVITI DAN KEBERHASILAN GRADUAN ', 0, 'boldText', 'multilevel');
+    $section2->addListItem('Sila rujuk Lampiran 1 - Format Kertas Kerja.', 1, 'notBoldText', 'multilevel');
+
+    $section2->addTextBreak(1);
+
+    $section2->addListItem('PENGLIBATAN INDUSTRI/ PERSATUAN/ AGENSI/ BADAN ORGANISASI LUAR SEBAGAI MENTOR/ PENASIHAT ', 0, 'boldText', 'multilevel');
+    $section2->addTextBreak(1);
+    $section2->addListItem('Nama dan Alamat Industri/ Persatuan/ Agensi/ Badan Organisasi Luar', 1, 'notBoldText', 'multilevel');
+    $name_of_mentor = $eventProposal->name_of_mentor;
+    $position_of_mentor = $eventProposal->position_of_mentor;
+
+    // Concatenate name and position with indentation (using tabs)
+    $mentor_info = $name_of_mentor . "\t\t" . $position_of_mentor;
+
+    $section2->addListItem('Nama dan Jawatan Mentor/ Penasihat ', 2, 'notBoldText', 'multilevel');
+    $section2->addText($mentor_info, [
+      'name' => 'Arial', // Font name
+      'size' => 11, // Font size
+      'bold' => false, // Bold style
+    ], 'justifiedStyle3');
+    $section2->addTextBreak(1);
+    $section2->addListItem('Alamat Syarikat ', 2, 'notBoldText', 'multilevel');
+    $company_address = $eventProposal->company_address;
+    $section2->addText($company_address, [
+      'name' => 'Arial', // Font name
+      'size' => 11, // Font size
+      'bold' => false, // Bold style
+    ], 'justifiedStyle3');
+
+    $section2->addTextBreak(1);
+    $section2->addListItem('Cadangan Peranan dan Sumbangan Mentor / Penasihat ', 2, 'notBoldText', 'multilevel');
+    $suggested_role = $eventProposal->suggested_role;
+    $section2->addText($suggested_role, [
+      'name' => 'Arial', // Font name
+      'size' => 11, // Font size
+      'bold' => false, // Bold style
+    ], 'justifiedStyle3');
+
+    $section2->addTextBreak(1);
+    $section2->addListItem('KEBERHASILAN AKTIVITI / IMPAK', 0, 'boldText', 'multilevel');
+    $section2->addTextBreak(1);
+    $section2->addListItem('Kepada Pelajar / Peserta', 1, 'notBoldText', 'multilevel');
+    $impact_student_1 = $eventProposal->impact_student_1;
+    $impact_student_2 = $eventProposal->impact_student_2;
+    $impact_student_3 = $eventProposal->impact_student_3;
+    $section2->addListItem($impact_student_1, 2, 'notBoldText', 'multilevel');
+    $section2->addListItem($impact_student_2, 2, 'notBoldText', 'multilevel');
+    $section2->addListItem($impact_student_3, 2, 'notBoldText', 'multilevel');
+    $section2->addTextBreak(1);
+    $section2->addListItem('Kepada Kelab / Universiti / Komuniti', 1, 'notBoldText', 'multilevel');
+    $toward_club_1 = $eventProposal->toward_club_1;
+    $toward_club_2 = $eventProposal->toward_club_2;
+    $toward_club_3 = $eventProposal->toward_club_3;
+    $section2->addListItem($toward_club_1, 2, 'notBoldText', 'multilevel');
+    $section2->addListItem($toward_club_2, 2, 'notBoldText', 'multilevel');
+    $section2->addListItem($toward_club_3, 2, 'notBoldText', 'multilevel');
+    $section2->addTextBreak(1);
+    $section2->addListItem('Kepada Kelestarian (Sila rujuk contoh di Lampiran 2 - Format Kertas Kerja)', 1, 'notBoldText', 'multilevel');
+    $section2->addListItem('Melalui program yang dijalankan, kadar penggunaan karbon yang rendah kerana program ini kerana para peserta digalakkan berkongsi kenderaan menuju ke lokasi program.', 2, 'notBoldText', 'multilevel');
+    $section2->addListItem('Promosi aktiviti menggunakan E=Poster dan E-Banner dengan minima cetakan.', 2, 'notBoldText', 'multilevel');
+    $section2->addTextBreak(1);
+    $section2->addListItem('ATUR CARA AKTIVITI ', 0, 'boldText', 'multilevel');
+
+
+    //ADD TABLE TENTATIVE
+    $tentativeActivity = json_decode($eventProposal->tentative_activity, true);
+    $tableStyle = array(
+      'borderSize' => 6,
+      'borderColor' => '000000',
+      'cellMargin' => 50,
+    );
+    $phpWord->addTableStyle('TentativeTable', $tableStyle);
+    $table = $section2->addTable('TentativeTable', );
+
+    $table->addRow();
+    $table->addCell(4750)->addText('Masa ', ['bold' => true]);
+    $table->addCell(4750)->addText('Pengisian', ['bold' => true]);
+
+    foreach ($tentativeActivity as $tentative) {
+      $table->addRow();
+      $table->addCell(4750)->addText($tentative['time']);
+      $table->addCell(4750)->addText($tentative['content']);
+    }
+
+    $section2->addTextBreak(1);
+    $section2->addListItem('JAWATANKUASA AKTIVITI ', 0, 'boldText', 'multilevel');
+    //ADD TABLE COMMITTEE
+    $committeeMembers = json_decode($eventProposal->committee_members, true);
+    $tableStyle = array(
+      'borderSize' => 10,
+      'borderColor' => '000000',
+      'cellMargin' => 50,
+    );
+
+    $phpWord->addTableStyle('CommitteeTable', $tableStyle);
+    $table = $section2->addTable('CommitteeTable');
+
+    $table->addRow();
+    $table->addCell(4000)->addText('Nama ', ['bold' => true]);
+    $table->addCell(2000)->addText('No. Matrik', ['bold' => true]);
+    $table->addCell(1000)->addText('Fakulti', ['bold' => true]);
+    $table->addCell(2500)->addText('Jawatan / Peranan', ['bold' => true]);
+
+    foreach ($committeeMembers as $member) {
+      $table->addRow();
+      $table->addCell(4000)->addText($member['name']);
+      $table->addCell(2000)->addText($member['matric']);
+      $table->addCell(1000)->addText($member['faculty']);
+      $table->addCell(2500)->addText($member['role']);
+    }
+
+    $section2->addTextBreak(1);
+    $section2->addListItem('LAIN - LAIN', 0, 'boldText', 'multilevel');
+    $others = $eventProposal->others;
+    $section2->addTextBreak(1);
+    $section2->addText($others, [
+      'name' => 'Arial', // Font name
+      'size' => 11, // Font size
+      'bold' => false, // Bold style
+    ], 'justifiedStyle');
+
+    $section2->addTextBreak(1);
+    $section2->addListItem('IMPLIKASI SEKIRANYA TIDAK DILULUSKAN ', 0, 'boldText', 'multilevel');
+    $implication = $eventProposal->implication;
+    $section2->addTextBreak(1);
+    $section2->addText($implication, [
+      'name' => 'Arial', // Font name
+      'size' => 11, // Font size
+      'bold' => false, // Bold style
+    ], 'justifiedStyle');
+
+    $section2->addTextBreak(1);
+    $section2->addListItem('KEPUTUSAN', 0, 'boldText', 'multilevel');
+    $decision = $eventProposal->decision;
+    $section2->addTextBreak(1);
+    $section2->addText($decision, [
+      'name' => 'Arial', // Font name
+      'size' => 11, // Font size
+      'bold' => false, // Bold style
+    ], 'justifiedStyle');
+
+    $section3 = $phpWord->addSection();
+
+    // Determine page size and adjust for margins
+    $pageWidth = 595.3; // A4 width in points
+    $pageHeight = 841.9; // A4 height in points
+    $margin = 50; // Adjust based on your document's margins
+
+    $logoPath = public_path('img/lampiran1.png'); // Path to your logo image file
+    $section3->addImage($logoPath, [
+      'width' => $pageWidth - 2 * $margin, // Adjusting for left and right margins
+      'height' => $pageHeight - 2 * $margin, // Adjusting for top and bottom margins
+      'alignment' => 'center', // Alignment of the logo within the page
+      'marginTop' => -20 // Adjust this value as needed to move the image up
+    ]);
+
+    $section4 = $phpWord->addSection();
+
+    // Determine page size and adjust for margins
+    $pageWidth = 595.3; // A4 width in points
+    $pageHeight = 841.9; // A4 height in points
+    $margin = 50; // Adjust based on your document's margins
+
+    $logoPath = public_path('img/lampiran2.png'); // Path to your logo image file
+    $section4->addImage($logoPath, [
+      'width' => $pageWidth - 2 * $margin, // Adjusting for left and right margins
+      'height' => $pageHeight - 2 * $margin, // Adjusting for top and bottom margins
+      'alignment' => 'center', // Alignment of the logo within the page
+      'marginTop' => -20 // Adjust this value as needed to move the image up
+    ]);
+
+    $section5 = $phpWord->addSection();
+
+    // Determine page size and adjust for margins
+    $pageWidth = 595.3; // A4 width in points
+    $pageHeight = 841.9; // A4 height in points
+    $margin = 50; // Adjust based on your document's margins
+
+    $logoPath = public_path('img/lampiran3.png'); // Path to your logo image file
+    $section5->addImage($logoPath, [
+      'width' => $pageWidth - 2 * $margin, // Adjusting for left and right margins
+      'height' => $pageHeight - 2 * $margin, // Adjusting for top and bottom margins
+      'alignment' => 'center', // Alignment of the logo within the page
+      'marginTop' => -20 // Adjust this value as needed to move the image up
+    ]);
+
+    $section6 = $phpWord->addSection();
+
+    // Determine page size and adjust for margins
+    $pageWidth = 595.3; // A4 width in points
+    $pageHeight = 841.9; // A4 height in points
+    $margin = 50; // Adjust based on your document's margins
+
+    $logoPath = public_path('img/lampiran4.png'); // Path to your logo image file
+    $section6->addImage($logoPath, [
+      'width' => $pageWidth - 2 * $margin, // Adjusting for left and right margins
+      'height' => $pageHeight - 2 * $margin, // Adjusting for top and bottom margins
+      'alignment' => 'center', // Alignment of the logo within the page
+      'marginTop' => -20 // Adjust this value as needed to move the image up
+    ]);
+
+    /*  if ($committeeMembers) {
+       // Create a table for committee members
+       $table = $section->addTable();
+
+       // Add table headers
+       $table->addRow();
+       $table->addCell(2000)->addText('Name', 'boldText');
+       $table->addCell(2000)->addText('Matric Number', 'boldText');
+       $table->addCell(2000)->addText('Faculty', 'boldText');
+       $table->addCell(2000)->addText('Role', 'boldText');
+
+       // Populate the table with committee members data
+       foreach ($committeeMembers as $committee) {
+         $table->addRow();
+         $table->addCell(2000)->addText($committee['name']);
+         $table->addCell(2000)->addText($committee['matric']);
+         $table->addCell(2000)->addText($committee['faculty']);
+         $table->addCell(2000)->addText($committee['role']);
+
+       }
+     } else {
+       $section->addText('No committee members found.', 'notBoldText', 'level1_text_style');
+     } */
 
     //MULTILEVEL ABC
     /* $section2->addListItem('Nama dan Alamat Industri/Persatuan/Agensi/Badan Organisasi Luar', 1, 'notBoldText', 'multilevel');

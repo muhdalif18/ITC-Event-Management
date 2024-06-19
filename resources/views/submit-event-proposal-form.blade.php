@@ -22,7 +22,7 @@
           </li>
           <li class="flex items-center gap-x-2 shrink basis-0 flex-1 group" data-hs-stepper-nav-item='{"index": 4}'>
           </li>
-          {{--          <li class="flex items-center gap-x-2 shrink basis-0 flex-1 group" data-hs-stepper-nav-item='{"index": 5}'>
+          <li class="flex items-center gap-x-2 shrink basis-0 flex-1 group" data-hs-stepper-nav-item='{"index": 5}'>
           </li>
           <li class="flex items-center gap-x-2 shrink basis-0 flex-1 group" data-hs-stepper-nav-item='{"index": 6}'>
           </li>
@@ -37,12 +37,12 @@
           <li class="flex items-center gap-x-2 shrink basis-0 flex-1 group" data-hs-stepper-nav-item='{"index": 11}'>
           </li>
           <li class="flex items-center gap-x-2 shrink basis-0 flex-1 group" data-hs-stepper-nav-item='{"index": 12}'>
-          </li> --}}
+          </li>
         </ul>
         <div class="mt-5 sm:mt-8">
           <form id="event-proposal-form" method='post' action={{ route('event.post-event-proposal') }}>
             @csrf
-            <!-- 1 Content -->
+            <!-- 1 Content Tujuan dan latar belakang-->
             <div data-hs-stepper-content-item='{"index": 1}' style="display: none;">
               <div
                 class="p-4 h-max bg-gray-50  items-center border border-dashed border-gray-200 rounded-xl dark:bg-gray-800 dark:border-gray-700">
@@ -77,7 +77,7 @@
 
                   <div class="sm:col-span-9">
                     <div class="sm:col-span-9">
-                      <textarea id="background" name="background" required data-field-name="background"
+                      <textarea id="background" name="background"
                         class="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
                         rows="6">{{ old('background') }}</textarea>
                       <x-input-error class="mt-2" :messages="$errors->get('background')" />
@@ -86,84 +86,10 @@
                 </div>
               </div>
             </div>
-            <!-- End 1 Content -->
+            <!-- End 1 Content Tujuan-->
 
-            <!-- 9 Content -->
+            <!--2 Content nama aktiviti dan penganjur-->
             <div data-hs-stepper-content-item='{"index": 2}' style="display: none;">
-              <div
-                class="p-4 h-max bg-gray-50  items-center border border-dashed border-gray-200 rounded-xl dark:bg-gray-800 dark:border-gray-700">
-                <div
-                  class="grid sm:grid-cols-12 gap-2 sm:gap-4 py-8 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 dark:border-gray-700 dark:first:border-transparent">
-                  <div class="sm:col-span-12">
-                    <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
-                      Committee
-                    </h2>
-                  </div>
-                  <div class="sm:col-span-3">
-                    <label for="activity_commitee" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
-                      Activity Committee
-                    </label>
-                  </div>
-                  <div class="sm:col-span-9">
-                    <table id="committee-table" class="w-full">
-                      <thead>
-                        <tr>
-                          <th class="text-left py-2">Role</th>
-                          <th class="text-left py-2">Name</th>
-                          {{--  <th class="text-left py-2">Action</th> --}}
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td><input type="text" name="committee[0][role]"
-                              class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px rounded-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
-                              required></td>
-                          <td><input type="text" name="committee[0][name]"
-                              class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px rounded-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
-                              required></td>
-                          <td><button type="button" <td><button type="button"
-                                class="add-row text-green-500 hover:underline"
-                                style="background: none; border: none; padding: 0;">Add</button></td>
-
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
-
-            <script>
-              document.addEventListener('DOMContentLoaded', function() {
-                let rowIndex = 1;
-                document.querySelector('#committee-table').addEventListener('click', function(event) {
-                  if (event.target.classList.contains('add-row')) {
-                    event.preventDefault();
-                    const table = document.querySelector('#committee-table tbody');
-                    const newRow = document.createElement('tr');
-                    newRow.innerHTML = `
-                              <td><input type="text" name="committee[${rowIndex}][role]" class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px rounded-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
-                              required></td>
-                              <td><input type="text" name="committee[${rowIndex}][name]" class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px rounded-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
-                              required></td>
-                              <td><button type="button" class="remove-row text-red-500 hover:underline py-1 px-2 bg-red-500 text-white rounded" style="background: none; border: none; padding: 0;">Remove</button></td>
-                          `;
-                    table.appendChild(newRow);
-                    rowIndex++;
-                  }
-                  if (event.target.classList.contains('remove-row')) {
-                    event.preventDefault();
-                    event.target.closest('tr').remove();
-                  }
-                });
-              });
-            </script>
-            <!-- End 9 Content -->
-
-            <!--2 COntent-->
-            <div data-hs-stepper-content-item='{"index": 3}' style="display: none;">
               <div
                 class="p-4 h-max bg-gray-50  items-center border border-dashed border-gray-200 rounded-xl dark:bg-gray-800 dark:border-gray-700">
                 <div
@@ -206,7 +132,8 @@
                   </div>
                   <div class="sm:col-span-9">
                     <div class="sm:flex">
-                      <input type="text" id="c" name="organizer_exco" value="{{ old('organizer_exco') }}"
+                      <input type="text" id="organizer_exco" name="organizer_exco"
+                        value="{{ old('organizer_exco') }}"
                         class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
                       <x-input-error class="mt-2" :messages="$errors->get('organizer_exco')" />
                     </div>
@@ -227,9 +154,9 @@
                 </div>
               </div>
             </div>
-            <!-- End 2 Content -->
+            <!-- End 2 Content nama aktiviti dan penganjur-->
 
-            {{-- <!--3 Content-->
+            <!--3 Content butiran aktiviti-->
             <div data-hs-stepper-content-item='{"index": 3}' style="display: none;">
               <div
                 class="p-4 h-max bg-gray-50  items-center border border-dashed border-gray-200 rounded-xl dark:bg-gray-800 dark:border-gray-700">
@@ -292,9 +219,9 @@
                 </div>
               </div>
             </div>
-            <!-- End 3 Content -->
+            <!-- End 3 Content butiran aktiviti-->
 
-            <!-- 4 Content -->
+            <!-- 4 Content objektif dan pernyataan masalah-->
             <div data-hs-stepper-content-item='{"index": 4}' style="display: none;">
               <div
                 class="p-4 h-max bg-gray-50  items-center border border-dashed border-gray-200 rounded-xl dark:bg-gray-800 dark:border-gray-700">
@@ -400,7 +327,463 @@
                 </div>
               </div>
             </div>
-            <!-- End 4 Content -->  --}}
+            <!-- End 4 Content objektif dan pernyataan masalah -->
+
+            <!-- 5 Content senarai peserta dan pengiring-->
+            <div data-hs-stepper-content-item='{"index": 5}' style="display: none;">
+              <div
+                class="p-4 h-max bg-gray-50  items-center border border-dashed border-gray-200 rounded-xl dark:bg-gray-800 dark:border-gray-700">
+                <div
+                  class="grid sm:grid-cols-12 gap-2 sm:gap-4 py-8 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 dark:border-gray-700 dark:first:border-transparent">
+                  <div class="sm:col-span-12">
+                    <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
+                      Participants and Escorts
+                    </h2>
+                  </div>
+                  <div class="sm:col-span-3">
+                    <label for="participant_escortss" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                      Participants and Escorts
+                    </label>
+                  </div>
+                  <div class="sm:col-span-9">
+                    <div class="sm:col-span-9">
+                      <textarea id="participant_escorts" name="participant_escorts"
+                        class="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                        rows="3"
+                        placeholder="Contoh: Peserta adalah dalam kalangan staff dan mahasiswa UTHM khususnya Mahasiswa Tahun Akhir Fakulti Sains Komputer dan Teknologi Maklumat.">{{ old('participant_escorts') }}</textarea>
+                      <x-input-error class="mt-2" :messages="$errors->get('participant_escorts')" />
+                    </div>
+                  </div>
+
+                  <div class="sm:col-span-3">
+                    <label for="resume_appendix" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                      Resume / Cv / Appendix
+                    </label>
+                  </div>
+                  <div class="sm:col-span-9">
+                    <div class="sm:col-span-9">
+                      <input type="file" id="resume_appendix" name="resume_appendix"
+                        class="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600" />
+                      <x-input-error class="mt-2" :messages="$errors->get('resume_appendix')" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End 5 Content -->
+
+            <!-- 6 Content Penglibatan industri -->
+            <div data-hs-stepper-content-item='{"index": 6}' style="display: none;">
+              <div
+                class="p-4 h-max bg-gray-50  items-center border border-dashed border-gray-200 rounded-xl dark:bg-gray-800 dark:border-gray-700">
+                <div
+                  class="grid sm:grid-cols-12 gap-2 sm:gap-4 py-8 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 dark:border-gray-700 dark:first:border-transparent">
+                  <div class="sm:col-span-12">
+                    <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
+                      Involvement of Industry/Association/Agencies/External Organization Bodies as Mentor/Advisor
+                    </h2>
+                  </div>
+                  <div class="sm:col-span-3">
+                    <label for="name_of_mentor" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                      Name of Mentor / Advisor
+                    </label>
+                  </div>
+                  <div class="sm:col-span-9">
+                    <div class="sm:col-span-9">
+                      <input type="text" id="name_of_mentor" name="name_of_mentor"
+                        value="{{ old('name_of_mentor') }}"
+                        class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
+                      <x-input-error class="mt-2" :messages="$errors->get('name_of_mentor')" />
+                    </div>
+                  </div>
+                  <div class="sm:col-span-3">
+                    <label for="position_of_mentor" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                      Position of Mentor/ Advisor
+                    </label>
+                  </div>
+                  <div class="sm:col-span-9">
+                    <div class="sm:col-span-9">
+                      <input type="text" id="position_of_mentor" name="position_of_mentor"
+                        value="{{ old('position_of_mentor') }}"
+                        class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
+                      <x-input-error class="mt-2" :messages="$errors->get('position_of_mentor')" />
+                    </div>
+                  </div>
+
+
+                  <div class="sm:col-span-3">
+                    <label for="company_address" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                      Company address
+                    </label>
+                  </div>
+                  <div class="sm:col-span-9">
+                    <div class="sm:col-span-9">
+                      <textarea id="company_address" name="company_address"
+                        class="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                        rows="6">{{ old('company_address') }}</textarea>
+                      <x-input-error class="mt-2" :messages="$errors->get('company_address')" />
+                    </div>
+                  </div>
+
+                  <div class="sm:col-span-3">
+                    <label for="suggested_role" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                      Suggested Roles and Contributions of Mentors / Advisors
+                    </label>
+                  </div>
+                  <div class="sm:col-span-9">
+                    <div class="sm:flex">
+                      <input type="text" id="suggested_role" name="suggested_role"
+                        value="{{ old('suggested_role') }}"
+                        class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
+                      <x-input-error class="mt-2" :messages="$errors->get('suggested_role')" />
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <!-- End 6 Content Penglibatan industri -->
+
+            <!-- 7 Content Impact-->
+            <div data-hs-stepper-content-item='{"index": 7}' style="display: none;">
+              <div
+                class="p-4 h-max bg-gray-50  items-center border border-dashed border-gray-200 rounded-xl dark:bg-gray-800 dark:border-gray-700">
+                <div
+                  class="grid sm:grid-cols-12 gap-2 sm:gap-4 py-8 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 dark:border-gray-700 dark:first:border-transparent">
+                  <div class="sm:col-span-12">
+                    <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
+                      Activity Success / Impact
+                    </h2>
+                  </div>
+                  <div class="sm:col-span-3">
+                    <label for="impact_student" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                      Towards Student
+                    </label>
+                  </div>
+                  <div class="sm:col-span-9">
+                    <div class="sm:col-span-9">
+                      <textarea id="impact_student_1" name="impact_student_1"
+                        class="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                        rows="2" placeholder="">{{ old('impact_student_1') }}</textarea>
+                      <x-input-error class="mt-2" :messages="$errors->get('impact_student_1')" />
+                    </div>
+                  </div>
+
+                  <div class="sm:col-span-3">
+                    <label for="impact_student_2" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                    </label>
+                  </div>
+
+                  <div class="sm:col-span-9">
+                    <div class="sm:col-span-9">
+                      <textarea id="impact_student_2" name="impact_student_2"
+                        class="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                        rows="2" placeholder="">{{ old('impact_student_2') }}</textarea>
+                      <x-input-error class="mt-2" :messages="$errors->get('impact_student_2')" />
+                    </div>
+                  </div>
+                  <div class="sm:col-span-3">
+                    <label for="impact_student_3" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                    </label>
+                  </div>
+
+                  <div class="sm:col-span-9">
+                    <div class="sm:col-span-9">
+                      <textarea id="impact_student_3" name="impact_student_3"
+                        class="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                        rows="2" placeholder="">{{ old('impact_student_3') }}</textarea>
+                      <x-input-error class="mt-2" :messages="$errors->get('impact_student_3')" />
+                    </div>
+                  </div>
+
+
+                  <div class="sm:col-span-3">
+                    <label for="toward_club" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                      Towards Club / University / Community
+                    </label>
+                  </div>
+                  <div class="sm:col-span-9">
+                    <div class="sm:col-span-9">
+                      <textarea id="toward_club_1" name="toward_club_1"
+                        class="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                        rows="2" placeholder="">{{ old('toward_club_1') }}</textarea>
+                      <x-input-error class="mt-2" :messages="$errors->get('toward_club_1')" />
+                    </div>
+                  </div>
+
+                  <div class="sm:col-span-3">
+                    <label for="toward_club_2" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                    </label>
+                  </div>
+
+                  <div class="sm:col-span-9">
+                    <div class="sm:col-span-9">
+                      <textarea id="toward_club_2" name="toward_club_2"
+                        class="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                        rows="2" placeholder="">{{ old('toward_club_2') }}</textarea>
+                      <x-input-error class="mt-2" :messages="$errors->get('toward_club_2')" />
+                    </div>
+                  </div>
+
+                  <div class="sm:col-span-3">
+                    <label for="toward_club_3" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                    </label>
+                  </div>
+                  <div class="sm:col-span-9">
+
+                    <div class="sm:col-span-9">
+                      <textarea id="toward_club_3" name="toward_club_3"
+                        class="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                        rows="2" placeholder="">{{ old('toward_club_3') }}</textarea>
+                      <x-input-error class="mt-2" :messages="$errors->get('toward_club_3')" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End 7 Content Impact-->
+
+            <!-- 8 Content Aturcara-->
+            <div data-hs-stepper-content-item='{"index": 8}' style="display: none;">
+              <div
+                class="p-4 h-max bg-gray-50  items-center border border-dashed border-gray-200 rounded-xl dark:bg-gray-800 dark:border-gray-700">
+                <div
+                  class="grid sm:grid-cols-12 gap-2 sm:gap-4 py-8 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 dark:border-gray-700 dark:first:border-transparent">
+                  <div class="sm:col-span-12">
+                    <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
+                      Tentative
+                    </h2>
+                  </div>
+                  <div class="sm:col-span-3">
+                    <label for="activity_commitee" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                      Activity Tentative
+                    </label>
+                  </div>
+                  <div class="sm:col-span-9">
+                    <table id="tentative-table" class="w-full">
+                      <thead>
+                        <tr>
+                          <th class="text-left py-2">Time</th>
+                          <th class="text-left py-2">Content</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><input type="text" name="tentative[0][time]"
+                              class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px rounded-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                              placeholder="8:30 am – 8:45 am"></td>
+                          <td><input type="text" name="tentative[0][content]"
+                              class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px rounded-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                              placeholder="Pendaftaran Peserta"></td>
+                          <td><button type="button" <td><button type="button"
+                                class="add-row text-green-500 hover:underline"
+                                style="background: none; border: none; padding: 0;">Add</button></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <script>
+              document.addEventListener('DOMContentLoaded', function() {
+                let rowIndex = 1;
+                document.querySelector('#tentative-table').addEventListener('click', function(event) {
+                  if (event.target.classList.contains('add-row')) {
+                    event.preventDefault();
+                    const table = document.querySelector('#tentative-table tbody');
+                    const newRow = document.createElement('tr');
+                    newRow.innerHTML = `
+                              <td><input type="text" name="tentative[${rowIndex}][time]" class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px rounded-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                              ></td>
+                              <td><input type="text" name="tentative[${rowIndex}][content]" class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px rounded-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                              ></td>
+                              <td><button type="button" class="remove-row text-red-500 hover:underline py-1 px-2 bg-red-500 text-red rounded" style="background: none; border: none; padding: 0;">Remove</button></td>
+                          `;
+                    table.appendChild(newRow);
+                    rowIndex++;
+                  }
+                  if (event.target.classList.contains('remove-row')) {
+                    event.preventDefault();
+                    event.target.closest('tr').remove();
+                  }
+                });
+              });
+            </script>
+            <!-- End 8 Content Senarai AJK-->
+
+            <!-- 9 Content -->
+            <div data-hs-stepper-content-item='{"index": 9}' style="display: none;">
+              <div
+                class="p-4 h-max bg-gray-50  items-center border border-dashed border-gray-200 rounded-xl dark:bg-gray-800 dark:border-gray-700">
+                <div
+                  class="grid sm:grid-cols-12 gap-2 sm:gap-4 py-8 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 dark:border-gray-700 dark:first:border-transparent">
+                  <div class="sm:col-span-12">
+                    <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
+                      Committee
+                    </h2>
+                  </div>
+                  <div class="sm:col-span-3">
+                    <label for="activity_commitee" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                      Activity Committee
+                    </label>
+                  </div>
+                  <div class="sm:col-span-9">
+                    <table id="committee-table" class="w-full">
+                      <thead>
+                        <tr>
+                          <th class="text-left py-2">Name</th>
+                          <th class="text-left py-2">Matric Number</th>
+                          <th class="text-left py-2">Faculty</th>
+                          <th class="text-left py-2">Role</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+
+                          <td><input type="text" name="committee[0][name]"
+                              class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px rounded-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                              required></td>
+                          <td><input type="text" name="committee[0][matric]"
+                              class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px rounded-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                              required></td>
+                          <td><input type="text" name="committee[0][faculty]"
+                              class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px rounded-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                              required></td>
+                          <td><input type="text" name="committee[0][role]"
+                              class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px rounded-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                              required></td>
+                          <td><button type="button" <td><button type="button"
+                                class="add-row text-green-500 hover:underline"
+                                style="background: none; border: none; padding: 0;">Add</button></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <script>
+              document.addEventListener('DOMContentLoaded', function() {
+                let rowIndex = 1;
+                document.querySelector('#committee-table').addEventListener('click', function(event) {
+                  if (event.target.classList.contains('add-row')) {
+                    event.preventDefault();
+                    const table = document.querySelector('#committee-table tbody');
+                    const newRow = document.createElement('tr');
+                    newRow.innerHTML = `
+                               <td><input type="text" name="committee[${rowIndex}][name]" class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px rounded-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                              required></td>
+                              <td><input type="text" name="committee[${rowIndex}][matric]" class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px rounded-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                              required></td>
+                              <td><input type="text" name="committee[${rowIndex}][faculty]" class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px rounded-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                              required></td>
+                              <td><input type="text" name="committee[${rowIndex}][role]" class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px rounded-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                              required></td>
+                              <td><button type="button" class="remove-row text-red-500 hover:underline py-1 px-2 bg-red-500 text-white rounded" style="background: none; border: none; padding: 0;">Remove</button></td>
+                          `;
+                    table.appendChild(newRow);
+                    rowIndex++;
+                  }
+                  if (event.target.classList.contains('remove-row')) {
+                    event.preventDefault();
+                    event.target.closest('tr').remove();
+                  }
+                });
+              });
+            </script>
+            <!-- End 9 Content -->
+
+            <!-- 10 Content lain lain-->
+            <div data-hs-stepper-content-item='{"index": 10}' style="display: none;">
+              <div
+                class="p-4 h-max bg-gray-50  items-center border border-dashed border-gray-200 rounded-xl dark:bg-gray-800 dark:border-gray-700">
+                <div
+                  class="grid sm:grid-cols-12 gap-2 sm:gap-4 py-8 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 dark:border-gray-700 dark:first:border-transparent">
+                  <div class="sm:col-span-12">
+                    <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
+                      Others
+                    </h2>
+                  </div>
+                  <div class="sm:col-span-3">
+                    <label for="others" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                      Others
+                    </label>
+                  </div>
+                  <div class="sm:col-span-9">
+                    <div class="sm:col-span-9">
+                      <textarea id="others" name="others"
+                        class="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                        rows="2"
+                        placeholder="Contoh: Penganjuran aktiviti ini memerlukan penggunaan kemudahan universiti iaitu extension, projector, PA sistem bagi kelancaran program. .">{{ old('others') }}</textarea>
+                      <x-input-error class="mt-2" :messages="$errors->get('others')" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End 10 Content lain lain -->
+
+            <!-- 11 Content Implikasi-->
+            <div data-hs-stepper-content-item='{"index": 11}' style="display: none;">
+              <div
+                class="p-4 h-max bg-gray-50  items-center border border-dashed border-gray-200 rounded-xl dark:bg-gray-800 dark:border-gray-700">
+                <div
+                  class="grid sm:grid-cols-12 gap-2 sm:gap-4 py-8 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 dark:border-gray-700 dark:first:border-transparent">
+                  <div class="sm:col-span-12">
+                    <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
+                      Implication if Not Approved
+                    </h2>
+                  </div>
+                  <div class="sm:col-span-3">
+                    <label for="implication" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                      Implication
+                    </label>
+                  </div>
+                  <div class="sm:col-span-9">
+                    <div class="sm:col-span-9">
+                      <textarea id="implication" name="implication"
+                        class="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                        rows="6">{{ old('implication') }}</textarea>
+                      <x-input-error class="mt-2" :messages="$errors->get('implication')" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End 11 Content Implikasi-->
+
+            <!-- 12 Keputusan-->
+            <div data-hs-stepper-content-item='{"index": 12}' style="display: none;">
+              <div
+                class="p-4 h-max bg-gray-50  items-center border border-dashed border-gray-200 rounded-xl dark:bg-gray-800 dark:border-gray-700">
+                <div
+                  class="grid sm:grid-cols-12 gap-2 sm:gap-4 py-8 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 dark:border-gray-700 dark:first:border-transparent">
+                  <div class="sm:col-span-12">
+                    <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
+                      Decision
+                    </h2>
+                  </div>
+                  <div class="sm:col-span-3">
+                    <label for="decision" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                      Decision
+                    </label>
+                  </div>
+                  <div class="sm:col-span-9">
+                    <div class="sm:col-span-9">
+                      <textarea id="decision" name="decision"
+                        class="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                        rows="3"
+                        placeholder="e.g Dengan segala hormatnya Yang Dipertua Majlis Perwakilan Pelajar adalah dipohon untuk menimbang serta meluluskan kertas kerja mengenai cadangan program AWS CLOUD ESSENTIALS FOR LEARNERS ">{{ old('decision') }}</textarea>
+                      <x-input-error class="mt-2" :messages="$errors->get('decision')" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End 12 Keputusan-->
 
 
 

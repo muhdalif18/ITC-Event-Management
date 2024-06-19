@@ -50,7 +50,7 @@ class UserSeed extends Seeder
       'password' => Hash::make('12345678'),
     ]);
 
-    DB::table('event_proposals')->insert([
+    /* DB::table('event_proposals')->insert([
       'purpose' => 'test',
       'background' => 'test',
       'eventName' => 'test',
@@ -67,14 +67,19 @@ class UserSeed extends Seeder
       'per_Masalah1' => 'test',
       'per_Masalah2' => 'test',
       'per_Masalah3' => 'test',
+
+      'participant_escorts' => 'test',
+      'name_of_mentor' => 'test',
+
+
       'description_Comment' => 'test',
       'eventDetails_Comment' => 'test',
       'organizer_Comment' => 'test',
       'obj_Comment' => 'test',
 
-    ]);
+    ]); */
 
-    DB::table('event_proposals')->insert([
+    /* DB::table('event_proposals')->insert([
       'purpose' => 'ABCD',
       'background' => 'ABCD',
       'eventName' => 'ABCD',
@@ -96,7 +101,7 @@ class UserSeed extends Seeder
       'organizer_Comment' => 'ABCD',
       'obj_Comment' => 'ABCD',
 
-    ]);
+    ]); */
 
     DB::table('event_reports')->insert([
       'r_purpose' => 'ABCD',
