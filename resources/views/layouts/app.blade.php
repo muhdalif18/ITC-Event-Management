@@ -24,27 +24,7 @@
 
 </head>
 
-{{-- <body class="flex font-sans antialiased">
-  @include('layouts.sidebar')
 
-  <div class="min-h-screen bg-gray-100 w-full">
-    @include('layouts.navigation')
-
-    <!-- Page Heading -->
-    @if (isset($header))
-      <header class="bg-white shadow">
-        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-          {{ $header }}
-        </div>
-      </header>
-    @endif
-
-    <!-- Page Content -->
-    <main>
-      {{ $slot }}
-    </main>
-  </div>
-</body> --}}
 
 <body
   class="font-sans antialiased bg-gray-50 dark:bg-slate-900 bg-cover bg-center bg-no-repeat bg-[url('https://encycolorpedia.com/20364b.png')]"

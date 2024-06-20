@@ -14,9 +14,5 @@ class CalendarEvent extends Model
    *
    * @var array<int, string>
    */
-  protected $fillable = [
-    'date', // Add 'date' to the fillable attributes
-    'event',
-    'time',
-  ];
+  protected $fillable = ['date', 'event', 'start_time', 'end_time'];
 }

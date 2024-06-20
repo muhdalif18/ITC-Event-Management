@@ -59,7 +59,8 @@ class CalendarController extends Controller
     $validated = $request->validate([
       'date' => 'required|date',
       'event' => 'required|string|max:255',
-      'time' => 'required|string|max:255',
+      'start_time' => 'required|date_format:H:i',
+      'end_time' => 'required|date_format:H:i|after:start_time',
       'id' => 'nullable|integer',
     ]);
 
@@ -69,7 +70,8 @@ class CalendarController extends Controller
       if ($event) {
         $event->date = $validated['date'];
         $event->event = $validated['event'];
-        $event->time = $validated['time'];
+        $event->start_time = $validated['start_time'];
+        $event->end_time = $validated['end_time'];
         $event->save();
       }
     } else {

@@ -38,12 +38,19 @@
               <input type="text" id="modal-event" name="event" placeholder="Enter event"
                 class="block w-full p-2.5 mb-4 border border-gray-300 rounded-lg shadow-sm">
 
-              <label for="time" class="block mb-2 text-sm font-medium text-gray-900">Time</label>
-              <input type="text" id="modal-time" name="time" placeholder="Enter Time"
-                class="block w-full p-2.5 mb-4 border border-gray-300 rounded-lg shadow-sm">
+              <!-- Start Time -->
+              <label for="start-time" class="block mb-2 text-sm font-medium text-gray-900">Start Time</label>
+              <input type="time" id="start-time" name="start_time"
+                class="block w-full p-2.5 mb-4 border border-gray-300 rounded-lg shadow-sm" required>
+
+              <!-- End Time -->
+              <label for="end-time" class="block mb-2 text-sm font-medium text-gray-900">End Time</label>
+              <input type="time" id="end-time" name="end_time"
+                class="block w-full p-2.5 mb-4 border border-gray-300 rounded-lg shadow-sm" required>
 
               <x-input-error :messages="$errors->get('event')" class="mt-2" />
-              <x-input-error :messages="$errors->get('time')" class="mt-2" />
+              <x-input-error :messages="$errors->get('start_time')" class="mt-2" />
+              <x-input-error :messages="$errors->get('end_time')" class="mt-2" />
               <button type="submit"
                 class="block w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 rounded-lg shadow-sm">Submit</button>
             </form>
@@ -64,7 +71,8 @@
           const modal = document.getElementById('medium-modal');
           const modalDateInput = document.getElementById('modal-date');
           const modalEventInput = document.getElementById('modal-event');
-          const modalTimeInput = document.getElementById('modal-time');
+          const startTimeInput = document.getElementById('start-time');
+          const endTimeInput = document.getElementById('end-time');
           const modalEventIdInput = document.getElementById('modal-event-id');
           const eventForm = document.getElementById('event-form');
 
@@ -86,7 +94,8 @@
             modal.classList.remove('hidden');
             modalEventIdInput.value = '';
             modalEventInput.value = '';
-            modalTimeInput.value = '';
+            startTimeInput.value = '';
+            endTimeInput.value = '';
           });
 
           closeModalButtons.forEach(button => {
@@ -105,7 +114,8 @@
               modal.classList.remove('hidden');
               modalEventIdInput.value = '';
               modalEventInput.value = '';
-              modalTimeInput.value = '';
+              startTimeInput.value = '';
+              endTimeInput.value = '';
             });
           });
 
@@ -116,12 +126,14 @@
               const eventId = this.dataset.id;
               const eventDate = this.dataset.date;
               const eventName = this.dataset.event;
-              const eventTime = this.dataset.time;
+              const startTime = this.dataset.start_time;
+              const endTime = this.dataset.end_time;
 
               modalDateInput.value = eventDate;
               modalEventIdInput.value = eventId;
               modalEventInput.value = eventName;
-              modalTimeInput.value = eventTime;
+              startTimeInput.value = startTime;
+              endTimeInput.value = endTime;
 
               modal.classList.remove('hidden');
             });
@@ -180,11 +192,11 @@
               Event</button>
           </form> --}}
 
-@if($user->role=='admin')
-<h2 class="text-2xl font-semibold "></h2>
-@else
-<h2 class="text-2xl font-semibold ">Secretariat Events</h2>
-@endif
+          @if ($user->role == 'admin')
+            <h2 class="text-2xl font-semibold "></h2>
+          @else
+            <h2 class="text-2xl font-semibold ">Secretariat Events</h2>
+          @endif
           <!-- <h2 class="text-2xl font-semibold ">Secretariat Events</h2> -->
           @foreach ($secretariatEvents as $secretariatEvent)
             <div class="bg-white p-3 mb-2 border rounded-lg shadow-sm">
@@ -224,8 +236,12 @@
                     @endphp
                     @if ($startOfCalendar->format('Y-m-d') == $dateFormat->format('Y-m-d'))
                       <div class="event {{ $colorClass }} rounded-md p-1 text-xs mt-1">
-                        <div>{{ $calendarEventData->event }}</div>
-                        <div>{{ $calendarEventData->time }}</div>
+                        <span class="truncate">{{ $calendarEventData->event }}
+                          ({{ \Carbon\Carbon::parse($calendarEventData->start_time)->format('h:i A') }} -
+                          {{ \Carbon\Carbon::parse($calendarEventData->end_time)->format('h:i A') }})
+                        </span>
+                        {{-- <div>{{ $calendarEventData->event }}</div>
+                        <div>{{ $calendarEventData->time }}</div> --}}
                         <div class="flex justify-between mt-1">
                           <button class="edit-event text-blue-600 hover:text-blue-800"
                             data-id="{{ $calendarEventData->id }}" data-date="{{ $calendarEventData->date }}"

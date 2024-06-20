@@ -21,8 +21,17 @@
     <!-- Exco -->
     <div class="mt-4">
       <x-input-label for="exco" :value="__('Exco')" />
-      <x-text-input id="exco" class="block mt-1 w-full" type="text" name="exco" :value="old('exco')" required
-        autocomplete="exco" />
+      <x-select id="exco" class="block mt-1 w-full" name="exco" required autocomplete="exco">
+        <option value="">Select Exco</option>
+        <option value="Exco Media" {{ old('exco') == 'Exco Media' ? 'selected' : '' }}>Exco Media</option>
+        <option value="Exco Sukan dan Rekreasi" {{ old('exco') == 'Exco Sukan dan Rekreasi' ? 'selected' : '' }}>Exco
+          Sukan dan Rekreasi</option>
+        <option value="Exco Pembangunan Pelajar" {{ old('exco') == 'Exco Pembangunan Pelajar' ? 'selected' : '' }}>Exco
+          Pembangunan Pelajar</option>
+        <option value="Exco Teknokeusahawanan" {{ old('exco') == 'Exco Teknokeusahawanan' ? 'selected' : '' }}>Exco
+          Teknokeusahawanan</option>
+        <option value="Exco Kebajikan" {{ old('exco') == 'Exco Kebajikan' ? 'selected' : '' }}>Exco Kebajikan</option>
+      </x-select>
       <x-input-error :messages="$errors->get('exco')" class="mt-2" />
     </div>
 
