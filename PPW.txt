@@ -1,0 +1,82 @@
+Komputasi awan, merujuk pada model penyediaan layanan komputasi melalui internet. Ini menggantikan model tradisional di mana sumber daya komputasi seperti server, dan penyimpanan data yang biasanya dikelola dan dioperasikan di lokasi fizikal yang dimiliki atau disewa oleh organisasi. Dalam komputasi awan, penyedia layanan seperti Amazon Web Services (AWS), menyediakan akses ke infrastruktur dan layanan IT mereka melalui internet. Komputasi awan digunakan secara luas dalam berbagai aplikasi, termasuk hosting laman web, pengolahan data, pengembangan perangkat lunak, kecerdasan buatan, Internet of Things (IoT), dan banyak lagi.
+
+AWS membenarkan organisasi dan individu untuk menyewa sumber daya komputasi, penyimpanan, jaringan, dan berbagai layanan lainnya secara fleksibel melalui internet. Komputasi awan juga diantara sistem komputasi yang banyak digunakan untuk Projek Sarjana Muda (PSM) bagi mahasiswa Fakulti Sains Komputer Dan Teknologi Maklumat. Namun begitu, mahasiswa masih kurang terdedah dengan kegunaan komputasi awan kerana kepelbagaian rujukan, gaya pemahaman yang beredar di internet. Oleh itu,cadangan program AWS CLOUD ESSENTIALS FOR LEARNERS diusulkanbagi membantu mahasiswa dan staff dalam meningkatkan kemahiran dan pengetahuan mereka berkenaan komputasi awan dan memudahkan merekadalam membangunkan sistem bagi PSM mereka kelak. Diharapkan selaras dengan penganjuran program ini dapat meningkatkan kebolehpasaran graduan dan membuka peluang kepada mahasiswa untuk meningkatkan kemahiran insaniah serta menilai kebolehan kerjaya, pengetahuan dan keyakinan diri mahasiswa itu sendiri. 
+
+AWS CLOUD ESSENTIALS FOR LEARNERS 
+
+KELAB TEKNOLOGI MAKLUMAT (ITC), FAKULTI SAINS KOMPUTER DAN TEKNOLOGI MAKLUMAT, DENGAN KERJASAMA PERBADANAN EKONOMI DIGITAL MALAYSIA (MDEC)  
+
+
+09 DISEMBER 2023 
+SABTU
+9:00 pagi sehingga 12:00 tengah hari 
+DEWAN KULIAH 3, PERPUSTAKAAN TUNKU TUN AMINAH, UNIVERSITI TUN HUSSEIN ONN MALAYSIA 
+
+obj
+Memberikan pengenalan kepada para peserta berkenaan dengan kegunaan komputasi awan untuk yang merupakan salah satu platform yang hebat dan mempunyai komuniti pengguna yang ramai.
+
+Memberikan pendedahan kepada para peserta dalam menggunakan fungsi-fungsi yang tersedia di AWS Cloud dan memaksimumkan pengetahuan serta pengalaman dalam penggunaan komputasi awan. 
+
+Membantu para peserta untuk meningkatkan kemahiran penggunaan komputasi awan untuk keperluan mereka dalam melaksanakan Projek Sarjana Muda (PSM) bagi kursus yang ditawarkan oleh Fakulti Sains Komputer dan Teknologi Maklumat. 
+
+masalah
+Peserta sukarnya untuk mempelajari AWS disebabkan kepelbagaian rujukan, gaya pemahaman dan penguasaan yang lemah dalam kegunaan komputasi awan. 
+
+Mahasiswa kurangnya pengetahuan mengenai teknologi terkini yang boleh digunakan dalam komputasi awan yang secara amnya banyak digunakan dalam industri namun kurang di dedahkan dalam silibus pengajaran universiti.
+
+Mahasiswa masih di tahap pemula dalam kemahiran komputasi awan bagi Projek Sarjana Muda (PSM) mereka kerana kurangnya pemahaman dan latihan, serta kepelbagaian platform yang berada di industri yang membuat mereka keliru untuk memilih platform yang bersesuaian. 
+
+
+Peserta adalah dalam kalangan staff dan mahasiswa UTHM khususnya Mahasiswa Tahun Akhir Fakulti Sains Komputer dan Teknologi Maklumat.
+
+Ms Valerie Leong 	Field Program Manager
+Malaysia Digital Economy Corporation (MDEC) Sdn. Bhd.  
+2360 Persiaran APEC
+63000 Cyberjaya
+Selangor Darul Ehsan. 
+
+
+Melahirkan individu yang mempunyai pengetahuan tinggi mengenai komputasi awan yang merupakan salah satu sistem komputasi yang terkenal dan meluas digunakan dalam industri.
+
+Meningkatkan kefahaman staff dan mahasiswa mengenai fungsi-fungsi yang tersedia di AWS di samping membantu mahasiswa yang ingin menggunakan komputasi awan bagi Projek Sarjana Muda (PSM) mereka.
+
+Meningkatkan motivasi dan inspirasi mahasiswa untuk mahir dan meningkatkan pengetahuan dalam komputasi awan.
+
+
+Menjalankan fungsi kelab sebagai pusat pembangunan mahasiswa yang berkaliber dan berpengetahuan luas.
+
+Merealisasikan fungsi UTHM sebagai sebuah destinasi ilmu yang holistik selaras dengan misi UTHM iaitu menyediakan penyelesaian teknikal untuk keperluan industri dan komuniti berasaskan paradigma tauhid.
+
+Mengeratkan hubungan dua hala diantara pihak alumni, pihak fakulti dan mahasiswa. 
+
+8:30 am – 8:45 am  Pendaftaran peserta 
+8:45 am – 8:55 am Majlis pembukaan bengkel 
+9:00 am – 10:30 am Pengenalan kepada AWS Cloud 
+10:30 am – 11:00 am  Minum Pagi 
+11:00 am – 12:00 pm AWS Cloud Essentials 
+12:00 pm – 12:10 pm Penyampaian cenderahati 
+12.15 pm Bersurai 
+
+
+YUMNI BINTI ABD AZIZ CI210078 FSKTM Pengarah 
+SYED MUHAMAD ALIF BIN SYED MOHD CI210009 FSKTM Setiausaha 
+NOOR HAZWALYENA BINTI HASSAN AI210284 FSKTM Bendahari 
+NUR SAZLIN SYAFIKA BINTI MAZLAN DI210085 FSKTM Unit Protokol 
+NURALYANA MAISARA BINTI NOORISHAM AI220222 FSKTM Unit Protokol 
+MUHAMMAD IZZUDDIN BIN MOHSIN DI210098 FSKTM Unit Pendaftaran 
+HEMASRRI A/P MUNIANDY DI220032 FSKTM Unit Pendaftaran 
+MOHAMED HAZIZI BIN HAMDAN CI210054 FSKTM Unit Teknikal Dan Tugas Khas
+MUHAMMAD HAQIMI BIN HARUN CI210003 FSKTM Unit Teknikal DanTugas Khas
+
+Penganjuran aktiviti ini memerlukan penggunaan kemudahan universiti iaitu extension, projector, PA sistem bagi kelancaran program. 
+
+impikasi
+Implikasi sekiranya program ini ditolak maka hasrat untuk memberikan pengenalan kepada para peserta untuk meningkatkan kemahiran berkenaan komputasi awan yang merupakan salah satu platform yang hebat dan mempunyai komuniti pengguna yang ramai tidak dapat dilaksanakan. Selain itu, hasrat untuk memberikan pendedahan kepada para peserta dalam menggunakan fungsi-fungsi yang tersedia di AWS dan memaksimumkan pengetahuan serta pengalaman dalam penggunaan AWS tidak dapat dijayakan di samping hasrat untuk mem bantu para peserta untuk memperoleh kemahiran yang diperlukan bagi membangunkan projek untuk keperluan mereka dalam melaksanakan Projek Sarjana Muda (PSM) bagi kursus yang ditawarkan oleh Fakulti Sains Komputer dan Teknologi Maklumat. 
+
+Dengan segala hormatnya Yang Dipertua Majlis Perwakilan Pelajar adalah dipohon untuk menimbang serta meluluskan kertas kerja mengenai cadangan program AWS CLOUD ESSENTIALS FOR LEARNERS 
+s
+s
+
+s
+s
+s
