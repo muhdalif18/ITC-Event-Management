@@ -913,8 +913,8 @@ class EventReportController extends Controller
         // Add image to the section
         $imagePath = public_path('storage/' . $other['image_path']);
         $section2->addImage($imagePath, [
-          'width' => 280, // Adjust width as needed
-          'height' => 280, // Adjust height as needed
+          'width' => 260, // Adjust width as needed
+          'height' => 260, // Adjust height as needed
           'alignment' => 'center',
         ]);
         $section2->addTextRun(['alignment' => 'center'])->addText($other['caption'], ['bold' => true, 'size' => 11]);

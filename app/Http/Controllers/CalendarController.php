@@ -60,32 +60,74 @@ class CalendarController extends Controller
       'tasks.*' => 'nullable|string', // Each task should be a string
       'persons_in_charge' => 'nullable|array', // Ensure persons_in_charge is an array
       'persons_in_charge.*' => 'nullable|string', // Each person in charge should be a string
+      'tasks_status' => 'nullable|array', // Add this line
+      'tasks_status.*' => 'boolean', // Add this line
       'id' => 'nullable|integer',
     ]);
 
     // Add tasks and persons_in_charge to the validated data
     $validated['tasks'] = $request->input('tasks', []); // If tasks are not provided, default to an empty array
     $validated['persons_in_charge'] = $request->input('persons_in_charge', []); // If persons_in_charge are not provided, default to an empty array
+    $validated['tasks_status'] = $request->input('tasks_status', []); // Add this line
 
     if ($request->id) {
-      // Update existing event
       $event = CalendarEvent::find($request->id);
       if ($event) {
-        $event->date = $validated['date'];
-        $event->event = $validated['event'];
-        $event->start_time = $validated['start_time'];
-        $event->end_time = $validated['end_time'];
-        $event->tasks = $validated['tasks']; // Update tasks
-        $event->persons_in_charge = $validated['persons_in_charge']; // Update persons in charge
-        $event->save();
+        $event->update($validated);
       }
     } else {
-      // Create new event
       CalendarEvent::create($validated);
     }
 
     return redirect()->route('calendar.get-calendar');
   }
+
+  /* public function saveTaskStatus(Request $request)
+  {
+    $validated = $request->validate([
+      'id' => 'required|integer',
+      'tasks_status' => 'required|array',
+      'tasks_status.*' => 'boolean',
+    ]);
+
+    $event = CalendarEvent::find($validated['id']);
+    if ($event) {
+      $event->tasks_status = $validated['tasks_status'];
+      $event->save();
+      return response()->json(['status' => 'success']);
+    }
+    return response()->json(['status' => 'error'], 404);
+  } */
+  public function saveTaskStatus(Request $request)
+  {
+    $validated = $request->validate([
+      'id' => 'required|integer',
+      'tasks_status' => 'required|array',
+      'tasks_status.*' => 'boolean',
+    ]);
+
+    $event = CalendarEvent::find($validated['id']);
+    if ($event) {
+      // Assuming tasks_status is a JSON field in your database
+      $event->tasks_status = json_encode($validated['tasks_status']);
+      $event->save();
+      return response()->json(['status' => 'success']);
+    }
+    return response()->json(['status' => 'error'], 404);
+  }
+
+  public function showEvent($id)
+  {
+    $event = CalendarEvent::find($id);
+    if ($event) {
+      // Decode the JSON tasks_status
+      $tasksStatus = json_decode($event->tasks_status, true);
+      return view('event-modal', ['event' => $event, 'tasksStatus' => $tasksStatus]);
+    }
+    // Handle event not found
+  }
+
+
 
 
 }

@@ -134,6 +134,7 @@ Route::middleware('auth')->group(function () {
 
   //Event Report
   //Route::post('/event-report', [EventReportController::class, 'postEventReport'])->name('event.post-event-report');
+  Route::post('/calendar/save-task-status', [CalendarController::class, 'saveTaskStatus'])->name('calendar.save-task-status');
 
   // Calendar
   Route::get('/calendar', [CalendarController::class, 'getCalendar'])->name('calendar.get-calendar');

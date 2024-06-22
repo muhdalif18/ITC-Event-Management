@@ -19,6 +19,7 @@ return new class extends Migration {
 
       $table->json('tasks')->nullable();
       $table->json('persons_in_charge')->nullable();
+      $table->json('tasks_status')->nullable();
 
       $table->timestamps();
     });

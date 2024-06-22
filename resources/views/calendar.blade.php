@@ -96,6 +96,8 @@
               <!-- Task list will be populated here -->
             </div>
             <div class="flex justify-end pt-4">
+              <button id="save-task-status"
+                class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Save</button>
               <button id="close-task-modal"
                 class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none">Close</button>
             </div>
@@ -108,6 +110,38 @@
 
       <script>
         document.addEventListener('DOMContentLoaded', function() {
+
+          //
+
+          const saveTaskStatusButton = document.getElementById('save-task-status');
+
+          saveTaskStatusButton.addEventListener('click', function() {
+            const tasksStatus = Array.from(document.querySelectorAll('.task-status')).map(checkbox => checkbox
+              .checked);
+            const eventId = document.querySelector('.gres-event').dataset.id;
+
+            fetch('{{ route('calendar.save-task-status') }}', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+              },
+              body: JSON.stringify({
+                id: eventId,
+                tasks_status: tasksStatus
+              })
+            }).then(response => {
+              if (response.ok) {
+                alert('Task status saved successfully.');
+              } else {
+                alert('Failed to save task status.');
+              }
+            });
+          });
+
+
+
+
           // Add Task Button
           const addTaskButton = document.getElementById('add-task');
           const tasksContainer = document.getElementById('tasks-container');
