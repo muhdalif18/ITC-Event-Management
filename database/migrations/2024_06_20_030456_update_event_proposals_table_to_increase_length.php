@@ -91,14 +91,14 @@ return new class extends Migration {
 
 
 
-      /*  $table->string('participant_escorts_Comment', 255)->nullable()->change();
-       $table->string('suggested_role_Comment', 255)->nullable()->change();
-       $table->string('impact_student_Comment', 255)->nullable()->change();
-       $table->string('tentative_activity_Comment', 255)->nullable()->change();
-       $table->string('committee_Comment', 255)->nullable()->change();
-       $table->string('others_Comment', 255)->nullable()->change();
-       $table->string('implication_Comment', 255)->nullable()->change();
-       $table->string('decision_Comment', 255)->nullable()->change(); */
+      $table->string('participant_escorts_Comment', 255)->nullable()->change();
+      $table->string('suggested_role_Comment', 255)->nullable()->change();
+      $table->string('impact_student_Comment', 255)->nullable()->change();
+      $table->string('tentative_activity_Comment', 255)->nullable()->change();
+      $table->string('committee_Comment', 255)->nullable()->change();
+      $table->string('others_Comment', 255)->nullable()->change();
+      $table->string('implication_Comment', 255)->nullable()->change();
+      $table->string('decision_Comment', 255)->nullable()->change();
 
 
       $table->string('participant_escorts', 255)->nullable()->change();
