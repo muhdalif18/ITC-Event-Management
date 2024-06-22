@@ -21,11 +21,13 @@ class CalendarEvent extends Model
     'end_time',
     'tasks',
     'persons_in_charge',
+    'tasks_status',
   ];
 
   protected $casts = [
     'tasks' => 'array',
     'persons_in_charge' => 'array',
+    'tasks_status' => 'array', // Add this line
   ];
 
 }
