@@ -50,12 +50,12 @@
                   class="grid sm:grid-cols-12 gap-2 sm:gap-4 py-8 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 dark:border-gray-700 dark:first:border-transparent">
                   <div class="sm:col-span-12">
                     <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
-                      Description
+                      Penerangan
                     </h2>
                   </div>
                   <div class="sm:col-span-3">
                     <label for="purpose" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
-                      Purpose
+                      Tujuan
                     </label>
                   </div>
                   <div class="sm:col-span-9">
@@ -70,7 +70,7 @@
 
                   <div class="sm:col-span-3">
                     <label for="background" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
-                      Background
+                      Latar Belakang
                     </label>
                   </div>
                   <!-- End Col -->
@@ -96,12 +96,12 @@
                   class="grid sm:grid-cols-12 gap-2 sm:gap-4 py-8 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 dark:border-gray-700 dark:first:border-transparent">
                   <div class="sm:col-span-12">
                     <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
-                      Event Name & Organizer
+                      Nama Aktiti & Penganjur
                     </h2>
                   </div>
                   <div class="sm:col-span-3">
                     <label for="eventName" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
-                      Event Name
+                      Name Aktiviti
                     </label>
                   </div>
                   <div class="sm:col-span-9">
@@ -113,7 +113,7 @@
                   </div>
                   <div class="sm:col-span-3">
                     <label for="organizer" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
-                      Organizer
+                      Penganjur
                     </label>
                   </div>
                   <div class="sm:col-span-9">
@@ -127,7 +127,7 @@
                   </div>
                   <div class="sm:col-span-3">
                     <label for="organizer_exco" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
-                      Exco In Charge
+                      Exco yang Terlibat
                     </label>
                   </div>
                   <div class="sm:col-span-9">
@@ -140,7 +140,7 @@
                   </div>
                   <div class="sm:col-span-3">
                     <label for="event_director" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
-                      Event Director
+                      Pengarah Program
                     </label>
                   </div>
                   <div class="sm:col-span-9">
@@ -164,13 +164,13 @@
                   class="grid sm:grid-cols-12 gap-2 sm:gap-4 py-8 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 dark:border-gray-700 dark:first:border-transparent">
                   <div class="sm:col-span-12">
                     <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
-                      Event Details
+                      Butiran Program
                     </h2>
                   </div>
 
                   <div class="sm:col-span-3">
                     <label for="date" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
-                      Date
+                      Tarikh
                     </label>
                   </div>
                   <div class="sm:col-span-9">
@@ -182,7 +182,7 @@
                   </div>
                   <div class="sm:col-span-3">
                     <label for="day" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
-                      Day
+                      Hari
                     </label>
                   </div>
                   <div class="sm:col-span-9">
@@ -194,7 +194,7 @@
                   </div>
                   <div class="sm:col-span-3">
                     <label for="time" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
-                      Time
+                      Masa
                     </label>
                   </div>
                   <div class="sm:col-span-9">
@@ -206,7 +206,7 @@
                   </div>
                   <div class="sm:col-span-3">
                     <label for="location" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
-                      Location
+                      Lokasi
                     </label>
                   </div>
                   <div class="sm:col-span-9">
@@ -229,12 +229,12 @@
                   class="grid sm:grid-cols-12 gap-2 sm:gap-4 py-8 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 dark:border-gray-700 dark:first:border-transparent">
                   <div class="sm:col-span-12">
                     <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
-                      Objective and Problem Statement
+                      Objektif & Pernyataan Masalah
                     </h2>
                   </div>
                   <div class="sm:col-span-3">
                     <label for="objective1" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
-                      Objective
+                      Objektif
                     </label>
                   </div>
                   <div class="sm:col-span-9">
@@ -337,12 +337,12 @@
                   class="grid sm:grid-cols-12 gap-2 sm:gap-4 py-8 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 dark:border-gray-700 dark:first:border-transparent">
                   <div class="sm:col-span-12">
                     <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
-                      Participants and Escorts
+                      Peserta dan Pengiring
                     </h2>
                   </div>
                   <div class="sm:col-span-3">
                     <label for="participant_escortss" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
-                      Participants and Escorts
+                      Peserta dan Pengiring
                     </label>
                   </div>
                   <div class="sm:col-span-9">
@@ -380,12 +380,12 @@
                   class="grid sm:grid-cols-12 gap-2 sm:gap-4 py-8 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 dark:border-gray-700 dark:first:border-transparent">
                   <div class="sm:col-span-12">
                     <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
-                      Involvement of Industry/Association/Agencies/External Organization Bodies as Mentor/Advisor
+                      Penglibatan Industri/ Persatuan/ Agensi/ Badan Organisasi Luar Sebagai Mentor
                     </h2>
                   </div>
                   <div class="sm:col-span-3">
                     <label for="name_of_mentor" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
-                      Name of Mentor / Advisor
+                      Nama Mentor / Penasihat
                     </label>
                   </div>
                   <div class="sm:col-span-9">
@@ -398,7 +398,7 @@
                   </div>
                   <div class="sm:col-span-3">
                     <label for="position_of_mentor" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
-                      Position of Mentor/ Advisor
+                      Jawatan Mentor/ Penasihat
                     </label>
                   </div>
                   <div class="sm:col-span-9">
@@ -413,7 +413,7 @@
 
                   <div class="sm:col-span-3">
                     <label for="company_address" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
-                      Company address
+                      Alamat Syarikat
                     </label>
                   </div>
                   <div class="sm:col-span-9">
@@ -427,7 +427,7 @@
 
                   <div class="sm:col-span-3">
                     <label for="suggested_role" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
-                      Suggested Roles and Contributions of Mentors / Advisors
+                      Cadangan Peranan & Sumbangan Mentor/ Penasihat
                     </label>
                   </div>
                   <div class="sm:col-span-9">
@@ -452,12 +452,12 @@
                   class="grid sm:grid-cols-12 gap-2 sm:gap-4 py-8 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 dark:border-gray-700 dark:first:border-transparent">
                   <div class="sm:col-span-12">
                     <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
-                      Activity Success / Impact
+                      Keberhasilan Aktiviti / Impak
                     </h2>
                   </div>
                   <div class="sm:col-span-3">
                     <label for="impact_student" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
-                      Towards Student
+                      Kepada Pelajar/ Peserta
                     </label>
                   </div>
                   <div class="sm:col-span-9">
@@ -499,7 +499,7 @@
 
                   <div class="sm:col-span-3">
                     <label for="toward_club" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
-                      Towards Club / University / Community
+                      Kepada Kelab/ Universiti/ Komuniti
                     </label>
                   </div>
                   <div class="sm:col-span-9">
@@ -551,20 +551,20 @@
                   class="grid sm:grid-cols-12 gap-2 sm:gap-4 py-8 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 dark:border-gray-700 dark:first:border-transparent">
                   <div class="sm:col-span-12">
                     <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
-                      Tentative
+                      Aturcara Aktiviti
                     </h2>
                   </div>
                   <div class="sm:col-span-3">
                     <label for="activity_commitee" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
-                      Activity Tentative
+                      Aturcara
                     </label>
                   </div>
                   <div class="sm:col-span-9">
                     <table id="tentative-table" class="w-full">
                       <thead>
                         <tr>
-                          <th class="text-left py-2">Time</th>
-                          <th class="text-left py-2">Content</th>
+                          <th class="text-left py-2">Masa</th>
+                          <th class="text-left py-2">Pengisian</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -621,22 +621,22 @@
                   class="grid sm:grid-cols-12 gap-2 sm:gap-4 py-8 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 dark:border-gray-700 dark:first:border-transparent">
                   <div class="sm:col-span-12">
                     <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
-                      Committee
+                      Jawatankuasa Aktiviti
                     </h2>
                   </div>
                   <div class="sm:col-span-3">
                     <label for="activity_commitee" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
-                      Activity Committee
+                      Jawatankuasa
                     </label>
                   </div>
                   <div class="sm:col-span-9">
                     <table id="committee-table" class="w-full">
                       <thead>
                         <tr>
-                          <th class="text-left py-2">Name</th>
-                          <th class="text-left py-2">Matric Number</th>
-                          <th class="text-left py-2">Faculty</th>
-                          <th class="text-left py-2">Role</th>
+                          <th class="text-left py-2">Nama</th>
+                          <th class="text-left py-2">No. Matrik</th>
+                          <th class="text-left py-2">Fakulti</th>
+                          <th class="text-left py-2">Jawatan / Peranan</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -644,16 +644,16 @@
 
                           <td><input type="text" name="committee[0][name]"
                               class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px rounded-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
-                              required></td>
+                              {{-- required --}}></td>
                           <td><input type="text" name="committee[0][matric]"
                               class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px rounded-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
-                              required></td>
+                              {{-- required --}}></td>
                           <td><input type="text" name="committee[0][faculty]"
                               class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px rounded-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
-                              required></td>
+                              {{-- required --}}></td>
                           <td><input type="text" name="committee[0][role]"
                               class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px rounded-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
-                              required></td>
+                              {{-- required --}}></td>
                           <td><button type="button" <td><button type="button"
                                 class="add-row text-green-500 hover:underline"
                                 style="background: none; border: none; padding: 0;">Add</button></td>
@@ -675,13 +675,13 @@
                     const newRow = document.createElement('tr');
                     newRow.innerHTML = `
                                <td><input type="text" name="committee[${rowIndex}][name]" class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px rounded-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
-                              required></td>
+                              ></td>
                               <td><input type="text" name="committee[${rowIndex}][matric]" class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px rounded-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
-                              required></td>
+                              ></td>
                               <td><input type="text" name="committee[${rowIndex}][faculty]" class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px rounded-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
-                              required></td>
+                              ></td>
                               <td><input type="text" name="committee[${rowIndex}][role]" class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px rounded-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
-                              required></td>
+                              ></td>
                               <td><button type="button" class="remove-row text-red-500 hover:underline py-1 px-2 bg-red-500 text-white rounded" style="background: none; border: none; padding: 0;">Remove</button></td>
                           `;
                     table.appendChild(newRow);
@@ -704,12 +704,12 @@
                   class="grid sm:grid-cols-12 gap-2 sm:gap-4 py-8 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 dark:border-gray-700 dark:first:border-transparent">
                   <div class="sm:col-span-12">
                     <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
-                      Others
+                      Lain - Lain
                     </h2>
                   </div>
                   <div class="sm:col-span-3">
                     <label for="others" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
-                      Others
+                      Lain - Lain
                     </label>
                   </div>
                   <div class="sm:col-span-9">
@@ -734,12 +734,12 @@
                   class="grid sm:grid-cols-12 gap-2 sm:gap-4 py-8 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 dark:border-gray-700 dark:first:border-transparent">
                   <div class="sm:col-span-12">
                     <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
-                      Implication if Not Approved
+                      Implikasi Sekiranya Tidak Diluluskan
                     </h2>
                   </div>
                   <div class="sm:col-span-3">
                     <label for="implication" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
-                      Implication
+                      Implikasi
                     </label>
                   </div>
                   <div class="sm:col-span-9">
@@ -763,12 +763,12 @@
                   class="grid sm:grid-cols-12 gap-2 sm:gap-4 py-8 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 dark:border-gray-700 dark:first:border-transparent">
                   <div class="sm:col-span-12">
                     <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
-                      Decision
+                      Keputusan
                     </h2>
                   </div>
                   <div class="sm:col-span-3">
                     <label for="decision" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
-                      Decision
+                      Keputusan
                     </label>
                   </div>
                   <div class="sm:col-span-9">

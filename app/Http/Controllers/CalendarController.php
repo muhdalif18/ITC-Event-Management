@@ -8,14 +8,9 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
-
 class CalendarController extends Controller
 {
-  /**
-   * Display calendar.
-   * 
-   * 
-   */
+
   public function getCalendar(Request $request): View
   {
     // Retrieve month and year from the request, or use the current date
@@ -61,8 +56,16 @@ class CalendarController extends Controller
       'event' => 'required|string|max:255',
       'start_time' => 'required|date_format:H:i',
       'end_time' => 'required|date_format:H:i|after:start_time',
+      'tasks' => 'nullable|array', // Ensure tasks is an array
+      'tasks.*' => 'nullable|string', // Each task should be a string
+      'persons_in_charge' => 'nullable|array', // Ensure persons_in_charge is an array
+      'persons_in_charge.*' => 'nullable|string', // Each person in charge should be a string
       'id' => 'nullable|integer',
     ]);
+
+    // Add tasks and persons_in_charge to the validated data
+    $validated['tasks'] = $request->input('tasks', []); // If tasks are not provided, default to an empty array
+    $validated['persons_in_charge'] = $request->input('persons_in_charge', []); // If persons_in_charge are not provided, default to an empty array
 
     if ($request->id) {
       // Update existing event
@@ -72,6 +75,8 @@ class CalendarController extends Controller
         $event->event = $validated['event'];
         $event->start_time = $validated['start_time'];
         $event->end_time = $validated['end_time'];
+        $event->tasks = $validated['tasks']; // Update tasks
+        $event->persons_in_charge = $validated['persons_in_charge']; // Update persons in charge
         $event->save();
       }
     } else {

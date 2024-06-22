@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Charts\MonthlyUsersChart;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
 class UserController extends Controller
@@ -19,6 +21,23 @@ class UserController extends Controller
     ]);
   }
 
+  public function uploadProfileImage(Request $request)
+  {
+    $request->validate([
+      'profile_image' => 'required|image|mimes:jpg,jpeg,png,gif|max:800',
+    ]);
+
+    $user = Auth::user();
+    if ($user->profile_image) {
+      Storage::delete('public/' . $user->profile_image);
+    }
+
+    $path = $request->file('profile_image')->store('profile_images', 'public');
+    $user->profile_image = $path;
+    $user->save();
+
+    return back()->with('success', 'Profile picture updated successfully.');
+  }
   /**
    * Show the form for creating a new resource.
    */

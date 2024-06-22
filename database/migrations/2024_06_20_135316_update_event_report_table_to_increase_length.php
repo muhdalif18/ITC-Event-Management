@@ -10,7 +10,7 @@ return new class extends Migration {
    */
   public function up()
   {
-    Schema::table('event_proposals', function (Blueprint $table) {
+    Schema::table('event_reports', function (Blueprint $table) {
       $table->text('background')->change();
       $table->text('eventName')->change();
       $table->text('organizer')->change();
@@ -29,20 +29,6 @@ return new class extends Migration {
       $table->text('description_Comment')->nullable()->change();
       $table->text('eventDetails_Comment')->nullable()->change();
       $table->text('organizer_Comment')->nullable()->change();
-
-
-      $table->string('participant_escorts_Comment')->nullable()->change();
-      $table->string('suggested_role_Comment')->nullable()->change();
-      $table->string('impact_student_Comment')->nullable()->change();
-      $table->string('tentative_activity_Comment')->nullable()->change();
-      $table->string('committee_Comment')->nullable()->change();
-      $table->string('others_Comment')->nullable()->change();
-      $table->string('implication_Comment')->nullable()->change();
-      $table->string('decision_Comment')->nullable()->change();
-
-
-
-
       $table->text('obj_Comment')->nullable()->change();
       $table->text('participant_escorts')->change();
       $table->text('name_of_mentor')->change();
@@ -58,12 +44,15 @@ return new class extends Migration {
       $table->text('others')->change();
       $table->text('implication')->change();
       $table->text('decision')->change();
+      $table->text('club_advisor')->change();
+      $table->text('club_president')->change();
+      $table->text('mpp')->change();
     });
   }
 
   public function down()
   {
-    Schema::table('event_proposals', function (Blueprint $table) {
+    Schema::table('event_reports', function (Blueprint $table) {
       $table->string('background', 255)->change();
       $table->string('eventName', 255)->change();
       $table->string('organizer', 255)->change();
@@ -85,22 +74,6 @@ return new class extends Migration {
       $table->string('eventDetails_Comment', 255)->nullable()->change();
       $table->string('organizer_Comment', 255)->nullable()->change();
       $table->string('obj_Comment', 255)->nullable()->change();
-
-
-
-
-
-
-      $table->string('participant_escorts_Comment', 255)->nullable()->change();
-      $table->string('suggested_role_Comment', 255)->nullable()->change();
-      $table->string('impact_student_Comment', 255)->nullable()->change();
-      $table->string('tentative_activity_Comment', 255)->nullable()->change();
-      $table->string('committee_Comment', 255)->nullable()->change();
-      $table->string('others_Comment', 255)->nullable()->change();
-      $table->string('implication_Comment', 255)->nullable()->change();
-      $table->string('decision_Comment', 255)->nullable()->change();
-
-
       $table->string('participant_escorts', 255)->nullable()->change();
       $table->string('name_of_mentor', 255)->change();
       $table->string('position_of_mentor', 255)->change();
@@ -115,6 +88,10 @@ return new class extends Migration {
       $table->string('others', 255)->change();
       $table->string('implication', 255)->change();
       $table->string('decision', 255)->change();
+      $table->string('club_advisor', 255)->change();
+      $table->string('club_president', 255)->change();
+      $table->string('mpp', 255)->change();
+
     });
   }
 };

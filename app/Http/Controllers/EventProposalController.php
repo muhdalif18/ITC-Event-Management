@@ -139,6 +139,7 @@ class EventProposalController extends Controller
       'decision' => 'nullable|string|max:255', */
 
       'background' => 'nullable|string',
+      'purpose' => 'nullable|string',
       'eventName' => 'nullable|string',
       'organizer' => 'nullable|string',
       'organizer_exco' => 'nullable|string',
@@ -157,6 +158,16 @@ class EventProposalController extends Controller
       'eventDetails_Comment' => 'nullable|string',
       'organizer_Comment' => 'nullable|string',
       'obj_Comment' => 'nullable|string',
+
+      'participant_escorts_Comment' => 'nullable|string',
+      'suggested_role_Comment' => 'nullable|string',
+      'impact_student_Comment' => 'nullable|string',
+      'tentative_activity_Comment' => 'nullable|string',
+      'committee_Comment' => 'nullable|string',
+      'others_Comment' => 'nullable|string',
+      'implication_Comment' => 'nullable|string',
+      'decision_Comment' => 'nullable|string',
+
       'participant_escorts' => 'nullable|string',
       'name_of_mentor' => 'nullable|string',
       'position_of_mentor' => 'nullable|string',
@@ -183,7 +194,7 @@ class EventProposalController extends Controller
 
     ]);
 
-    if ($request->has('id')) {
+    /* if ($request->has('id')) {
       // Find the existing event proposal by ID
       $eventProposal = EventProposal::find($request->id);
 
@@ -194,7 +205,7 @@ class EventProposalController extends Controller
     } else {
       // If no ID is provided in the request, create a new event proposal
       $eventProposal = new EventProposal();
-    }
+    } */
 
     // Update the event proposal details
     $eventProposal->purpose = $request->input('purpose');
@@ -251,11 +262,141 @@ class EventProposalController extends Controller
     $eventProposal->decision = $request->input('decision');
 
 
+    $eventProposal->participant_escorts_Comment = $request->input('participant_escorts_Comment');
+    $eventProposal->suggested_role_Comment = $request->input('suggested_role_Comment');
+    $eventProposal->impact_student_Comment = $request->input('impact_student_Comment');
+    $eventProposal->tentative_activity_Comment = $request->input('tentative_activity_Comment');
+    $eventProposal->committee_Comment = $request->input('committee_Comment');
+    $eventProposal->others_Comment = $request->input('others_Comment');
+    $eventProposal->implication_Comment = $request->input('implication_Comment');
+    $eventProposal->decision_Comment = $request->input('decision_Comment');
+
 
 
     $eventProposal->save();
 
     return redirect()->route('submit-event-proposal-form');
+  }
+
+  //update
+
+
+  ///
+  ///
+  public function updateEventProposal(Request $request, $id)
+  {
+    $eventProposal = EventProposal::findOrFail($id);
+
+    $this->validate($request, [
+      'purpose' => 'nullable|string',
+      'background' => 'nullable|string',
+      'eventName' => 'nullable|string',
+      'organizer' => 'nullable|string',
+      'organizer_exco' => 'nullable|string',
+      'event_director' => 'nullable|string',
+      'date' => 'nullable|string',
+      'day' => 'nullable|string',
+      'time' => 'nullable|string',
+      'location' => 'nullable|string',
+      'objective1' => 'nullable|string',
+      'objective2' => 'nullable|string',
+      'objective3' => 'nullable|string',
+      'per_Masalah1' => 'nullable|string',
+      'per_Masalah2' => 'nullable|string',
+      'per_Masalah3' => 'nullable|string',
+      'description_Comment' => 'nullable|string',
+      'eventDetails_Comment' => 'nullable|string',
+      'organizer_Comment' => 'nullable|string',
+      'obj_Comment' => 'nullable|string',
+      'participant_escorts_Comment' => 'nullable|string',
+      'suggested_role_Comment' => 'nullable|string',
+      'impact_student_Comment' => 'nullable|string',
+      'tentative_activity_Comment' => 'nullable|string',
+      'committee_Comment' => 'nullable|string',
+      'others_Comment' => 'nullable|string',
+      'implication_Comment' => 'nullable|string',
+      'decision_Comment' => 'nullable|string',
+      'participant_escorts' => 'nullable|string',
+      'name_of_mentor' => 'nullable|string',
+      'position_of_mentor' => 'nullable|string',
+      'company_address' => 'nullable|string',
+      'suggested_role' => 'nullable|string',
+      'impact_student_1' => 'nullable|string',
+      'impact_student_2' => 'nullable|string',
+      'impact_student_3' => 'nullable|string',
+      'toward_club_1' => 'nullable|string',
+      'toward_club_2' => 'nullable|string',
+      'toward_club_3' => 'nullable|string',
+      'others' => 'nullable|string',
+      'implication' => 'nullable|string',
+      'decision' => 'nullable|string',
+      /* 'committee' => 'nullable|string', */
+      /*  'committee.*.role' => 'nullable|string',
+       'committee.*.name' => 'nullable|string',
+       'committee.*.matric' => 'nullable|string',
+       'committee.*.faculty' => 'nullable|string', */
+      /* 'tentative' => 'nullable|string',
+      'tentative.*.time' => 'nullable|string',
+      'tentative.*.content' => 'nullable|string', */
+
+    ]);
+
+    $eventProposal->update([
+      'background' => $request->input('background'),
+      'purpose' => $request->input('purpose'),
+      'eventName' => $request->input('eventName'),
+      'organizer' => $request->input('organizer'),
+      'organizer_exco' => $request->input('organizer_exco'),
+      'event_director' => $request->input('event_director'),
+      'date' => $request->input('date'),
+      'day' => $request->input('day'),
+      'time' => $request->input('time'),
+      'location' => $request->input('location'),
+      'objective1' => $request->input('objective1'),
+      'objective2' => $request->input('objective2'),
+
+      'objective3' => $request->input('objective3'),
+      'per_Masalah1' => $request->input('per_Masalah1'),
+      'per_Masalah2' => $request->input('per_Masalah2'),
+      'per_Masalah3' => $request->input('per_Masalah3'),
+      'description_Comment' => $request->input('description_Comment'),
+      'eventDetails_Comment' => $request->input('eventDetails_Comment'),
+      'organizer_Comment' => $request->input('organizer_Comment'),
+      'obj_Comment' => $request->input('obj_Comment'),
+      'participant_escorts_Comment' => $request->input('participant_escorts_Comment'),
+      'suggested_role_Comment' => $request->input('suggested_role_Comment'),
+      'impact_student_Comment' => $request->input('impact_student_Comment'),
+      'tentative_activity_Comment' => $request->input('tentative_activity_Comment'),
+      'committee_Comment' => $request->input('committee_Comment'),
+      'others_Comment' => $request->input('others_Comment'),
+      'implication_Comment' => $request->input('implication_Comment'),
+      'decision_Comment' => $request->input('decision_Comment'),
+      'participant_escorts' => $request->input('participant_escorts'),
+      'name_of_mentor' => $request->input('name_of_mentor'),
+      'position_of_mentor' => $request->input('position_of_mentor'),
+      'company_address' => $request->input('company_address'),
+      'suggested_role' => $request->input('suggested_role'),
+      'impact_student_1' => $request->input('impact_student_1'),
+      'impact_student_2' => $request->input('impact_student_2'),
+      'impact_student_3' => $request->input('impact_student_3'),
+      'toward_club_1' => $request->input('toward_club_1'),
+      'toward_club_2' => $request->input('toward_club_2'),
+      'toward_club_3' => $request->input('toward_club_3'),
+      'others' => $request->input('others'),
+      'implication' => $request->input('implication'),
+      'decision' => $request->input('decision'),
+      /* 'committee' => $request->input('committee'), */
+      /*       'committee.*.role' => $request->input('committee.*.role'),
+            'committee.*.name' => $request->input('committee.*.name'),
+            'committee.*.matric' => $request->input('committee.*.matric'),
+            'committee.*.faculty' => $request->input('committee.*.faculty'), */
+      /* 'tentative' => $request->input('tentative'),
+      'tentative.*.time' => $request->input('tentative.*.time'),
+      'tentative.*.content' => $request->input('tentative.*.content'), */
+    ]);
+
+    /* return redirect()->route('submit-event-proposal-form'); */
+    return redirect()->route('event.get-event-proposal');
   }
 
   public function fetchData()
@@ -837,52 +978,6 @@ class EventProposalController extends Controller
       'marginTop' => -20 // Adjust this value as needed to move the image up
     ]);
 
-    /*  if ($committeeMembers) {
-       // Create a table for committee members
-       $table = $section->addTable();
-
-       // Add table headers
-       $table->addRow();
-       $table->addCell(2000)->addText('Name', 'boldText');
-       $table->addCell(2000)->addText('Matric Number', 'boldText');
-       $table->addCell(2000)->addText('Faculty', 'boldText');
-       $table->addCell(2000)->addText('Role', 'boldText');
-
-       // Populate the table with committee members data
-       foreach ($committeeMembers as $committee) {
-         $table->addRow();
-         $table->addCell(2000)->addText($committee['name']);
-         $table->addCell(2000)->addText($committee['matric']);
-         $table->addCell(2000)->addText($committee['faculty']);
-         $table->addCell(2000)->addText($committee['role']);
-
-       }
-     } else {
-       $section->addText('No committee members found.', 'notBoldText', 'level1_text_style');
-     } */
-
-    //MULTILEVEL ABC
-    /* $section2->addListItem('Nama dan Alamat Industri/Persatuan/Agensi/Badan Organisasi Luar', 1, 'notBoldText', 'multilevel');
-    $section2->addListItem($background, 2, 'notBoldText', 'multilevel'); */
-
-    // Add table
-    /* $table = $section->addTable();
-
-    // Add headers
-    $table->addRow();
-    $headers = ['purpose', 'background', 'eventName', 'organizer']; // Replace with your column names
-    foreach ($headers as $header) {
-      $table->addCell()->addText($header);
-    }
-
-    // Add data rows
-    foreach ($data as $row) {
-      $table->addRow();
-      foreach ($row->toArray() as $column) {
-        $table->addCell()->addText($column);
-      }
-    } */
-
     // Save the document
     $filename = 'exported_data.docx';
     $path = storage_path('app/' . $filename);
@@ -891,18 +986,6 @@ class EventProposalController extends Controller
 
     return $path;
   }
-
-  /* public function exportToWord()
-  {
-    // Fetch data
-    $data = $this->fetchData();
-
-    // Generate Word document
-    $filePath = $this->generateWordDocument($data);
-
-    // Download the document
-    return Response::download($filePath);
-  } */
 
   public function exportToWord($id)
   {

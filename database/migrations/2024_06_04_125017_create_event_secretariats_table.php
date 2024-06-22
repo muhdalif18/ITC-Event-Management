@@ -18,6 +18,7 @@ return new class extends Migration {
       $table->id();
       $table->string('secre_name');
       $table->string('secre_matric_number');
+      $table->string('secre_task');
       $table->unsignedBigInteger('event_id');
       $table->foreign('event_id')->references('id')->on('event_proposals')->onDelete('cascade');
       $table->timestamps();

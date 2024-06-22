@@ -14,5 +14,18 @@ class CalendarEvent extends Model
    *
    * @var array<int, string>
    */
-  protected $fillable = ['date', 'event', 'start_time', 'end_time'];
+  protected $fillable = [
+    'date',
+    'event',
+    'start_time',
+    'end_time',
+    'tasks',
+    'persons_in_charge',
+  ];
+
+  protected $casts = [
+    'tasks' => 'array',
+    'persons_in_charge' => 'array',
+  ];
+
 }

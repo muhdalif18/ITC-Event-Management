@@ -158,13 +158,6 @@
                     <a href="#" type="button" data-modal-target="editUserModal" data-modal-show="editUserModal"
                       class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
                       data-hs-overlay="#hs-large-modal">Add</a>
-
-
-                    {{--  <button type="button"
-                            class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
-                            data-hs-overlay="#hs-large-modal">
-                            Large
-                          </button> --}}
                     <div id="hs-large-modal"
                       class="hs-overlay hidden size-full fixed top-0 start-0 z-[80] overflow-x-hidden overflow-y-auto pointer-events-none">
                       <div
@@ -191,21 +184,6 @@
                             <form method="POST" action="{{ route('event.secretariat.store') }}">
                               @csrf
                               <div id="input-container" class="grid grid-cols-6 gap-6">
-                                <div class="col-span-6 sm:col-span-3">
-                                  <label for="secre_name"
-                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
-                                  <input type="text" name="secre_name" id="secre_name"
-                                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                                    required>
-                                </div>
-                                <div class="col-span-6 sm:col-span-3">
-                                  <label for="secre_matric_number"
-                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Matric
-                                    Number</label>
-                                  <input type="text" name="secre_matric_number" id="secre_matric_number"
-                                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                                    required>
-                                </div>
                                 <div class="col-span-6">
                                   <label for="event_id"
                                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Event</label>
@@ -216,6 +194,36 @@
                                       <option value="{{ $event->id }}">{{ $event->eventName }}</option>
                                     @endforeach
                                   </select>
+                                </div>
+                                <div id="secretariat-container" class="col-span-6 grid grid-cols-6 gap-6">
+                                  <div class="col-span-6 sm:col-span-2">
+                                    <label for="secre_name_0"
+                                      class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
+                                    <input type="text" name="secre_name[]" id="secre_name_0"
+                                      class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                      required>
+                                  </div>
+                                  <div class="col-span-6 sm:col-span-2">
+                                    <label for="secre_matric_number_0"
+                                      class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Matric
+                                      Number</label>
+                                    <input type="text" name="secre_matric_number[]" id="secre_matric_number_0"
+                                      class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                      required>
+                                  </div>
+                                  <div class="col-span-6 sm:col-span-2">
+                                    <label for="secre_task_0"
+                                      class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Task</label>
+                                    <input type="text" name="secre_task[]" id="secre_task_0"
+                                      class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                      required>
+                                  </div>
+                                </div>
+                                <div class="col-span-6">
+                                  <button type="button" id="add-secretariat"
+                                    class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800">
+                                    Add Another Secretariat
+                                  </button>
                                 </div>
                               </div>
                               <div
@@ -228,106 +236,40 @@
                                   changes</button>
                               </div>
                             </form>
-
-                            {{-- <form method="POST" action="{{ route('event.secretariat.store') }}">
-                                          @csrf
-                                          <div id="input-container" class="grid grid-cols-6 gap-6">
-                                            <div class="col-span-6 sm:col-span-3">
-                                              <label for="secre_name"
-                                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
-                                              <input type="text" name="secre_name" id="secre_name"
-                                                class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                                                placeholder="" required>
-                                            </div>
-                                            <div class="col-span-6 sm:col-span-3">
-                                              <label for="secre_matric_number"
-                                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Matric Number</label>
-                                              <input type="text" name="secre_matric_number" id="secre_matric_number"
-                                                class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                                                placeholder="" required>
-                                            </div>
-                                          </div>
-                                          <div class="flex justify-end items-center gap-x-2 py-3 px-4 border-t dark:border-neutral-700">
-                                            <button type="button"
-                                              class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800"
-                                              data-hs-overlay="#hs-large-modal">
-                                              Close
-                                            </button>
-                                            <button type="submit"
-                                              class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none">
-                                              Save changes
-                                            </button>
-                                          </div>
-                                        </form> --}}
                           </div>
                         </div>
                       </div>
                     </div>
-
-                    {{--  <div id="hs-large-modal"
-                                                class="hs-overlay hidden size-full fixed top-0 start-0 z-[80] overflow-x-hidden overflow-y-auto pointer-events-none">
-                                                <div
-                                                  class="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-0 opacity-0 ease-out transition-all lg:max-w-4xl lg:w-full m-3 lg:mx-auto">
-                                                  <div
-                                                    class="flex flex-col bg-white border shadow-sm rounded-xl pointer-events-auto dark:bg-neutral-800 dark:border-neutral-700 dark:shadow-neutral-700/70">
-                                                    <div class="flex justify-between items-center py-3 px-4 border-b dark:border-neutral-700">
-                                                      <h3 class="font-bold text-gray-800 dark:text-white">
-                                                        Modal title
-                                                      </h3>
-                                                      <button type="button"
-                                                        class="flex justify-center items-center size-7 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-neutral-700"
-                                                        data-hs-overlay="#hs-large-modal">
-                                                        <span class="sr-only">Close</span>
-                                                        <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24"
-                                                          height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                          stroke-linecap="round" stroke-linejoin="round">
-                                                          <path d="M18 6 6 18"></path>
-                                                          <path d="m6 6 12 12"></path>
-                                                        </svg>
-                                                      </button>
-                                                    </div>
-                                                    <div class="p-4 overflow-y-auto">
-                                                      <div id="input-container" class="grid grid-cols-6 gap-6">
-                                                        <div class="col-span-6 sm:col-span-3">
-                                                          <label for="secre_name"
-                                                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
-                                                          <input type="text" name="secre_name" id="secre_name"
-                                                            class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                                                            placeholder="" required>
-                                                        </div>
-                                                        <div class="col-span-6 sm:col-span-3">
-                                                          <label for="secre_matric_number"
-                                                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Matric
-                                                            Number</label>
-                                                          <input type="text" name="secre_matric_number" id="secre_matric_number"
-                                                            class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                                                            placeholder="" required>
-                                                        </div>
-                                                      </div>
-                                                      <div class="mt-4">
-                                                        <button type="button" onclick="addInputField()"
-                                                          class="py-2 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700">
-                                                          Add another
-                                                        </button>
-                                                      </div>
-                                                    </div>
-                                                    <div class="flex justify-end items-center gap-x-2 py-3 px-4 border-t dark:border-neutral-700">
-                                                      <button type="button"
-                                                        class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800"
-                                                        data-hs-overlay="#hs-large-modal">
-                                                        Close
-                                                      </button>
-                                                      <button type="button"
-                                                        class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none">
-                                                        Save changes
-                                                      </button>
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                              </div> --}}
-
-
                   </td>
+
+                  <script>
+                    document.getElementById('add-secretariat').addEventListener('click', function() {
+                      const container = document.getElementById('secretariat-container');
+                      const index = container.children.length / 3;
+                      const nameField = `
+                      <div class="col-span-6 sm:col-span-2">
+                        <label for="secre_name_${index}" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
+                        <input type="text" name="secre_name[]" id="secre_name_${index}"
+                          class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                          required>
+                      </div>`;
+                      const matricField = `
+                      <div class="col-span-6 sm:col-span-2">
+                        <label for="secre_matric_number_${index}" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Matric Number</label>
+                        <input type="text" name="secre_matric_number[]" id="secre_matric_number_${index}"
+                          class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                          required>
+                      </div>`;
+                      const taskField = `
+                      <div class="col-span-6 sm:col-span-2">
+                        <label for="secre_task_${index}" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Task</label>
+                        <input type="text" name="secre_task[]" id="secre_task_${index}"
+                          class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                          required>
+                      </div>`;
+                      container.insertAdjacentHTML('beforeend', nameField + matricField + taskField);
+                    });
+                  </script>
                 @endif
 
                 @php($user = Auth::user())

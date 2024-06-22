@@ -103,7 +103,7 @@ class UserSeed extends Seeder
 
     ]); */
 
-    DB::table('event_reports')->insert([
+    /* DB::table('event_reports')->insert([
       'r_purpose' => 'ABCD',
       'r_background' => 'ABCD',
       'r_organizer_exco' => 'ZXCV',
@@ -111,6 +111,6 @@ class UserSeed extends Seeder
       'r_description_Comment' => 'ABCD',
 
 
-    ]);
+    ]); */
   }
 }

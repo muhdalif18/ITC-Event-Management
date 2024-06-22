@@ -32,9 +32,6 @@ Route::get('/', function () {
   return view('welcome');
 });
 
-//image
-Route::post('/profile/upload', [UserController::class, 'uploadProfileImage'])->name('profile.upload');
-
 
 Route::post('/profile/change-password', [ProfileController::class, 'changePassword'])->name('profile.change-password');
 
@@ -110,14 +107,12 @@ Route::middleware('auth')->group(function () {
   Route::get('/event-proposal-user', [EventProposalController::class, 'getEventProposalUser'])->name('event.get-event-proposal-user');
   Route::get('/event-proposal/submit/', [EventProposalController::class, 'getSubmitEventProposal'])->name('event.get-submit-event-proposal');
   Route::get('/event-proposal/view/{id}', [EventProposalController::class, 'getViewEventProposal'])->name('event.get-view-event-proposal');
-  Route::get('/export-to-word/{id}', [EventReportController::class, 'exportToWord'])->name('export-to-word');
+  Route::get('/export-to-word/{id}', [EventProposalController::class, 'exportToWord'])->name('export-to-word');
 
   //status for report and proposal
   Route::patch('/event-proposal/{id}/status', [EventProposalController::class, 'updateEventProposalStatus'])->name('event.update-event-proposal-status');
   Route::patch('/event-report/{id}/status', [EventReportController::class, 'updateEventReportStatus'])->name('event.update-event-report-status');
 
-  Route::patch('/event-report/{id}', [EventReportController::class, 'updateEventReport'])->name('event.patch-event-report');
-  Route::patch('/event-proposal/{id}', [EventProposalController::class, 'updateEventProposal'])->name('event.patch-event-proposal');
 
   // Event Report
   Route::post('/event-report', [EventReportController::class, 'postEventReport'])->name('event.post-event-report');
@@ -125,7 +120,6 @@ Route::middleware('auth')->group(function () {
   Route::get('/event-report-user', [EventReportController::class, 'getEventReportUser'])->name('event.get-event-report-user');
   Route::get('/event-report/submit/', [EventReportController::class, 'getGenerateEventReport'])->name('event.get-generate-event-report');
   Route::get('/event-report/view/{id}', [EventReportController::class, 'getViewEventReport'])->name('event.get-view-event-report');
-  Route::get('/export-to-word-report/{id}', [EventProposalController::class, 'exportToWord'])->name('export-to-word-report');
   /* Route::get('/export-to-word/{id}', [EventProposalController::class, 'exportToWord'])->name('export-to-word'); */
 
 

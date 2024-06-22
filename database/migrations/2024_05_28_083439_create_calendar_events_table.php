@@ -16,6 +16,10 @@ return new class extends Migration {
       $table->string('event');
       $table->time('start_time');
       $table->time('end_time');
+
+      $table->json('tasks')->nullable();
+      $table->json('persons_in_charge')->nullable();
+
       $table->timestamps();
     });
   }

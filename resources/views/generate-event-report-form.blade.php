@@ -1,412 +1,122 @@
 <x-app-layout>
   <x-slot name="header">
     <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-      {{ __('Submit Event Proposal') }}
+      {{ __('Submit Event Report') }}
     </h2>
   </x-slot>
 
   <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
     <div class="p-6 text-gray-900">
-      <!-- Stepper -->
+      <h1 class="text-xl font-semibold text-gray-800 dark:text-gray-200">
+        Event Report Form
+      </h1>
       <div data-hs-stepper>
-        <!-- Stepper Nav -->
         <ul class="relative flex flex-row gap-x-2">
-          <!-- Item -->
           <li class="flex items-center gap-x-2 shrink basis-0 flex-1 group active"
             data-hs-stepper-nav-item='{"index": 1, "isOptional": true}'>
-            {{-- <span
-              class="min-w-7 min-h-7 group inline-flex items-center text-xs align-middle focus:outline-none disabled:opacity-50 disabled:pointer-events-none">
-              <span
-                class="size-7 flex justify-center items-center flex-shrink-0 bg-gray-100 font-medium text-gray-800 rounded-full group-focus:bg-gray-200 dark:bg-gray-700 dark:text-white dark:group-focus:bg-gray-600 hs-stepper-active:bg-blue-600 hs-stepper-active:text-white hs-stepper-success:bg-blue-600 hs-stepper-success:text-white hs-stepper-completed:bg-teal-500 hs-stepper-completed:group-focus:bg-teal-600">
-                <span class="hs-stepper-success:hidden hs-stepper-completed:hidden">1</span>
-                <svg class="hidden flex-shrink-0 size-3 hs-stepper-success:block" xmlns="http://www.w3.org/2000/svg"
-                  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-              </span>
-              <span
-                class="ms-2 text-sm font-medium text-gray-800 group-focus:text-gray-500 dark:text-white dark:group-focus:text-gray-400">
-                Step
-              </span>
-            </span>
-            <div
-              class="w-full h-px flex-1 bg-gray-200 group-last:hidden dark:bg-blue-500 hs-stepper-success:bg-blue-600 hs-stepper-completed:bg-teal-600">
-            </div> --}}
           </li>
-          <!-- End Item -->
-
-          <!-- Item -->
           <li class="flex items-center gap-x-2 shrink basis-0 flex-1 group"
             data-hs-stepper-nav-item='{ "index": 2, "isOptional": true}'>
-            <span
-              class="min-w-7 min-h-7 group inline-flex items-center text-xs align-middle focus:outline-none disabled:opacity-50 disabled:pointer-events-none">
-              {{-- <span
-                class="size-7 flex justify-center items-center flex-shrink-0 bg-gray-100 font-medium text-gray-800 rounded-full group-focus:bg-gray-200 dark:bg-gray-700 dark:text-white dark:group-focus:bg-gray-600 hs-stepper-active:bg-blue-600 hs-stepper-active:text-white hs-stepper-success:bg-blue-600 hs-stepper-success:text-white hs-stepper-completed:bg-teal-500 hs-stepper-completed:group-focus:bg-teal-600">
-                <span class="hs-stepper-success:hidden hs-stepper-completed:hidden">2</span>
-                <svg class="hidden flex-shrink-0 size-3 hs-stepper-success:block" xmlns="http://www.w3.org/2000/svg"
-                  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-              </span>
-              <span
-                class="ms-2 text-sm font-medium text-gray-800 group-focus:text-gray-500 dark:text-white dark:group-focus:text-gray-400">
-                Step
-              </span>
-            </span>
-            <div
-              class="w-full h-px flex-1 bg-gray-200 group-last:hidden dark:bg-gray-700 hs-stepper-success:bg-blue-600 hs-stepper-completed:bg-teal-600">
-            </div> --}}
           </li>
-          <!-- End Item -->
-
-          <!-- Item -->
           <li class="flex items-center gap-x-2 shrink basis-0 flex-1 group" data-hs-stepper-nav-item='{"index": 3}'>
-            <span
-              class="min-w-7 min-h-7 group inline-flex items-center text-xs align-middle focus:outline-none disabled:opacity-50 disabled:pointer-events-none">
-              {{-- <span
-                class="size-7 flex justify-center items-center flex-shrink-0 bg-gray-100 font-medium text-gray-800 rounded-full group-focus:bg-gray-200 dark:bg-gray-700 dark:text-white dark:group-focus:bg-gray-600 hs-stepper-active:bg-blue-600 hs-stepper-active:text-white hs-stepper-success:bg-blue-600 hs-stepper-success:text-white hs-stepper-completed:bg-teal-500 hs-stepper-completed:group-focus:bg-teal-600">
-                <span class="hs-stepper-success:hidden hs-stepper-completed:hidden">3</span>
-                <svg class="hidden flex-shrink-0 size-3 hs-stepper-success:block" xmlns="http://www.w3.org/2000/svg"
-                  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-              </span>
-              <span
-                class="ms-2 text-sm font-medium text-gray-800 group-focus:text-gray-500 dark:text-white dark:group-focus:text-gray-400">
-                Step
-              </span>
-            </span>
-            <div
-              class="w-full h-px flex-1 bg-gray-200 group-last:hidden dark:bg-gray-700 hs-stepper-success:bg-blue-600 hs-stepper-completed:bg-teal-600">
-            </div> --}}
           </li>
-          <!-- End Item -->
-
-          <!-- Item -->
           <li class="flex items-center gap-x-2 shrink basis-0 flex-1 group" data-hs-stepper-nav-item='{"index": 4}'>
-            <span
-              class="min-w-7 min-h-7 group inline-flex items-center text-xs align-middle focus:outline-none disabled:opacity-50 disabled:pointer-events-none">
-              {{-- <span
-                class="size-7 flex justify-center items-center flex-shrink-0 bg-gray-100 font-medium text-gray-800 rounded-full group-focus:bg-gray-200 dark:bg-gray-700 dark:text-white dark:group-focus:bg-gray-600 hs-stepper-active:bg-blue-600 hs-stepper-active:text-white hs-stepper-success:bg-blue-600 hs-stepper-success:text-white hs-stepper-completed:bg-teal-500 hs-stepper-completed:group-focus:bg-teal-600">
-                <span class="hs-stepper-success:hidden hs-stepper-completed:hidden">4</span>
-                <svg class="hidden flex-shrink-0 size-3 hs-stepper-success:block" xmlns="http://www.w3.org/2000/svg"
-                  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-              </span>
-              <span
-                class="ms-2 text-sm font-medium text-gray-800 group-focus:text-gray-500 dark:text-white dark:group-focus:text-gray-400">
-                Step
-              </span>
-            </span>
-            <div
-              class="w-full h-px flex-1 bg-gray-200 group-last:hidden dark:bg-gray-700 hs-stepper-success:bg-blue-600 hs-stepper-completed:bg-teal-600">
-            </div> --}}
           </li>
-          <!-- End Item -->
-
-          <!-- Item -->
           <li class="flex items-center gap-x-2 shrink basis-0 flex-1 group" data-hs-stepper-nav-item='{"index": 5}'>
-            <span
-              class="min-w-7 min-h-7 group inline-flex items-center text-xs align-middle focus:outline-none disabled:opacity-50 disabled:pointer-events-none">
-              {{-- <span
-                class="size-7 flex justify-center items-center flex-shrink-0 bg-gray-100 font-medium text-gray-800 rounded-full group-focus:bg-gray-200 dark:bg-gray-700 dark:text-white dark:group-focus:bg-gray-600 hs-stepper-active:bg-blue-600 hs-stepper-active:text-white hs-stepper-success:bg-blue-600 hs-stepper-success:text-white hs-stepper-completed:bg-teal-500 hs-stepper-completed:group-focus:bg-teal-600">
-                <span class="hs-stepper-success:hidden hs-stepper-completed:hidden">5</span>
-                <svg class="hidden flex-shrink-0 size-3 hs-stepper-success:block" xmlns="http://www.w3.org/2000/svg"
-                  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-              </span>
-              <span
-                class="ms-2 text-sm font-medium text-gray-800 group-focus:text-gray-500 dark:text-white dark:group-focus:text-gray-400">
-                Step
-              </span>
-            </span>
-            <div
-              class="w-full h-px flex-1 bg-gray-200 group-last:hidden dark:bg-gray-700 hs-stepper-success:bg-blue-600 hs-stepper-completed:bg-teal-600">
-            </div> --}}
           </li>
-          <!-- End Item -->
-
-          <!-- Item -->
           <li class="flex items-center gap-x-2 shrink basis-0 flex-1 group" data-hs-stepper-nav-item='{"index": 6}'>
-            <span
-              class="min-w-7 min-h-7 group inline-flex items-center text-xs align-middle focus:outline-none disabled:opacity-50 disabled:pointer-events-none">
-              {{-- <span
-                class="size-7 flex justify-center items-center flex-shrink-0 bg-gray-100 font-medium text-gray-800 rounded-full group-focus:bg-gray-200 dark:bg-gray-700 dark:text-white dark:group-focus:bg-gray-600 hs-stepper-active:bg-blue-600 hs-stepper-active:text-white hs-stepper-success:bg-blue-600 hs-stepper-success:text-white hs-stepper-completed:bg-teal-500 hs-stepper-completed:group-focus:bg-teal-600">
-                <span class="hs-stepper-success:hidden hs-stepper-completed:hidden">6</span>
-                <svg class="hidden flex-shrink-0 size-3 hs-stepper-success:block" xmlns="http://www.w3.org/2000/svg"
-                  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-              </span>
-              <span
-                class="ms-2 text-sm font-medium text-gray-800 group-focus:text-gray-500 dark:text-white dark:group-focus:text-gray-400">
-                Step
-              </span>
-            </span>
-            <div
-              class="w-full h-px flex-1 bg-gray-200 group-last:hidden dark:bg-gray-700 hs-stepper-success:bg-blue-600 hs-stepper-completed:bg-teal-600">
-            </div> --}}
           </li>
-          <!-- End Item -->
-
-          <!-- Item -->
           <li class="flex items-center gap-x-2 shrink basis-0 flex-1 group" data-hs-stepper-nav-item='{"index": 7}'>
-            <span
-              class="min-w-7 min-h-7 group inline-flex items-center text-xs align-middle focus:outline-none disabled:opacity-50 disabled:pointer-events-none">
-              {{-- <span
-                class="size-7 flex justify-center items-center flex-shrink-0 bg-gray-100 font-medium text-gray-800 rounded-full group-focus:bg-gray-200 dark:bg-gray-700 dark:text-white dark:group-focus:bg-gray-600 hs-stepper-active:bg-blue-600 hs-stepper-active:text-white hs-stepper-success:bg-blue-600 hs-stepper-success:text-white hs-stepper-completed:bg-teal-500 hs-stepper-completed:group-focus:bg-teal-600">
-                <span class="hs-stepper-success:hidden hs-stepper-completed:hidden">7</span>
-                <svg class="hidden flex-shrink-0 size-3 hs-stepper-success:block" xmlns="http://www.w3.org/2000/svg"
-                  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-              </span>
-              <span
-                class="ms-2 text-sm font-medium text-gray-800 group-focus:text-gray-500 dark:text-white dark:group-focus:text-gray-400">
-                Step
-              </span>
-            </span>
-            <div
-              class="w-full h-px flex-1 bg-gray-200 group-last:hidden dark:bg-gray-700 hs-stepper-success:bg-blue-600 hs-stepper-completed:bg-teal-600">
-            </div> --}}
           </li>
-          <!-- End Item -->
-
-          <!-- Item -->
           <li class="flex items-center gap-x-2 shrink basis-0 flex-1 group" data-hs-stepper-nav-item='{"index": 8}'>
-            <span
-              class="min-w-7 min-h-7 group inline-flex items-center text-xs align-middle focus:outline-none disabled:opacity-50 disabled:pointer-events-none">
-              {{--  <span
-                class="size-7 flex justify-center items-center flex-shrink-0 bg-gray-100 font-medium text-gray-800 rounded-full group-focus:bg-gray-200 dark:bg-gray-700 dark:text-white dark:group-focus:bg-gray-600 hs-stepper-active:bg-blue-600 hs-stepper-active:text-white hs-stepper-success:bg-blue-600 hs-stepper-success:text-white hs-stepper-completed:bg-teal-500 hs-stepper-completed:group-focus:bg-teal-600">
-                <span class="hs-stepper-success:hidden hs-stepper-completed:hidden">8</span>
-                <svg class="hidden flex-shrink-0 size-3 hs-stepper-success:block" xmlns="http://www.w3.org/2000/svg"
-                  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-              </span>
-              <span
-                class="ms-2 text-sm font-medium text-gray-800 group-focus:text-gray-500 dark:text-white dark:group-focus:text-gray-400">
-                Step
-              </span>
-            </span>
-            <div
-              class="w-full h-px flex-1 bg-gray-200 group-last:hidden dark:bg-gray-700 hs-stepper-success:bg-blue-600 hs-stepper-completed:bg-teal-600">
-            </div> --}}
           </li>
-          <!-- End Item -->
-
-          <!-- Item -->
           <li class="flex items-center gap-x-2 shrink basis-0 flex-1 group" data-hs-stepper-nav-item='{"index": 9}'>
-            <span
-              class="min-w-7 min-h-7 group inline-flex items-center text-xs align-middle focus:outline-none disabled:opacity-50 disabled:pointer-events-none">
-              {{-- <span
-                class="size-7 flex justify-center items-center flex-shrink-0 bg-gray-100 font-medium text-gray-800 rounded-full group-focus:bg-gray-200 dark:bg-gray-700 dark:text-white dark:group-focus:bg-gray-600 hs-stepper-active:bg-blue-600 hs-stepper-active:text-white hs-stepper-success:bg-blue-600 hs-stepper-success:text-white hs-stepper-completed:bg-teal-500 hs-stepper-completed:group-focus:bg-teal-600">
-                <span class="hs-stepper-success:hidden hs-stepper-completed:hidden">8</span>
-                <svg class="hidden flex-shrink-0 size-3 hs-stepper-success:block" xmlns="http://www.w3.org/2000/svg"
-                  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-              </span>
-              <span
-                class="ms-2 text-sm font-medium text-gray-800 group-focus:text-gray-500 dark:text-white dark:group-focus:text-gray-400">
-                Step
-              </span>
-            </span>
-            <div
-              class="w-full h-px flex-1 bg-gray-200 group-last:hidden dark:bg-gray-700 hs-stepper-success:bg-blue-600 hs-stepper-completed:bg-teal-600">
-            </div> --}}
           </li>
-          <!-- End Item -->
-
-          <!-- Item -->
           <li class="flex items-center gap-x-2 shrink basis-0 flex-1 group" data-hs-stepper-nav-item='{"index": 10}'>
-            <span
-              class="min-w-7 min-h-7 group inline-flex items-center text-xs align-middle focus:outline-none disabled:opacity-50 disabled:pointer-events-none">
-              {{-- <span
-                class="size-7 flex justify-center items-center flex-shrink-0 bg-gray-100 font-medium text-gray-800 rounded-full group-focus:bg-gray-200 dark:bg-gray-700 dark:text-white dark:group-focus:bg-gray-600 hs-stepper-active:bg-blue-600 hs-stepper-active:text-white hs-stepper-success:bg-blue-600 hs-stepper-success:text-white hs-stepper-completed:bg-teal-500 hs-stepper-completed:group-focus:bg-teal-600">
-                <span class="hs-stepper-success:hidden hs-stepper-completed:hidden">8</span>
-                <svg class="hidden flex-shrink-0 size-3 hs-stepper-success:block" xmlns="http://www.w3.org/2000/svg"
-                  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-              </span>
-              <span
-                class="ms-2 text-sm font-medium text-gray-800 group-focus:text-gray-500 dark:text-white dark:group-focus:text-gray-400">
-                Step
-              </span>
-            </span>
-            <div
-              class="w-full h-px flex-1 bg-gray-200 group-last:hidden dark:bg-gray-700 hs-stepper-success:bg-blue-600 hs-stepper-completed:bg-teal-600">
-            </div> --}}
           </li>
-          <!-- End Item -->
-
-          <!-- Item -->
           <li class="flex items-center gap-x-2 shrink basis-0 flex-1 group" data-hs-stepper-nav-item='{"index": 11}'>
-            <span
-              class="min-w-7 min-h-7 group inline-flex items-center text-xs align-middle focus:outline-none disabled:opacity-50 disabled:pointer-events-none">
-              {{-- <span
-                class="size-7 flex justify-center items-center flex-shrink-0 bg-gray-100 font-medium text-gray-800 rounded-full group-focus:bg-gray-200 dark:bg-gray-700 dark:text-white dark:group-focus:bg-gray-600 hs-stepper-active:bg-blue-600 hs-stepper-active:text-white hs-stepper-success:bg-blue-600 hs-stepper-success:text-white hs-stepper-completed:bg-teal-500 hs-stepper-completed:group-focus:bg-teal-600">
-                <span class="hs-stepper-success:hidden hs-stepper-completed:hidden">8</span>
-                <svg class="hidden flex-shrink-0 size-3 hs-stepper-success:block" xmlns="http://www.w3.org/2000/svg"
-                  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-              </span>
-              <span
-                class="ms-2 text-sm font-medium text-gray-800 group-focus:text-gray-500 dark:text-white dark:group-focus:text-gray-400">
-                Step
-              </span>
-            </span>
-            <div
-              class="w-full h-px flex-1 bg-gray-200 group-last:hidden dark:bg-gray-700 hs-stepper-success:bg-blue-600 hs-stepper-completed:bg-teal-600">
-            </div> --}}
           </li>
-          <!-- End Item -->
-
-          <!-- Item -->
           <li class="flex items-center gap-x-2 shrink basis-0 flex-1 group" data-hs-stepper-nav-item='{"index": 12}'>
-            <span
-              class="min-w-7 min-h-7 group inline-flex items-center text-xs align-middle focus:outline-none disabled:opacity-50 disabled:pointer-events-none">
-              {{-- <span
-                class="size-7 flex justify-center items-center flex-shrink-0 bg-gray-100 font-medium text-gray-800 rounded-full group-focus:bg-gray-200 dark:bg-gray-700 dark:text-white dark:group-focus:bg-gray-600 hs-stepper-active:bg-blue-600 hs-stepper-active:text-white hs-stepper-success:bg-blue-600 hs-stepper-success:text-white hs-stepper-completed:bg-teal-500 hs-stepper-completed:group-focus:bg-teal-600">
-                <span class="hs-stepper-success:hidden hs-stepper-completed:hidden">8</span>
-                <svg class="hidden flex-shrink-0 size-3 hs-stepper-success:block" xmlns="http://www.w3.org/2000/svg"
-                  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-              </span>
-              <span
-                class="ms-2 text-sm font-medium text-gray-800 group-focus:text-gray-500 dark:text-white dark:group-focus:text-gray-400">
-                Step
-              </span>
-            </span>
-            <div
-              class="w-full h-px flex-1 bg-gray-200 group-last:hidden dark:bg-gray-700 hs-stepper-success:bg-blue-600 hs-stepper-completed:bg-teal-600">
-            </div> --}}
           </li>
-          <!-- End Item -->
         </ul>
-        <!-- End Stepper Nav -->
-
-        <!-- Stepper Content -->
         <div class="mt-5 sm:mt-8">
-          <form method='post' action={{ route('event.post-event-report') }}>
+          <form id="event-report-form" method='post' action={{ route('event.post-event-report') }}>
             @csrf
-            <!-- First Content -->
+            <!-- 1 Content Tujuan dan latar belakang-->
             <div data-hs-stepper-content-item='{"index": 1}' style="display: none;">
               <div
                 class="p-4 h-max bg-gray-50  items-center border border-dashed border-gray-200 rounded-xl dark:bg-gray-800 dark:border-gray-700">
-                {{-- <h3 class="text-gray-500">
-                    First content
-                  </h3> --}}
-
-                <!-- Section -->
                 <div
                   class="grid sm:grid-cols-12 gap-2 sm:gap-4 py-8 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 dark:border-gray-700 dark:first:border-transparent">
                   <div class="sm:col-span-12">
                     <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
-                      Description
+                      Penerangan
                     </h2>
                   </div>
-                  <!-- End Col -->
-
                   <div class="sm:col-span-3">
-                    <label for="r_purpose" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
-                      Purpose
+                    <label for="purpose" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                      Tujuan
                     </label>
                   </div>
-                  <!-- End Col -->
-
                   <div class="sm:col-span-9">
                     <div class="sm:flex">
-                      <input type="text" id="r_purpose" name="r_purpose" value="{{ old('r_purpose') }}"
+                      <input type="text" id="purpose" name="purpose" value="{{ old('purpose') }}" required
+                        data-field-name="purpose"
                         class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
-                      <x-input-error class="mt-2" :messages="$errors->get('r_purpose')" />
+                      <x-input-error class="mt-2" :messages="$errors->get('purpose')" />
                     </div>
                   </div>
                   <!-- End Col -->
 
                   <div class="sm:col-span-3">
-                    <label for="r_background" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
-                      Background
+                    <label for="background" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                      Latar Belakang
                     </label>
                   </div>
                   <!-- End Col -->
 
                   <div class="sm:col-span-9">
-                    {{--  <input id="af-submit-application-phone" type="text"
-                        class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"> --}}
                     <div class="sm:col-span-9">
-                      <textarea id="r_background" name="r_background"
+                      <textarea id="background" name="background"
                         class="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
-                        rows="6" placeholder=""> {{ old('r_background') }}
-                    </textarea>
-                      <x-input-error class="mt-2" :messages="$errors->get('r_background')" />
+                        rows="6">{{ old('background') }}</textarea>
+                      <x-input-error class="mt-2" :messages="$errors->get('background')" />
                     </div>
                   </div>
-                  <!-- End Col -->
                 </div>
               </div>
             </div>
-            <!-- End First Content -->
+            <!-- End 1 Content Tujuan-->
 
-            <!--Second COntent-->
+            <!--2 Content nama aktiviti dan penganjur-->
             <div data-hs-stepper-content-item='{"index": 2}' style="display: none;">
               <div
                 class="p-4 h-max bg-gray-50  items-center border border-dashed border-gray-200 rounded-xl dark:bg-gray-800 dark:border-gray-700">
-                {{-- <h3 class="text-gray-500">
-                    First content
-                  </h3> --}}
-
-                <!-- Section -->
                 <div
                   class="grid sm:grid-cols-12 gap-2 sm:gap-4 py-8 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 dark:border-gray-700 dark:first:border-transparent">
                   <div class="sm:col-span-12">
                     <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
-                      Event Name & Organizer
+                      Nama Aktiti & Penganjur
                     </h2>
                   </div>
-                  <!-- End Col -->
-
-                  {{-- <div class="sm:col-span-3">
+                  <div class="sm:col-span-3">
                     <label for="eventName" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
-                      Event Name
+                      Name Aktiviti
                     </label>
-                  </div> --}}
-                  <!-- End Col -->
-
-                  {{-- <div class="sm:col-span-9">
+                  </div>
+                  <div class="sm:col-span-9">
                     <div class="sm:flex">
                       <input type="text" id="eventName" name="eventName" value="{{ old('eventName') }}"
                         class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
                       <x-input-error class="mt-2" :messages="$errors->get('eventName')" />
                     </div>
-                  </div> --}}
-                  <!-- End Col -->
-
-                  {{-- <div class="sm:col-span-3">
+                  </div>
+                  <div class="sm:col-span-3">
                     <label for="organizer" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
-                      Organizer
+                      Penganjur
                     </label>
-                  </div> --}}
-                  <!-- End Col -->
-
-                  {{-- <div class="sm:col-span-9">
+                  </div>
+                  <div class="sm:col-span-9">
                     <div class="sm:col-span-9">
                       <textarea id="organizer" name="organizer"
                         class="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
@@ -414,46 +124,731 @@
                       </textarea>
                       <x-input-error class="mt-2" :messages="$errors->get('organizer')" />
                     </div>
+                  </div>
+                  <div class="sm:col-span-3">
+                    <label for="organizer_exco" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                      Exco yang Terlibat
+                    </label>
+                  </div>
+                  <div class="sm:col-span-9">
+                    <div class="sm:flex">
+                      <input type="text" id="organizer_exco" name="organizer_exco"
+                        value="{{ old('organizer_exco') }}"
+                        class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
+                      <x-input-error class="mt-2" :messages="$errors->get('organizer_exco')" />
+                    </div>
+                  </div>
+                  <div class="sm:col-span-3">
+                    <label for="event_director" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                      Pengarah Program
+                    </label>
+                  </div>
+                  <div class="sm:col-span-9">
+                    <div class="sm:flex">
+                      <input type="text" id="event_director" name="event_director"
+                        value="{{ old('event_director') }}"
+                        class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
+                      <x-input-error class="mt-2" :messages="$errors->get('event_director')" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End 2 Content nama aktiviti dan penganjur-->
+
+            <!--3 Content butiran aktiviti-->
+            <div data-hs-stepper-content-item='{"index": 3}' style="display: none;">
+              <div
+                class="p-4 h-max bg-gray-50  items-center border border-dashed border-gray-200 rounded-xl dark:bg-gray-800 dark:border-gray-700">
+                <div
+                  class="grid sm:grid-cols-12 gap-2 sm:gap-4 py-8 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 dark:border-gray-700 dark:first:border-transparent">
+                  <div class="sm:col-span-12">
+                    <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
+                      Butiran Program
+                    </h2>
+                  </div>
+
+                  <div class="sm:col-span-3">
+                    <label for="date" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                      Tarikh
+                    </label>
+                  </div>
+                  <div class="sm:col-span-9">
+                    <div class="sm:flex">
+                      <input type="text" id="date" name="date" value="{{ old('date') }}"
+                        class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
+                      <x-input-error class="mt-2" :messages="$errors->get('date')" />
+                    </div>
+                  </div>
+                  <div class="sm:col-span-3">
+                    <label for="day" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                      Hari
+                    </label>
+                  </div>
+                  <div class="sm:col-span-9">
+                    <div class="sm:flex">
+                      <input type="text" id="day" name="day" value="{{ old('day') }}"
+                        class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
+                      <x-input-error class="mt-2" :messages="$errors->get('day')" />
+                    </div>
+                  </div>
+                  <div class="sm:col-span-3">
+                    <label for="time" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                      Masa
+                    </label>
+                  </div>
+                  <div class="sm:col-span-9">
+                    <div class="sm:flex">
+                      <input type="text" id="time" name="time" value="{{ old('time') }}"
+                        class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
+                      <x-input-error class="mt-2" :messages="$errors->get('time')" />
+                    </div>
+                  </div>
+                  <div class="sm:col-span-3">
+                    <label for="location" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                      Lokasi
+                    </label>
+                  </div>
+                  <div class="sm:col-span-9">
+                    <div class="sm:flex">
+                      <input type="text" id="location" name="location" value="{{ old('location') }}"
+                        class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
+                      <x-input-error class="mt-2" :messages="$errors->get('location')" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End 3 Content butiran aktiviti-->
+
+            <!-- 4 Content objektif dan pernyataan masalah-->
+            <div data-hs-stepper-content-item='{"index": 4}' style="display: none;">
+              <div
+                class="p-4 h-max bg-gray-50  items-center border border-dashed border-gray-200 rounded-xl dark:bg-gray-800 dark:border-gray-700">
+                <div
+                  class="grid sm:grid-cols-12 gap-2 sm:gap-4 py-8 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 dark:border-gray-700 dark:first:border-transparent">
+                  <div class="sm:col-span-12">
+                    <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
+                      Objektif & Pernyataan Masalah
+                    </h2>
+                  </div>
+                  <div class="sm:col-span-3">
+                    <label for="objective1" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                      Objektif
+                    </label>
+                  </div>
+                  <div class="sm:col-span-9">
+                    <div class="sm:col-span-9">
+                      <textarea id="objective1" name="objective1"
+                        class="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                        rows="2" placeholder="">{{ old('objective1') }}</textarea>
+                      <x-input-error class="mt-2" :messages="$errors->get('objective1')" />
+                    </div>
+                  </div>
+
+                  <div class="sm:col-span-3">
+                    <label for="objective2" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                    </label>
+                  </div>
+
+                  <div class="sm:col-span-9">
+                    <div class="sm:col-span-9">
+                      <textarea id="objective2" name="objective2"
+                        class="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                        rows="2" placeholder="">{{ old('objective2') }}</textarea>
+                      <x-input-error class="mt-2" :messages="$errors->get('objective2')" />
+                    </div>
+                  </div>
+                  <div class="sm:col-span-3">
+                    <label for="objective3" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+
+                    </label>
+                  </div>
+
+
+                  <div class="sm:col-span-9">
+
+                    <div class="sm:col-span-9">
+                      <textarea id="objective3" name="objective3"
+                        class="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                        rows="2" placeholder="">{{ old('objective3') }}</textarea>
+                      <x-input-error class="mt-2" :messages="$errors->get('objective3')" />
+                    </div>
+                  </div>
+
+
+                  <div class="sm:col-span-3">
+                    <label for="per_Masalah1" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                      Problem Statement
+                    </label>
+                  </div>
+
+
+                  <div class="sm:col-span-9">
+                    <div class="sm:col-span-9">
+                      <textarea id="per_Masalah1" name="per_Masalah1"
+                        class="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                        rows="3" placeholder="">{{ old('per_Masalah1') }}</textarea>
+                      <x-input-error class="mt-2" :messages="$errors->get('per_Masalah1')" />
+                    </div>
+                  </div>
+
+
+                  <div class="sm:col-span-3">
+                    <label for="per_Masalah2" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+
+                    </label>
+                  </div>
+
+                  <div class="sm:col-span-9">
+
+                    <div class="sm:col-span-9">
+                      <textarea id="per_Masalah2" name="per_Masalah2"
+                        class="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                        rows="3" placeholder="">{{ old('per_Masalah2') }}</textarea>
+                      <x-input-error class="mt-2" :messages="$errors->get('per_Masalah2')" />
+                    </div>
+                  </div>
+
+                  <div class="sm:col-span-3">
+                    <label for="per_Masalah3" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+
+                    </label>
+                  </div>
+                  <div class="sm:col-span-9">
+
+                    <div class="sm:col-span-9">
+                      <textarea id="per_Masalah3" name="per_Masalah3"
+                        class="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                        rows="6" placeholder="">{{ old('per_Masalah2') }}</textarea>
+                      <x-input-error class="mt-2" :messages="$errors->get('per_Masalah3')" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End 4 Content objektif dan pernyataan masalah -->
+
+            <!-- 5 Content senarai peserta dan pengiring-->
+            <div data-hs-stepper-content-item='{"index": 5}' style="display: none;">
+              <div
+                class="p-4 h-max bg-gray-50  items-center border border-dashed border-gray-200 rounded-xl dark:bg-gray-800 dark:border-gray-700">
+                <div
+                  class="grid sm:grid-cols-12 gap-2 sm:gap-4 py-8 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 dark:border-gray-700 dark:first:border-transparent">
+                  <div class="sm:col-span-12">
+                    <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
+                      Peserta dan Pengiring
+                    </h2>
+                  </div>
+                  <div class="sm:col-span-3">
+                    <label for="participant_escortss" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                      Peserta dan Pengiring
+                    </label>
+                  </div>
+                  <div class="sm:col-span-9">
+                    <div class="sm:col-span-9">
+                      <textarea id="participant_escorts" name="participant_escorts"
+                        class="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                        rows="3"
+                        placeholder="Contoh: Peserta adalah dalam kalangan staff dan mahasiswa UTHM khususnya Mahasiswa Tahun Akhir Fakulti Sains Komputer dan Teknologi Maklumat.">{{ old('participant_escorts') }}</textarea>
+                      <x-input-error class="mt-2" :messages="$errors->get('participant_escorts')" />
+                    </div>
+                  </div>
+                  {{-- 
+                  <div class="sm:col-span-3">
+                    <label for="resume_appendix" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                      Resume / Cv / Appendix
+                    </label>
+                  </div>
+                  <div class="sm:col-span-9">
+                    <div class="sm:col-span-9">
+                      <input type="file" id="resume_appendix" name="resume_appendix"
+                        class="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600" />
+                      <x-input-error class="mt-2" :messages="$errors->get('resume_appendix')" />
+                    </div>
                   </div> --}}
-                  <!-- End Col -->
+                </div>
+              </div>
+            </div>
+            <!-- End 5 Content -->
 
+            <!-- 6 Content Penglibatan industri -->
+            <div data-hs-stepper-content-item='{"index": 6}' style="display: none;">
+              <div
+                class="p-4 h-max bg-gray-50  items-center border border-dashed border-gray-200 rounded-xl dark:bg-gray-800 dark:border-gray-700">
+                <div
+                  class="grid sm:grid-cols-12 gap-2 sm:gap-4 py-8 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 dark:border-gray-700 dark:first:border-transparent">
+                  <div class="sm:col-span-12">
+                    <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
+                      Penglibatan Industri/ Persatuan/ Agensi/ Badan Organisasi Luar Sebagai Mentor
+                    </h2>
+                  </div>
                   <div class="sm:col-span-3">
-                    <label for="r_organizer_exco" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
-                      Exco In Charge
+                    <label for="name_of_mentor" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                      Nama Mentor / Penasihat
                     </label>
                   </div>
-                  <!-- End Col -->
-
                   <div class="sm:col-span-9">
-                    <div class="sm:flex">
-                      <input type="text" id="c" name="r_organizer_exco" value="{{ old('r_organizer_exco') }}"
+                    <div class="sm:col-span-9">
+                      <input type="text" id="name_of_mentor" name="name_of_mentor"
+                        value="{{ old('name_of_mentor') }}"
                         class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
-                      <x-input-error class="mt-2" :messages="$errors->get('r_organizer_exco')" />
+                      <x-input-error class="mt-2" :messages="$errors->get('name_of_mentor')" />
                     </div>
                   </div>
-                  <!-- End Col -->
-
                   <div class="sm:col-span-3">
-                    <label for="r_event_director" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
-                      Event Director
+                    <label for="position_of_mentor" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                      Jawatan Mento/ Penasihat
                     </label>
                   </div>
-                  <!-- End Col -->
-
                   <div class="sm:col-span-9">
-                    <div class="sm:flex">
-                      <input type="text" id="r_event_director" name="r_event_director"
-                        value="{{ old('r_event_director') }}"
+                    <div class="sm:col-span-9">
+                      <input type="text" id="position_of_mentor" name="position_of_mentor"
+                        value="{{ old('position_of_mentor') }}"
                         class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
-                      <x-input-error class="mt-2" :messages="$errors->get('r_event_director')" />
+                      <x-input-error class="mt-2" :messages="$errors->get('position_of_mentor')" />
                     </div>
                   </div>
-                  <!-- End Col -->
+
+
+                  <div class="sm:col-span-3">
+                    <label for="company_address" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                      Alamat Syarikat
+                    </label>
+                  </div>
+                  <div class="sm:col-span-9">
+                    <div class="sm:col-span-9">
+                      <textarea id="company_address" name="company_address"
+                        class="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                        rows="6">{{ old('company_address') }}</textarea>
+                      <x-input-error class="mt-2" :messages="$errors->get('company_address')" />
+                    </div>
+                  </div>
+
+                  <div class="sm:col-span-3">
+                    <label for="suggested_role" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                      Cadangan Peranan & Sumbangan Mentor/ Penasihat
+                    </label>
+                  </div>
+                  <div class="sm:col-span-9">
+                    <div class="sm:flex">
+                      <input type="text" id="suggested_role" name="suggested_role"
+                        value="{{ old('suggested_role') }}"
+                        class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
+                      <x-input-error class="mt-2" :messages="$errors->get('suggested_role')" />
+                    </div>
+                  </div>
 
                 </div>
               </div>
             </div>
-            <!-- End Second Content -->
+            <!-- End 6 Content Penglibatan industri -->
+
+            <!-- 7 Content Impact-->
+            <div data-hs-stepper-content-item='{"index": 7}' style="display: none;">
+              <div
+                class="p-4 h-max bg-gray-50  items-center border border-dashed border-gray-200 rounded-xl dark:bg-gray-800 dark:border-gray-700">
+                <div
+                  class="grid sm:grid-cols-12 gap-2 sm:gap-4 py-8 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 dark:border-gray-700 dark:first:border-transparent">
+                  <div class="sm:col-span-12">
+                    <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
+                      Keberhasilan Aktiviti / Impak
+                    </h2>
+                  </div>
+                  <div class="sm:col-span-3">
+                    <label for="impact_student" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                      Kepada Pelajar/ Peserta
+                    </label>
+                  </div>
+                  <div class="sm:col-span-9">
+                    <div class="sm:col-span-9">
+                      <textarea id="impact_student_1" name="impact_student_1"
+                        class="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                        rows="2" placeholder="">{{ old('impact_student_1') }}</textarea>
+                      <x-input-error class="mt-2" :messages="$errors->get('impact_student_1')" />
+                    </div>
+                  </div>
+
+                  <div class="sm:col-span-3">
+                    <label for="impact_student_2" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                    </label>
+                  </div>
+
+                  <div class="sm:col-span-9">
+                    <div class="sm:col-span-9">
+                      <textarea id="impact_student_2" name="impact_student_2"
+                        class="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                        rows="2" placeholder="">{{ old('impact_student_2') }}</textarea>
+                      <x-input-error class="mt-2" :messages="$errors->get('impact_student_2')" />
+                    </div>
+                  </div>
+                  <div class="sm:col-span-3">
+                    <label for="impact_student_3" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                    </label>
+                  </div>
+
+                  <div class="sm:col-span-9">
+                    <div class="sm:col-span-9">
+                      <textarea id="impact_student_3" name="impact_student_3"
+                        class="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                        rows="2" placeholder="">{{ old('impact_student_3') }}</textarea>
+                      <x-input-error class="mt-2" :messages="$errors->get('impact_student_3')" />
+                    </div>
+                  </div>
+
+
+                  <div class="sm:col-span-3">
+                    <label for="toward_club" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                      Kepada Kelab/ Universiti/ Komuniti
+                    </label>
+                  </div>
+                  <div class="sm:col-span-9">
+                    <div class="sm:col-span-9">
+                      <textarea id="toward_club_1" name="toward_club_1"
+                        class="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                        rows="2" placeholder="">{{ old('toward_club_1') }}</textarea>
+                      <x-input-error class="mt-2" :messages="$errors->get('toward_club_1')" />
+                    </div>
+                  </div>
+
+                  <div class="sm:col-span-3">
+                    <label for="toward_club_2" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                    </label>
+                  </div>
+
+                  <div class="sm:col-span-9">
+                    <div class="sm:col-span-9">
+                      <textarea id="toward_club_2" name="toward_club_2"
+                        class="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                        rows="2" placeholder="">{{ old('toward_club_2') }}</textarea>
+                      <x-input-error class="mt-2" :messages="$errors->get('toward_club_2')" />
+                    </div>
+                  </div>
+
+                  <div class="sm:col-span-3">
+                    <label for="toward_club_3" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                    </label>
+                  </div>
+                  <div class="sm:col-span-9">
+
+                    <div class="sm:col-span-9">
+                      <textarea id="toward_club_3" name="toward_club_3"
+                        class="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                        rows="2" placeholder="">{{ old('toward_club_3') }}</textarea>
+                      <x-input-error class="mt-2" :messages="$errors->get('toward_club_3')" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End 7 Content Impact-->
+
+            <!-- 8 Content Aturcara-->
+            <div data-hs-stepper-content-item='{"index": 8}' style="display: none;">
+              <div
+                class="p-4 h-max bg-gray-50  items-center border border-dashed border-gray-200 rounded-xl dark:bg-gray-800 dark:border-gray-700">
+                <div
+                  class="grid sm:grid-cols-12 gap-2 sm:gap-4 py-8 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 dark:border-gray-700 dark:first:border-transparent">
+                  <div class="sm:col-span-12">
+                    <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
+                      Aturcara Aktiviti
+                    </h2>
+                  </div>
+                  <div class="sm:col-span-3">
+                    <label for="activity_commitee" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                      Aturcara
+                    </label>
+                  </div>
+                  <div class="sm:col-span-9">
+                    <table id="tentative-table" class="w-full">
+                      <thead>
+                        <tr>
+                          <th class="text-left py-2">Masa</th>
+                          <th class="text-left py-2">Pengisian</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><input type="text" name="tentative[0][time]"
+                              class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px rounded-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                              placeholder="8:30 am – 8:45 am"></td>
+                          <td><input type="text" name="tentative[0][content]"
+                              class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px rounded-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                              placeholder="Pendaftaran Peserta"></td>
+                          <td><button type="button" <td><button type="button"
+                                class="add-row text-green-500 hover:underline"
+                                style="background: none; border: none; padding: 0;">Add</button></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <script>
+              document.addEventListener('DOMContentLoaded', function() {
+                let rowIndex = 1;
+                document.querySelector('#tentative-table').addEventListener('click', function(event) {
+                  if (event.target.classList.contains('add-row')) {
+                    event.preventDefault();
+                    const table = document.querySelector('#tentative-table tbody');
+                    const newRow = document.createElement('tr');
+                    newRow.innerHTML = `
+                              <td><input type="text" name="tentative[${rowIndex}][time]" class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px rounded-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                              ></td>
+                              <td><input type="text" name="tentative[${rowIndex}][content]" class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px rounded-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                              ></td>
+                              <td><button type="button" class="remove-row text-red-500 hover:underline py-1 px-2 bg-red-500 text-red rounded" style="background: none; border: none; padding: 0;">Remove</button></td>
+                          `;
+                    table.appendChild(newRow);
+                    rowIndex++;
+                  }
+                  if (event.target.classList.contains('remove-row')) {
+                    event.preventDefault();
+                    event.target.closest('tr').remove();
+                  }
+                });
+              });
+            </script>
+            <!-- End 8 Content Senarai AJK-->
+
+            <!-- 9 Content -->
+            <div data-hs-stepper-content-item='{"index": 9}' style="display: none;">
+              <div
+                class="p-4 h-max bg-gray-50  items-center border border-dashed border-gray-200 rounded-xl dark:bg-gray-800 dark:border-gray-700">
+                <div
+                  class="grid sm:grid-cols-12 gap-2 sm:gap-4 py-8 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 dark:border-gray-700 dark:first:border-transparent">
+                  <div class="sm:col-span-12">
+                    <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
+                      Jawatankuasa Aktiviti
+                    </h2>
+                  </div>
+                  <div class="sm:col-span-3">
+                    <label for="activity_commitee" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                      Jawatankuasa
+                    </label>
+                  </div>
+                  <div class="sm:col-span-9">
+                    <table id="committee-table" class="w-full">
+                      <thead>
+                        <tr>
+                          <th class="text-left py-2">Name</th>
+                          <th class="text-left py-2">No, Matrik</th>
+                          <th class="text-left py-2">Fakulti</th>
+                          <th class="text-left py-2">Jawatan / Peranan</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+
+                          <td><input type="text" name="committee[0][name]"
+                              class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px rounded-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                              required></td>
+                          <td><input type="text" name="committee[0][matric]"
+                              class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px rounded-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                              required></td>
+                          <td><input type="text" name="committee[0][faculty]"
+                              class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px rounded-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                              required></td>
+                          <td><input type="text" name="committee[0][role]"
+                              class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px rounded-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                              required></td>
+                          <td><button type="button" <td><button type="button"
+                                class="add-row text-green-500 hover:underline"
+                                style="background: none; border: none; padding: 0;">Add</button></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <script>
+              document.addEventListener('DOMContentLoaded', function() {
+                let rowIndex = 1;
+                document.querySelector('#committee-table').addEventListener('click', function(event) {
+                  if (event.target.classList.contains('add-row')) {
+                    event.preventDefault();
+                    const table = document.querySelector('#committee-table tbody');
+                    const newRow = document.createElement('tr');
+                    newRow.innerHTML = `
+                               <td><input type="text" name="committee[${rowIndex}][name]" class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px rounded-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                              required></td>
+                              <td><input type="text" name="committee[${rowIndex}][matric]" class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px rounded-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                              required></td>
+                              <td><input type="text" name="committee[${rowIndex}][faculty]" class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px rounded-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                              required></td>
+                              <td><input type="text" name="committee[${rowIndex}][role]" class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px rounded-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                              required></td>
+                              <td><button type="button" class="remove-row text-red-500 hover:underline py-1 px-2 bg-red-500 text-white rounded" style="background: none; border: none; padding: 0;">Remove</button></td>
+                          `;
+                    table.appendChild(newRow);
+                    rowIndex++;
+                  }
+                  if (event.target.classList.contains('remove-row')) {
+                    event.preventDefault();
+                    event.target.closest('tr').remove();
+                  }
+                });
+              });
+            </script>
+            <!-- End 9 Content -->
+
+            <!-- 10 Content lain lain -->
+            <div data-hs-stepper-content-item='{"index": 10}' style="display: none;">
+              <div
+                class="p-4 h-max bg-gray-50 items-center border border-dashed border-gray-200 rounded-xl dark:bg-gray-800 dark:border-gray-700">
+                <div
+                  class="grid sm:grid-cols-12 gap-2 sm:gap-4 py-8 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 dark:border-gray-700 dark:first:border-transparent">
+                  <div class="sm:col-span-12">
+                    <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Gambar Aktiviti</h2>
+                  </div>
+                  <div class="sm:col-span-12">
+                    <label for="others" class="inline-block text-sm font-medium text-gray-500 mt-2.5">Gambar
+                      Aktiviti</label>
+                    <div id="others-container">
+                      <div class="flex items-center mb-2">
+                        <input type="file" name="others_images[]"
+                          class="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                          accept="image/*">
+                        <input type="text" name="others_captions[]"
+                          class="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 ml-2 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                          placeholder="Image Caption">
+                      </div>
+                    </div>
+                    <button type="button" class="mt-2 text-sm text-blue-600" onclick="addImageInput()">Add
+                      More</button>
+                    <x-input-error class="mt-2" :messages="$errors->get('others')" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <script>
+              function addImageInput() {
+                const container = document.getElementById('others-container');
+                const newInput = document.createElement('div');
+                newInput.className = 'flex items-center mb-2';
+                newInput.innerHTML = `
+                                  <input type="file" name="others_images[]" class="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600" accept="image/*">
+                                  <input type="text" name="others_captions[]" class="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 ml-2 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600" placeholder="Image Caption">
+                              `;
+                container.appendChild(newInput);
+              }
+            </script>
+            <!-- 10 Content lain lain -->
+
+            <!-- 11 Content Implikasi-->
+            <div data-hs-stepper-content-item='{"index": 11}' style="display: none;">
+              <div
+                class="p-4 h-max bg-gray-50  items-center border border-dashed border-gray-200 rounded-xl dark:bg-gray-800 dark:border-gray-700">
+                <div
+                  class="grid sm:grid-cols-12 gap-2 sm:gap-4 py-8 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 dark:border-gray-700 dark:first:border-transparent">
+                  <div class="sm:col-span-12">
+                    <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
+                      Implikasi Sekiranya Tidak Diluluskan
+                    </h2>
+                  </div>
+                  <div class="sm:col-span-3">
+                    <label for="implication" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                      Implikasi
+                    </label>
+                  </div>
+                  <div class="sm:col-span-9">
+                    <div class="sm:col-span-9">
+                      <textarea id="implication" name="implication"
+                        class="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                        rows="6">{{ old('implication') }}</textarea>
+                      <x-input-error class="mt-2" :messages="$errors->get('implication')" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End 11 Content Implikasi-->
+
+            <!-- 12 Keputusan-->
+            <div data-hs-stepper-content-item='{"index": 12}' style="display: none;">
+              <div
+                class="p-4 h-max bg-gray-50  items-center border border-dashed border-gray-200 rounded-xl dark:bg-gray-800 dark:border-gray-700">
+                <div
+                  class="grid sm:grid-cols-12 gap-2 sm:gap-4 py-8 first:pt-0 last:pb-0 border-t first:border-transparent border-gray-200 dark:border-gray-700 dark:first:border-transparent">
+                  <div class="sm:col-span-12">
+                    <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
+                      Keputusan
+                    </h2>
+                  </div>
+
+                  <div class="sm:col-span-3">
+                    <label for="decision" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                      Keputusan
+                    </label>
+                  </div>
+                  <div class="sm:col-span-9">
+                    <div class="sm:col-span-9">
+                      <textarea id="decision" name="decision"
+                        class="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                        rows="3"
+                        placeholder="e.g Dengan segala hormatnya Yang Dipertua Majlis Perwakilan Pelajar adalah dipohon untuk menimbang serta meluluskan kertas kerja mengenai cadangan program AWS CLOUD ESSENTIALS FOR LEARNERS ">{{ old('decision') }}</textarea>
+                      <x-input-error class="mt-2" :messages="$errors->get('decision')" />
+                    </div>
+                  </div>
+
+                  <div class="sm:col-span-3">
+                    <label for="club_president" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                      Nama Pengerusi Kelab
+                    </label>
+                  </div>
+                  <div class="sm:col-span-9">
+                    <div class="sm:col-span-9">
+                      <div class="sm:flex">
+                        <input type="text" id="club_president" name="club_president"
+                          value="{{ old('club_president') }}"
+                          class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
+                        <x-input-error class="mt-2" :messages="$errors->get('club_president')" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="sm:col-span-3">
+                    <label for="club_advisor" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                      Nama Penasihat Kelab
+                    </label>
+                  </div>
+                  <div class="sm:col-span-9">
+                    <div class="sm:col-span-9">
+                      <div class="sm:flex">
+                        <input type="text" id="club_advisor" name="club_advisor"
+                          value="{{ old('club_advisor') }}"
+                          class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
+                        <x-input-error class="mt-2" :messages="$errors->get('club_advisor')" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="sm:col-span-3">
+                    <label for="mpp" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
+                      Nama Naib Yang Dipertua MPP UTHM
+                    </label>
+                  </div>
+                  <div class="sm:col-span-9">
+                    <div class="sm:col-span-9">
+                      <div class="sm:flex">
+                        <input type="text" id="mpp" name="mpp" value="{{ old('mpp') }}"
+                          class="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
+                        <x-input-error class="mt-2" :messages="$errors->get('mpp')" />
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <!-- End 12 Keputusan-->
+
+
 
             <!-- Button -->
             <div class="mt-5 flex justify-between items-center gap-x-2">
@@ -478,21 +873,12 @@
                 </svg>
               </button>
 
-              {{--  <button type="generate"
-                class="py-2 px-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
+              <button type="submit" id="submit-btn"
+                class="py-2 px-3 inline-flex items-center gap-x-1
+                text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700
+                disabled:opacity-50 disabled:pointer-events-none"
                 data-hs-stepper-next-btn>
-                Genserate
-                <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round">
-                  <path d="m9 18 6-6-6-6" />
-                </svg>
-              </button> --}}
-
-              <button type="submit"
-                class="py-2 px-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
-                data-hs-stepper-next-btn>
-                Generate
+                Submit
                 <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                   stroke-linejoin="round">
@@ -510,22 +896,11 @@
                 Reset
               </button>
             </div>
-            <!-- End Button -->
+          </form>
         </div>
-        <!-- End Stepper Content -->
 
-        {{-- <button type="generate" id="generate-button"
-          class="py-2 px-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
-          data-hs-stepper-next-btn>
-          Generate
-          <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-            stroke-linejoin="round">
-            <path d="m9 18 6-6-6-6" />
-          </svg>
-        </button> --}}
       </div>
-      <!-- Stepper -->
+
       <script>
         document.getElementById('generate-button').addEventListener('click', function() {
           window.location.href = '/export-to-word'; // Replace with your actual URL
@@ -534,4 +909,124 @@
 
     </div>
   </div>
+
+  <div id="success-modal" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center">
+    <div class="bg-white rounded-lg p-6">
+      <h2 class="text-lg font-semibold text-gray-800 mb-4">Success</h2>
+      <p class="text-gray-600 mb-4">Your event report has been submitted successfully.</p>
+      <button id="close-modal" class="py-2 px-4 bg-blue-600 text-white rounded-lg">Close</button>
+    </div>
+  </div>
 </x-app-layout>
+
+<script>
+  document.getElementById('event-report-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Here you can add your form validation if needed
+
+    // Show the modal
+    document.getElementById('success-modal').classList.remove('hidden');
+
+    // Optionally, you can clear the form or perform other actions here
+  });
+
+  document.getElementById('close-modal').addEventListener('click', function() {
+    document.getElementById('success-modal').classList.add('hidden');
+  });
+</script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('event-report-form');
+    form.addEventListener('submit', function(event) {
+      let valid = true;
+      const requiredFields = document.querySelectorAll('[required]');
+      requiredFields.forEach(field => {
+        const errorElement = field.nextElementSibling;
+        if (!field.value.trim()) {
+          valid = false;
+          errorElement.textContent = `${field.getAttribute('data-field-name')} is required.`;
+          errorElement.style.display = 'block';
+        } else {
+          errorElement.textContent = '';
+          errorElement.style.display = 'none';
+        }
+      });
+      if (!valid) {
+        event.preventDefault();
+        alert('Please fill in all required fields.');
+      }
+    });
+  });
+</script>
+
+
+<script>
+  document.getElementById('event-report-form').addEventListener('submit', async function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Get form data
+    const form = event.target;
+    const formData = new FormData(form);
+
+    // Send form data using fetch
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'X-CSRF-TOKEN': document.querySelector('input[name="_token"]').value // Ensure CSRF token is sent
+      }
+    });
+
+    if (response.ok) {
+      // Clear the form
+      form.reset();
+
+      // Redirect to step 1 (you might need to adjust this based on your step navigation logic)
+      document.querySelector('[data-hs-stepper-nav-item="{\"index\": 1}"]').click();
+    } else {
+      // Handle error (optional)
+      console.error('Form submission failed');
+    }
+  });
+</script>
+
+<script>
+  function addRow() {
+    var table = document.getElementById("tableBody");
+    var newRow = table.insertRow();
+
+    var cell1 = newRow.insertCell(0);
+    var cell2 = newRow.insertCell(1);
+
+    cell1.innerHTML = '<input type="text" name="column1[]">';
+    cell2.innerHTML = '<input type="text" name="column2[]">';
+  }
+
+  function saveData() {
+    var form = document.getElementById("tableForm");
+    var formData = new FormData(form);
+
+    fetch('save_data.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        alert('Data saved successfully');
+        console.log(data);
+        // Optionally, update UI or do something else after saving
+      })
+      .catch(error => {
+        console.error('Error saving data:', error);
+        alert('Error saving data');
+      });
+  }
+</script>

@@ -12,6 +12,7 @@ class EventSecretariats extends Model
   protected $fillable = [
     'secre_name',
     'secre_matric_number',
+    'secre_task',
     'event_id',
   ];
 
