@@ -21,7 +21,7 @@
           </div>
           <div class="flex-grow pl-4">
             <h2 class="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider">STEP 1</h2>
-            <p class="leading-relaxed text-lg">1.0 Objective.</p>
+            <p class="leading-relaxed text-lg">1.0 Objektif.</p>
           </div>
         </div>
 
