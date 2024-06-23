@@ -29,10 +29,10 @@
       class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow sm:block">
       <div
         class="flex flex-col gap-y-4 gap-x-0 mt-5 sm:flex-row sm:items-center sm:justify-end sm:gap-y-0 sm:gap-x-7 sm:mt-0 sm:ps-7">
-        <a class="font-medium text-white sm:py-6" href="#" aria-current="page">Landing</a>
-        <a class="font-medium text-white/[.8] hover:text-white sm:py-6" href="#">Account</a>
-        <a class="font-medium text-white/[.8] hover:text-white sm:py-6" href="#">Work</a>
-        <a class="font-medium text-white/[.8] hover:text-white sm:py-6" href="#">Blog</a>
+        <a class="font-medium text-white sm:py-6" href="#" aria-current="page"><!-- Landing --></a>
+        <a class="font-medium text-white/[.8] hover:text-white sm:py-6" href="#"><!-- Account --></a>
+        <a class="font-medium text-white/[.8] hover:text-white sm:py-6" href="#"><!-- Work --></a>
+        <a class="font-medium text-white/[.8] hover:text-white sm:py-6" href="#"><!-- Blog --></a>
 
         <div
           class="hs-dropdown [--strategy:static] sm:[--strategy:fixed] [--adaptive:none] sm:[--trigger:hover] sm:py-4">
@@ -141,11 +141,11 @@
         <button type="button"
           class="hs-dark-mode-active:hidden block hs-dark-mode group flex items-center text-white hover:text-blue-600 font-medium dark:text-gray-400 dark:hover:text-gray-500"
           data-hs-theme-click-value="dark">
-          <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+          <!-- <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
             stroke-linejoin="round">
             <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
-          </svg>
+          </svg> -->
         </button>
         <button type="button"
           class="hs-dark-mode-active:block hidden hs-dark-mode group flex items-center text-gray-600 hover:text-blue-600 font-medium dark:text-gray-400 dark:hover:text-gray-500"
@@ -166,13 +166,13 @@
           </svg>
         </button>
         <a class="font-medium text-white dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-          href="#" aria-current="page">Landing</a>
+          href="#" aria-current="page"><!-- Landing --></a>
         <a class="font-medium text-white hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-          href="#">Account</a>
+          href="#"><!-- Account --></a>
         <a class="font-medium text-white hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-          href="#">Work</a>
+          href="#"><!-- Work --></a>
         <a class="font-medium text-white hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-          href="#">Blog</a>
+          href="#"><!-- Blog --></a>
       </div>
     </div>
   </nav>

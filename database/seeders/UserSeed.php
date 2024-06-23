@@ -24,29 +24,47 @@ class UserSeed extends Seeder
     ]);
 
     DB::table('users')->insert([
-      'name' => 'USER 1',
-      'email' => 'user1@example.com',
-      'role' => 'user',
-      'matric_number' => 'ci210001',
-      'exco' => 'test 1',
-      'password' => Hash::make('12345678'),
-    ]);
-
-    DB::table('users')->insert([
-      'name' => 'USER 2',
-      'email' => 'user2@example.com',
-      'role' => 'user',
-      'matric_number' => 'ci210002',
-      'exco' => 'test 2',
-      'password' => Hash::make('12345678'),
-    ]);
-
-    DB::table('users')->insert([
-      'name' => 'USER 3',
-      'email' => 'user3@example.com',
+      'name' => 'MUHAMMAD HAQIMI BIN HARUN',
+      'email' => 'ci210003@student.uthm.edu.my,
       'role' => 'user',
       'matric_number' => 'ci210003',
-      'exco' => 'test 3',
+      'exco' => 'EXCO PEMBANGUNAN PELAJAR',
+      'password' => Hash::make('12345678'),
+    ]);
+
+    DB::table('users')->insert([
+      'name' => 'UTHMANN AL-SYURAEEM BIN AL-HADI',
+      'email' => 'ci210001@student.uthm.edu.my',
+      'role' => 'user',
+      'matric_number' => 'ci210001',
+      'exco' => 'EXCO MEDIA',
+      'password' => Hash::make('12345678'),
+    ]);
+
+    DB::table('users')->insert([
+      'name' => 'AIMAN SYAFIQ BIN TAHRIM',
+      'email' => 'ci210032@student.uthm.edu.my',
+      'role' => 'user',
+      'matric_number' => 'ci210032',
+      'exco' => 'EXCO MEDIA',
+      'password' => Hash::make('12345678'),
+    ]);
+
+    DB::table('users')->insert([
+      'name' => 'ADIB NAWFAL BIN YAZID',
+      'email' => 'ci210094@student.uthm.edu.my',
+      'role' => 'user',
+      'matric_number' => 'ci210094',
+      'exco' => 'EXCO SUKAN DAN REKREASI',
+      'password' => Hash::make('12345678'),
+    ]);
+
+    DB::table('users')->insert([
+      'name' => 'MUHAMMAD AIZUDDIN BIN ZULKIFLI',
+      'email' => 'ci210067@student.uthm.edu.my',
+      'role' => 'user',
+      'matric_number' => 'ci210067',
+      'exco' => 'EXCO SUKAN DAN REKREASI',
       'password' => Hash::make('12345678'),
     ]);
 

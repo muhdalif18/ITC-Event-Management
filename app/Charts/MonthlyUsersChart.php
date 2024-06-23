@@ -19,8 +19,8 @@ class MonthlyUsersChart
       ->setTitle('APPROVED EVENT.')
       /*  ->setSubtitle('Physical sales vs Digital sales.') */
       /*    ->addData('Physical sales', [40, 93, 35, 42, 18, 82]) */
-      ->addData('Digital sales', [2, 4, 3, 5, 2])
-      ->setXAxis(['January', 'February', 'March', 'April', 'May', 'June']);
+      ->addData('', [1, 2, 3])
+      ->setXAxis(['Jun', 'July']);
 
     /* return $this->chart->areaChart()
       ->setTitle('Approved and Not Approved Proposals')
